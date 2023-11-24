@@ -3,22 +3,36 @@ using System.Collections.Generic;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
-public class PlayerController : AnimatorController
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
     private float _startSpeed;
     private bool _isJump;
+    private Rigidbody2D rb;
+    private Vector2 currentPosition, previousPosition, direction;
+    private Animator anim;
+    private AnimatorController animatorController;
+
 
     void Start()
     {
-        BaseStart();
+        previousPosition = transform.position;
         _startSpeed = _speed;
+
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+
+
+        animatorController = new AnimatorController();
+        animatorController.StartForPlayersEvent();
     }
 
     void Update()
     {
-        BaseUpdate();
+        currentPosition = transform.position;
+        direction = currentPosition - previousPosition;
+        previousPosition = currentPosition;
 
         if (!_isJump)
         {
@@ -41,6 +55,17 @@ public class PlayerController : AnimatorController
 
             _isJump = true;
         }
+
+        if (direction.x > 0)
+        {
+            transform.localScale = new Vector2(1, 1);
+        }
+        else if(direction.x < 0)
+        {
+            transform.localScale = new Vector2(-1, 1);
+        }
+
+        animatorController.animationsEvent(direction, anim);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -49,5 +74,10 @@ public class PlayerController : AnimatorController
         {
             _isJump = false;
         }
+    }
+
+    private void OnDisable()
+    {
+        animatorController.animationsEvent = null;
     }
 }

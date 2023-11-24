@@ -1,30 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
 {
-    protected Rigidbody2D rb;
-    protected Animator anim;
-    private Vector2 currentPosition, previousPosition, direction;
-    private bool _isFacingRight;
+    public delegate void AnimationsEvent(Vector2 direction, Animator anim);
 
-    protected void BaseStart()
+    public AnimationsEvent animationsEvent;
+
+
+
+    public void StartForPlayersEvent()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        previousPosition = transform.position;
+        animationsEvent += RunDetecting;
+        animationsEvent += JumpDetecting;
     }
 
-    protected void BaseUpdate()
+    private void RunDetecting(Vector2 direction, Animator anim)
     {
-        currentPosition = transform.position;
+        if (direction.x != 0)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
+    }
 
-        direction = currentPosition - previousPosition;
-        previousPosition = currentPosition;
-
-
-        if (direction.y != 0 )
+    private void JumpDetecting(Vector2 direction, Animator anim)
+    {
+        if (direction.y != 0)
         {
             anim.SetBool("isJumping", true);
 
@@ -32,30 +39,6 @@ public class AnimatorController : MonoBehaviour
         else
         {
             anim.SetBool("isJumping", false);
-        }
-
-        if (direction.x != 0)
-        {
-            Flip(direction.x);
-            anim.SetBool("isRunning", true);
-        }
-        else
-        {
-            anim.SetBool("isRunning", false);
-        }
-
-
-    }
-
-    private void Flip( float directionX)
-    {
-        if((directionX > 0))
-        {
-            transform.localScale = new Vector2(1, 1);
-        }
-        if(directionX < 0)
-        {
-            transform.localScale = new Vector2(-1, 1);
         }
     }
 
