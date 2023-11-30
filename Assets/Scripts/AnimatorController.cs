@@ -5,41 +5,50 @@ using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
 {
-    public delegate void AnimationsEvent(Vector2 direction, Animator anim);
-
-    public AnimationsEvent animationsEvent;
-
+    [SerializeField] private PlayerController _playerController;
+    private Animator _anim;
 
 
-    public void StartForPlayersEvent()
+    private void Awake()
     {
-        animationsEvent += RunDetecting;
-        animationsEvent += JumpDetecting;
+        _anim = GetComponent<Animator>();
     }
 
-    private void RunDetecting(Vector2 direction, Animator anim)
+    private void OnEnable()
     {
-        if (direction.x != 0)
+        _playerController.MoveEvent += MovementDetecting;
+    }
+    private void OnDisable()
+    {
+        _playerController.MoveEvent -= MovementDetecting;
+    }
+
+    private void MovementDetecting(Vector2 direction)
+    {
+
+        if (direction.x != 0 && direction.y==0)
         {
-            anim.SetBool("isRunning", true);
+           _anim.SetBool("isRunning", true);
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            _anim.SetBool("isRunning", false);
         }
-    }
 
-    private void JumpDetecting(Vector2 direction, Animator anim)
-    {
-        if (direction.y != 0)
+        if (Input.GetKey(KeyCode.Space))
         {
-            anim.SetBool("isJumping", true);
+            _playerController.isJump = true;
+            _anim.SetTrigger("TakeOf");
 
+
+        }
+        if(!_playerController.isJump)
+        {
+            _anim.SetBool("isJumping", false);
         }
         else
         {
-            anim.SetBool("isJumping", false);
+            _anim.SetBool("isJumping", true);
         }
     }
-
 }
