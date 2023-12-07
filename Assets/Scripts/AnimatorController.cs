@@ -26,7 +26,7 @@ public class AnimatorController : MonoBehaviour
     private void MovementDetecting(Vector2 direction)
     {
 
-        if (direction.x != 0 && direction.y==0)
+        if (direction.x != 0)
         {
            _anim.SetBool("isRunning", true);
         }
@@ -35,12 +35,9 @@ public class AnimatorController : MonoBehaviour
             _anim.SetBool("isRunning", false);
         }
 
-        if (Input.GetKey(KeyCode.Space) && _playerController.isJump)
+        if (Input.GetKey(KeyCode.Space))
         {
-            _playerController.isJump = true;
             _anim.SetTrigger("TakeOf");
-
-
         }
         if(!_playerController.isJump)
         {
