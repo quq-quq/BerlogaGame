@@ -1,8 +1,10 @@
-﻿namespace Node
+﻿using UnityEngine;
+
+namespace Node
 {
     public class TestNode : BaseNode
     {
-        public override void Do()
+        public override void Do(GameObject go)
         {
             print(NameNode);
         }

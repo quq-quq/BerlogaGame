@@ -9,6 +9,7 @@ namespace UI
 {
     public class ConnectorEnter : MonoBehaviour
     {
+        
         [SerializeField] private BaseNode _node;
 
         private List<BaseConnector> _connections = new List<BaseConnector>();
@@ -55,7 +56,7 @@ namespace UI
             _connectorEnters.Add(this);
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _connectorEnters.Remove(this);
         }

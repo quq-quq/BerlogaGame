@@ -96,7 +96,7 @@ namespace UI
             return false;
         }
 
-        private void Die()
+        public void Die()
         {
             if(_currentConnectEnter != null)
                 _currentConnectEnter.Disconnect(_connector);
