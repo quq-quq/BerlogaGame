@@ -35,7 +35,7 @@ public class AnimatorController : MonoBehaviour
             _anim.SetBool("isRunning", false);
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && _playerController.isJump)
         {
             _playerController.isJump = true;
             _anim.SetTrigger("TakeOf");

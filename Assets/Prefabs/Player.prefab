@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3288060528279872093}
   - component: {fileID: 4556303894503714781}
   - component: {fileID: 5859760284366865555}
+  - component: {fileID: 5516600279172417906}
+  - component: {fileID: 2339430992912833062}
   - component: {fileID: 8277581412608047324}
   - component: {fileID: 5516600279172417906}
   - component: {fileID: 8128333174014758081}
@@ -80,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.5896226, g: 0.8629756, b: 1, a: 1}
+  m_Sprite: {fileID: -1585377777, guid: 9d94b82abfd3a754c9cbc40e8df8d933, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2.1, y: 3.491136}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -123,8 +125,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0, y: 0.013890803}
+  m_Size: {x: 1, y: 1.7988652}
   m_Direction: 0
 --- !u!50 &5859760284366865555
 Rigidbody2D:
@@ -153,6 +155,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5516600279172417906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331810074789557404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa02e62fee009e419456f481a06854e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  _jumpForce: 7.5
+  isJump: 0
+--- !u!114 &2339430992912833062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331810074789557404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cc0448d6860094eb0abb4f2af3ab5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 5516600279172417906}
 --- !u!95 &8277581412608047324
 Animator:
   serializedVersion: 5

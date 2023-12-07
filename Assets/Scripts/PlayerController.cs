@@ -55,11 +55,11 @@ public class PlayerController : MonoBehaviour
 
         if (direction.x > 0)
         {
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(-1, 1);
         }
         else if (direction.x < 0)
         {
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(1, 1);
         }
 
         MoveEvent?.Invoke(direction);

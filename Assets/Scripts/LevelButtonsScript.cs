@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,20 +6,52 @@ using UnityEngine.SceneManagement;
 
 public class LevelButtonsScript : MonoBehaviour
 {
-    //все последующие сцены должны быть тоже игровыми
-    [SerializeField]private SerializeField _firstGameplayScene;
-    [SerializeField] private GameObject _playButton;
-    [SerializeField] private Transform _canvasTransform;
-    [SerializeField] private Vector2[] nums;
+    [SerializeField] GameObject _pausePanel;
+    private bool _isPaused, _isMusicOff;
 
-    private void Awake()
+    private void Start()
     {
+        _pausePanel.SetActive(false);
+        _isPaused = false;
+    }
 
-        Vector2 spawnPoint = new(0, 0);
-        for(int i = 0; i < SceneManager.sceneCount; i++)
+    public void QuitLevel()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Pause()
+    {
+        if (!_isPaused)
         {
-            Instantiate(_playButton, spawnPoint, Quaternion.identity, _canvasTransform.transform);
-
+            Time.timeScale = 0;
+            _pausePanel.SetActive(true);
+            AudioListener.pause = true;
+            _isPaused = true;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            _pausePanel.SetActive(false);
+            AudioListener.pause = false;
+            _isPaused = false;
         }
     }
+
+    public void StopMusic()
+    {
+        if (!_isMusicOff)
+        {
+
+            AudioListener.pause = true;
+            _isMusicOff = true;
+        }
+        else
+        {
+
+            AudioListener.pause = false;
+            _isMusicOff = false;
+        }
+    }
+
 }
