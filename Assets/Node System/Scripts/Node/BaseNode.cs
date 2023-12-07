@@ -18,7 +18,7 @@ namespace Node
             protected set => _name = value;
         }
 
-        public abstract void Do();
+        public abstract void Do(GameObject go);
 
         public bool IsConnected(BaseNode node)
         {

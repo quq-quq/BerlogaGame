@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
-    [HideInInspector] public bool isJump;
+    public bool isJump;
     private float _startSpeed;
     private Rigidbody2D rb;
     private Vector2 currentPosition, previousPosition, direction;
@@ -23,11 +23,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        previousPosition = currentPosition;
         currentPosition = transform.position;
         direction = currentPosition - previousPosition;
-        previousPosition = currentPosition;
 
         var horizontalInput = Input.GetAxis("Horizontal");
 
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
             {
                 //_rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse); alternative way
-                rb.velocity = new Vector2(Input.GetAxis("Horizontal") * _speed, _jumpForce);
+                rb.velocity = new Vector2(horizontalInput * _speed, _jumpForce);
 
                 isJump = true;
             }
