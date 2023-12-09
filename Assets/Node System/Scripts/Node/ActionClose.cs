@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Node_System.Scripts.Node
 {
-    public class ActionClose : ActionNode<IOpenClose>
+    public class ActionClose : ActionNode
     {
         protected override void DoAction(GameObject go)
         {

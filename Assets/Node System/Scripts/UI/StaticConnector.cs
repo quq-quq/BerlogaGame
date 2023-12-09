@@ -1,21 +1,34 @@
-﻿namespace UI
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace UI
 {
     public class StaticConnector : BaseConnector
     {
+        [SerializeField] private List<ConnectorEnter> _enters;
 
         protected override void OnAwake()
         {
-            throw new System.NotImplementedException();
+            foreach (var enter in _enters)
+            {
+                var c = new Connection(_end, _solid, this);
+                c.MoveConnect(enter.transform.position);
+                c.FinishConnect();
+                _connections.Add(c);
+            }
+            
+            _enters.ForEach(i => i.MakeSealed());
         }
 
         protected override void OnLateUpdate()
         {
-            throw new System.NotImplementedException();
         }
 
         protected override bool CheckoutMode()
         {
-            throw new System.NotImplementedException();
+            return true;
+            
         }
     }
 }

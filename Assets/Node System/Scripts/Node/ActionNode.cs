@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 
 namespace Node_System.Scripts.Node
 {
-    public abstract class ActionNode<T> : BaseNode
+    public abstract class ActionNode : BaseNode
     {
         public sealed override void Do(GameObject go)
         {

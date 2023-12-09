@@ -12,6 +12,7 @@ namespace UI
         
         [SerializeField] private BaseNode _node;
 
+        private bool _isSealed = false;
         private List<BaseConnector> _connections = new List<BaseConnector>();
 
         public BaseNode Node
@@ -31,6 +32,9 @@ namespace UI
 
         public bool Connect(BaseConnector connection)
         {
+            if(_isSealed)
+                return false;
+            
             if(_connections.All(item => item != connection) && !_node.IsConnected(connection.OwnerNode))
             {
                 _connections.Add(connection);
@@ -49,6 +53,11 @@ namespace UI
                 Debug.LogError("Connection not found");
             }
             _connections.Remove(connection);
+        }
+
+        public void MakeSealed()
+        {
+            _isSealed = true;
         }
 
         private void Awake()

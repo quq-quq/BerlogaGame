@@ -1,17 +1,18 @@
 ﻿using InterfaceNode;
 using Node;
+using NodeObjects;
 using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Node_System.Scripts.Node
 {
-    public class ActionOpen : ActionNode
+    public class ActionStopSleep : ActionNode
     {
         protected override void DoAction(GameObject go)
         {
-            if(go.TryGetComponent(out IOpenClose openClose))
+            if(go.TryGetComponent(out Quadrocopter q))
             {
-                openClose.Open();
+                q.StopSleep();
             }
         }
     }

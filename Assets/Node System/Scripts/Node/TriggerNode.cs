@@ -9,7 +9,7 @@ namespace Node_System.Scripts.Node
     {
         [SerializeField] private TriggerForNode _trigger;
 
-        private void Awake()
+        private void Awake()  
         {
             _trigger.SubscribeTrigger(() => Do(null));
         }
