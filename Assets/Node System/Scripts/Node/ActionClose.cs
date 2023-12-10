@@ -10,7 +10,7 @@ namespace Node_System.Scripts.Node
         {
             if(go.TryGetComponent(out IOpenClose openClose))
             {
-                openClose.Close();
+                openClose?.Close();
             }
         }
     }
