@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DefaultNamespace;
 using InterfaceNode;
 using Node_System.Scripts.Node;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace NodeObjects
     [RequireComponent(typeof(Collider2D))]
     public class Quadrocopter : ObjectForNode
     {
+        [SerializeField] private TriggerZone _zone;
         [SerializeField] private SpriteRenderer _spriteRange;
         [SerializeField] private Transform _followObject;
         [SerializeField] private bool _isFollow = true;
@@ -20,6 +22,12 @@ namespace NodeObjects
 
         private List<ISleeper> _sleepers = new List<ISleeper>();
         private bool _isStartSleep = false;
+
+        private void Awake()
+        {
+            _zone.TriggerEnter += OnZoneEnter;
+            _zone.TriggerExit += OnZoneExit;
+        }
 
         public void StartSleep()
         {
@@ -41,7 +49,7 @@ namespace NodeObjects
             _spriteRange.color = _zoneOffColor;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnZoneEnter(Collider2D other)
         {
             if(other.TryGetComponent(out ISleeper sleeper))
             {
@@ -50,7 +58,7 @@ namespace NodeObjects
                 _sleepers.Add(sleeper);
             }
         }
-        private void OnTriggerExit2D(Collider2D other)
+        private void OnZoneExit(Collider2D other)
         {
             if(other.TryGetComponent(out ISleeper sleeper))
             {
