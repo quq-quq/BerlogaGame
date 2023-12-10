@@ -1,0 +1,1112 @@
+fileFormatVersion: 2
+guid: 4357f19e47b48c14e8cdd745d78e4839
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 616
+        width: 32
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f249570a1d5468c48947a8b33d69f6b8
+      internalID: 1130352441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 616
+        width: 32
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65c70e61a6b5d2459751e036d9f3864
+      internalID: -1590241967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 600
+        width: 170
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9380f7cd379d6f4c94e6ded57d3d790
+      internalID: 742279259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 600
+        width: 170
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865afda4009aefc48aa8000e3645c884
+      internalID: 420335715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 600
+        width: 176
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc015ce1da64ccf4c9cde0de647ac018
+      internalID: -1953963644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 600
+        width: 170
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889900609311a6b4d82197d0d38d497a
+      internalID: 318146413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 600
+        width: 168
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86255274d91ffc4428b4ac377d2edf11
+      internalID: -857722656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 600
+        width: 166
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0dcd30475895745980b55158c3dfe1
+      internalID: 1877447901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 542
+        width: 166
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77158244754237c4fa2c099b0dd056dc
+      internalID: 639424247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 542
+        width: 166
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab460e21b6c06947826c9983d8b31bb
+      internalID: 271346911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 542
+        width: 174
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f3fa464ff550248b17363d32964c92
+      internalID: 840653071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 542
+        width: 166
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300c53e0a241be14582b997fd2f7d6c8
+      internalID: -348568815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 542
+        width: 168
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba908b8090ca8d4e8eb5a8d848af3b3
+      internalID: 312472376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 2452
+        y: 542
+        width: 168
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764cf0b92edd2b44792f1bc9a419f2e8
+      internalID: 1897086240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 2648
+        y: 484
+        width: 168
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188c92e87f39e9a459e57c947a23dd47
+      internalID: -93539620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 2824
+        y: 484
+        width: 168
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0abfc50a3d750c4eb15a7bbf7750468
+      internalID: -676312928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 484
+        width: 172
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0dddac43aae204789b9f11d26544f6
+      internalID: 823804821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 3186
+        y: 484
+        width: 170
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2e414722da35d45903a4def8fe1f23
+      internalID: 2118754684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 3372
+        y: 484
+        width: 170
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d8966d3ea841148b4ffbb40e5ecacf
+      internalID: 1429127805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 3560
+        y: 484
+        width: 176
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f8c7d06292ef343937a937efb99288
+      internalID: -1915606617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 542
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf500fd97c60e44eb6c507699230c32
+      internalID: -220092189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 494
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eab3304177315e4992c3b370990c8fc
+      internalID: -1010749614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 270
+        width: 100
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6041af5934611854b919b4d3c45500bc
+      internalID: -832349370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 176
+        width: 172
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2785103ef3c8279479eed244df6ba1e0
+      internalID: 373521875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 176
+        width: 172
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8334caef04f1ee84784e224b279b2480
+      internalID: 779392961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 116
+        width: 168
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4594125aafaaa4692bf270c4aa2543
+      internalID: 737724677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 116
+        width: 170
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d0cc92e9acae04ba84d8b4f68c4063
+      internalID: 853532657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 3204
+        y: 58
+        width: 172
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19353de1f29c564b855048a483319a7
+      internalID: 937637693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_28
+      rect:
+        serializedVersion: 2
+        x: 3588
+        y: 58
+        width: 174
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9deb7d46b5e135949804e065d8649942
+      internalID: -495491186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_29
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 46
+        width: 104
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c07f286796a243f42baa5c94d580bb6d
+      internalID: 1560472506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 176
+        width: 174
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02a795dc06de4c418dcb52b3d43e7f8
+      internalID: -1898425421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_31
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 176
+        width: 174
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33bc3f9f7c831f43b0293c10e22e2c0
+      internalID: -2023005836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_32
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 176
+        width: 172
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189eb84bc5a4add4082b1df9a4a815cb
+      internalID: -785075021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_33
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 176
+        width: 170
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba0ef19338dcb614bbfb0592e6bc33b5
+      internalID: -489669451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_34
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 116
+        width: 170
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50488fe938f02d41801379a75f43b26
+      internalID: -427710435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_35
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 116
+        width: 170
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57298c791dd950a49970164adc060a2c
+      internalID: 225791784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_36
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 116
+        width: 168
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0efed62f921ff0644824ea497b0a0836
+      internalID: 1354641610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_37
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 116
+        width: 170
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d5314e5341b694d99179af94c19950
+      internalID: 281263645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_38
+      rect:
+        serializedVersion: 2
+        x: 2658
+        y: 58
+        width: 170
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae05516bc9fe98648b0d846e43ea6d13
+      internalID: 2103386738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_39
+      rect:
+        serializedVersion: 2
+        x: 2836
+        y: 58
+        width: 172
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8a7afe4abeb6b45a4a97ea83bb577e
+      internalID: 501929858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_40
+      rect:
+        serializedVersion: 2
+        x: 3016
+        y: 58
+        width: 172
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1c0ea1f8721694a972eab3d1bc5010
+      internalID: 1634732351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_41
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 58
+        width: 174
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7d0d08f6eb1664d9af78c8ea85e84d
+      internalID: -4363193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_42
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 479
+        width: 64
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c50bd6782e3bc445b16cf40fb94f371
+      internalID: -524904447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Location N1 Storage Atlas_0: 1130352441
+      Location N1 Storage Atlas_1: -1590241967
+      Location N1 Storage Atlas_10: 840653071
+      Location N1 Storage Atlas_11: -348568815
+      Location N1 Storage Atlas_12: 312472376
+      Location N1 Storage Atlas_13: 1897086240
+      Location N1 Storage Atlas_14: -93539620
+      Location N1 Storage Atlas_15: -676312928
+      Location N1 Storage Atlas_16: 823804821
+      Location N1 Storage Atlas_17: 2118754684
+      Location N1 Storage Atlas_18: 1429127805
+      Location N1 Storage Atlas_19: -1915606617
+      Location N1 Storage Atlas_2: 742279259
+      Location N1 Storage Atlas_20: -220092189
+      Location N1 Storage Atlas_21: -1010749614
+      Location N1 Storage Atlas_22: -832349370
+      Location N1 Storage Atlas_23: 373521875
+      Location N1 Storage Atlas_24: 779392961
+      Location N1 Storage Atlas_25: 737724677
+      Location N1 Storage Atlas_26: 853532657
+      Location N1 Storage Atlas_27: 937637693
+      Location N1 Storage Atlas_28: -495491186
+      Location N1 Storage Atlas_29: 1560472506
+      Location N1 Storage Atlas_3: 420335715
+      Location N1 Storage Atlas_30: -1898425421
+      Location N1 Storage Atlas_31: -2023005836
+      Location N1 Storage Atlas_32: -785075021
+      Location N1 Storage Atlas_33: -489669451
+      Location N1 Storage Atlas_34: -427710435
+      Location N1 Storage Atlas_35: 225791784
+      Location N1 Storage Atlas_36: 1354641610
+      Location N1 Storage Atlas_37: 281263645
+      Location N1 Storage Atlas_38: 2103386738
+      Location N1 Storage Atlas_39: 501929858
+      Location N1 Storage Atlas_4: -1953963644
+      Location N1 Storage Atlas_40: 1634732351
+      Location N1 Storage Atlas_41: -4363193
+      Location N1 Storage Atlas_42: -524904447
+      Location N1 Storage Atlas_5: 318146413
+      Location N1 Storage Atlas_6: -857722656
+      Location N1 Storage Atlas_7: 1877447901
+      Location N1 Storage Atlas_8: 639424247
+      Location N1 Storage Atlas_9: 271346911
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

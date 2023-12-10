@@ -26,14 +26,12 @@ public class LevelButtonsScript : MonoBehaviour
         {
             Time.timeScale = 0;
             _pausePanel.SetActive(true);
-            AudioListener.pause = true;
             _isPaused = true;
         }
         else
         {
             Time.timeScale = 1f;
             _pausePanel.SetActive(false);
-            AudioListener.pause = false;
             _isPaused = false;
         }
     }
