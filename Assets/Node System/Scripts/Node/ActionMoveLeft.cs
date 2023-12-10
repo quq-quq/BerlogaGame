@@ -1,17 +1,16 @@
 ﻿using InterfaceNode;
 using Node;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Node_System.Scripts.Node
 {
-    public class ActionOpen : ActionNode
+    public class ActionMoveLeft : ActionNodeParameter
     {
         protected override void DoAction(GameObject go)
         {
-            if(go.TryGetComponent(out IOpenClose openClose))
+            if(go.TryGetComponent(out IHorizontalMover horizontalMover))
             {
-                openClose.Open();
+                horizontalMover.MoveHorizontal(-Value);
             }
         }
     }

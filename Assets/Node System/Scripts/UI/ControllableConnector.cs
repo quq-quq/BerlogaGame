@@ -40,7 +40,7 @@ namespace UI
                 return false;
             }
             var baseType = node.GetType().BaseType;
-            var isAction = baseType.IsGenericType? baseType.GetGenericTypeDefinition().IsAssignableFrom(typeof(ActionNode<>)): false;
+            var isAction = node is ActionNode;
             var isObject = node is ObjectNode;
 
             if(isAction)

@@ -21,13 +21,11 @@ namespace NodeObjects
 
         public void Open()
         {
-            print("Open");
             SwitchStates(true);
         }
 
         public void Close()
         {
-            print("Close");
             SwitchStates(false);
         }
 
