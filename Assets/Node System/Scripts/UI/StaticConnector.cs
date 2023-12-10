@@ -18,6 +18,10 @@ namespace UI
                 _connections.Add(c);
             }
             
+        }
+
+        private void Start()
+        {
             _enters.ForEach(i => i.MakeSealed());
         }
 

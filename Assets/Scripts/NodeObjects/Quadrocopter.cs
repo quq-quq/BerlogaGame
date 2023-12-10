@@ -43,7 +43,6 @@ namespace NodeObjects
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            print(other);
             if(other.TryGetComponent(out ISleeper sleeper))
             {
                 if(_isStartSleep)
