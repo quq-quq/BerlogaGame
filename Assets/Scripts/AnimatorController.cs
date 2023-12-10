@@ -7,6 +7,7 @@ public class AnimatorController : MonoBehaviour
 {
     [SerializeField] private PlayerController _playerController;
     private Animator _anim;
+    
 
 
     private void Awake()
