@@ -8,7 +8,7 @@ namespace Node_System.Scripts.Node
 {
     public abstract class ActionNode : BaseNode
     {
-        public sealed override void Do(GameObject go)
+        public override void Do(GameObject go)
         {
             DoAction(go);
             Connector.GetConnectedNodes().ForEach(i => i.Do(go));
