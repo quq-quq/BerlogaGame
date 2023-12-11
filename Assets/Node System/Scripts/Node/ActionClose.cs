@@ -8,6 +8,8 @@ namespace Node_System.Scripts.Node
     {
         protected override void DoAction(GameObject go)
         {
+            if(go == null) return;
+            
             if(go.TryGetComponent(out IOpenClose openClose))
             {
                 openClose.Close();
