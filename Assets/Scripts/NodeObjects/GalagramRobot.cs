@@ -35,7 +35,7 @@ public class GalagramRobot : ObjectForNode, IHorizontalMover
     public void UpdateState()
     {
         _isNeedUpdate = false;
-        //_skinOff.SetActive(!_isActive);
+        //_skinOff.SetActive(!_isActive); //i removed that to get active an animation of bot under the galagram
         _skinOn.SetActive(_isActive);
         _detectable.IsDetectable = _isActive;
     }
