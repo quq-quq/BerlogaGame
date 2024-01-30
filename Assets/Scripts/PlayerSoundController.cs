@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerSoundController : MonoBehaviour
 {
     [SerializeField] private AudioClip _runAudio, _jumpAudio;
-    [SerializeField] PlayerController _playerController;
+    private PlayerController _playerController;
     private AudioSource _audioSource;
     
-
-    void Start()
+    private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+        _playerController = GetComponent<PlayerController>();
         _audioSource.loop = false;
     }
 
@@ -26,7 +26,7 @@ public class PlayerSoundController : MonoBehaviour
 
     private void MovementSoundsDetecting(Vector2 direction)
     {
-        if(direction.x!=0 && direction.y == 0)
+        if(direction.x!=0 && !_playerController.isJump && direction.y == 0)
         {
             if (!_audioSource.isPlaying)
             {
@@ -36,18 +36,17 @@ public class PlayerSoundController : MonoBehaviour
             }
         }
 
-
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !_playerController.isJump)
         {
             _audioSource.loop = false;
             _audioSource.clip = _jumpAudio;
             _audioSource.Play();
         }
-        else if(direction.x == 0 && direction.y == 0)
+
+        if (direction.x == 0 && direction.y == 0)
         {
             _audioSource.clip = null;
             _audioSource.Play();
         }
-
     }
 }

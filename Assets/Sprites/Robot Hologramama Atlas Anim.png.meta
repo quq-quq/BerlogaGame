@@ -1,0 +1,355 @@
+fileFormatVersion: 2
+guid: 5a878b6955bb12f429cd698277d385e2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Robot Hologramama Atlas Anim_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 385
+        width: 305
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b91c5c3cbeca8f489f22e6697b26db8
+      internalID: -949550798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Hologramama Atlas Anim_1
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 385
+        width: 305
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047242bcde8c58c479d3f683c1ba32fc
+      internalID: -1939363750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Hologramama Atlas Anim_2
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 385
+        width: 305
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c32ee16c5b2594295ea4e35c763994
+      internalID: -1926163015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Hologramama Atlas Anim_3
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 380
+        width: 305
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902a91dfd76dbd54891eb9c58671ed08
+      internalID: 407287000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Hologramama Atlas Anim_4
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 375
+        width: 305
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49229c450d6011948aacd6b723701e67
+      internalID: 620990926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Hologramama Atlas Anim_26
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 11
+        width: 282
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5bf17a4f5b7ba44890e6cd062a868da
+      internalID: 128658194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Hologramama Atlas Anim_40
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 15
+        width: 275
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f91507c9325804cb84f7d4243f0346
+      internalID: -615543359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Robot Hologramama Atlas Anim_0: -949550798
+      Robot Hologramama Atlas Anim_1: -1939363750
+      Robot Hologramama Atlas Anim_10: -1351913450
+      Robot Hologramama Atlas Anim_11: 865860204
+      Robot Hologramama Atlas Anim_12: -128720373
+      Robot Hologramama Atlas Anim_13: 139268996
+      Robot Hologramama Atlas Anim_14: -224730008
+      Robot Hologramama Atlas Anim_15: -1703502599
+      Robot Hologramama Atlas Anim_16: 392199224
+      Robot Hologramama Atlas Anim_17: -1290018154
+      Robot Hologramama Atlas Anim_18: -1331509862
+      Robot Hologramama Atlas Anim_19: 1740210000
+      Robot Hologramama Atlas Anim_2: -1926163015
+      Robot Hologramama Atlas Anim_20: -1210685179
+      Robot Hologramama Atlas Anim_21: -76590748
+      Robot Hologramama Atlas Anim_22: 1184250672
+      Robot Hologramama Atlas Anim_23: -187450636
+      Robot Hologramama Atlas Anim_24: -624402825
+      Robot Hologramama Atlas Anim_25: 1727301902
+      Robot Hologramama Atlas Anim_26: 128658194
+      Robot Hologramama Atlas Anim_27: -1425689675
+      Robot Hologramama Atlas Anim_28: -435998191
+      Robot Hologramama Atlas Anim_29: 1835867063
+      Robot Hologramama Atlas Anim_3: 407287000
+      Robot Hologramama Atlas Anim_30: 848863360
+      Robot Hologramama Atlas Anim_31: -1849353438
+      Robot Hologramama Atlas Anim_32: -260126099
+      Robot Hologramama Atlas Anim_33: 358417118
+      Robot Hologramama Atlas Anim_34: -2869068
+      Robot Hologramama Atlas Anim_35: -425498615
+      Robot Hologramama Atlas Anim_36: 203257598
+      Robot Hologramama Atlas Anim_37: 469137271
+      Robot Hologramama Atlas Anim_38: -1741545121
+      Robot Hologramama Atlas Anim_39: -1133910568
+      Robot Hologramama Atlas Anim_4: 620990926
+      Robot Hologramama Atlas Anim_40: -615543359
+      Robot Hologramama Atlas Anim_41: -575730113
+      Robot Hologramama Atlas Anim_5: -1293360296
+      Robot Hologramama Atlas Anim_6: 827076825
+      Robot Hologramama Atlas Anim_7: -788858556
+      Robot Hologramama Atlas Anim_8: 155174707
+      Robot Hologramama Atlas Anim_9: -1684164490
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

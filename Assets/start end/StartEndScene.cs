@@ -14,6 +14,8 @@ public class StartEndScene : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private GameObject _canvas;
     [SerializeField] private TriggerZone _zone;
+    [SerializeField] private AudioClip _endAudio;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
@@ -21,6 +23,10 @@ public class StartEndScene : MonoBehaviour
         _image.color = Color.black;
         Show();
         _zone.TriggerEnter += OnZoneEnter;
+
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.loop = false;
+        _audioSource.clip = _endAudio;
     }
     
     private void OnZoneEnter(Collider2D other)
@@ -35,6 +41,7 @@ public class StartEndScene : MonoBehaviour
     public void Hide()
     {
         StartCoroutine(HideCoroutine());
+        _audioSource.Play();
         IEnumerator HideCoroutine()
         {
             var t = _transitTime;

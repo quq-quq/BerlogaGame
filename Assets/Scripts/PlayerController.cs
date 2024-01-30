@@ -7,13 +7,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private float _jumpForce;
+    [SerializeField] private float _jumpForce;    
     public bool isJump;
     private float _startSpeed;
     private Rigidbody2D rb;
     private Vector2 currentPosition, previousPosition, direction;
     public event Action<Vector2> MoveEvent;
 
+    [Space(30)]
+    [SerializeField] private float _checkRadius;
+    [SerializeField] private LayerMask _whatIsGround;
+    [SerializeField] private Transform _feetPos;
 
     void Start()
     {
@@ -28,7 +32,11 @@ public class PlayerController : MonoBehaviour
         currentPosition = transform.position;
         direction = currentPosition - previousPosition;
 
+        isJump = !Physics2D.OverlapCircle(_feetPos.position, _checkRadius, _whatIsGround);
+
         var horizontalInput = Input.GetAxis("Horizontal");
+
+        MoveEvent?.Invoke(direction);
 
         if (!isJump)
         {
@@ -36,10 +44,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space))
             {
-                //_rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse); alternative way
                 rb.velocity = new Vector2(horizontalInput * _speed, _jumpForce);
-
-                isJump = true;
             }
         }
 
@@ -60,15 +65,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector2(1, 1);
         }
-
-        MoveEvent?.Invoke(direction);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnDrawGizmos()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isJump = false;
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(_feetPos.position, _checkRadius);
     }
 }

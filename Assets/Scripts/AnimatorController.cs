@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
 {
-    [SerializeField] private PlayerController _playerController;
+    private PlayerController _playerController;
     private Animator _anim;
     
-
-
     private void Awake()
     {
         _anim = GetComponent<Animator>();
+        _playerController = GetComponent<PlayerController>();
     }
 
     private void OnEnable()
@@ -35,12 +34,13 @@ public class AnimatorController : MonoBehaviour
             _anim.SetBool("isRunning", false);
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            _anim.SetTrigger("TakeOf");
-        }
+
         if(!_playerController.isJump)
         {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                _anim.SetTrigger("TakeOf");
+            }
             _anim.SetBool("isJumping", false);
         }
         else

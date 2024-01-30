@@ -1039,7 +1039,7 @@ TextureImporter:
         width: 64
         height: 124
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1047,6 +1047,27 @@ TextureImporter:
       bones: []
       spriteID: 3c50bd6782e3bc445b16cf40fb94f371
       internalID: -524904447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Location N1 Storage Atlas_43
+      rect:
+        serializedVersion: 2
+        x: 3796
+        y: 526
+        width: 175
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51c15859d62d2c4a9d40a2519dbb149
+      internalID: 1432834581
       vertices: []
       indices: 
       edges: []
@@ -1100,6 +1121,7 @@ TextureImporter:
       Location N1 Storage Atlas_40: 1634732351
       Location N1 Storage Atlas_41: -4363193
       Location N1 Storage Atlas_42: -524904447
+      Location N1 Storage Atlas_43: 1432834581
       Location N1 Storage Atlas_5: 318146413
       Location N1 Storage Atlas_6: -857722656
       Location N1 Storage Atlas_7: 1877447901

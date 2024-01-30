@@ -10,6 +10,7 @@ public class MenuScript : MonoBehaviour
 
     private void Start()
     {
+        AudioListener.pause = false;
         _menuButtons.SetActive(true);
         _drake.SetActive(false);
         _levelsButtons.SetActive(false);

@@ -11,13 +11,15 @@ public class LevelButtonsScript : MonoBehaviour
 
     private void Start()
     {
+        AudioListener.pause = false;
+        _isMusicOff = false;
         _pausePanel.SetActive(false);
         _isPaused = false;
     }
 
     public void QuitLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Pause()
@@ -52,4 +54,8 @@ public class LevelButtonsScript : MonoBehaviour
         }
     }
 
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

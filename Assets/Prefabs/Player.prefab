@@ -39,6 +39,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6240693068158861397}
+  - {fileID: 6786489342853815272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3288060528279872093
@@ -170,6 +171,11 @@ MonoBehaviour:
   _speed: 5
   _jumpForce: 7.5
   isJump: 0
+  _checkRadius: 0.3
+  _whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  _feetPos: {fileID: 6786489342853815272}
 --- !u!114 &2339430992912833062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cc0448d6860094eb0abb4f2af3ab5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 5516600279172417906}
 --- !u!114 &5089163717266856136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +333,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDetectable: 1
+--- !u!1 &6664690041769943506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6786489342853815272}
+  m_Layer: 0
+  m_Name: FeetPos
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6786489342853815272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6664690041769943506}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09, y: -0.69, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6424740514884847047}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8043678235970794381
 GameObject:
   m_ObjectHideFlags: 0
