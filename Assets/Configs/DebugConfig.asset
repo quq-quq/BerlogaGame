@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43c31afed1146c0922dcc6d03dd7956, type: 3}
+  m_Name: DebugConfig
+  m_EditorClassIdentifier: 
+  _progressData:
+    _levels:
+    - _parts:
+      - _sceneName: 111111111111111111
+        _isCompleted: 1
+      - _sceneName: 444
+        _isCompleted: 1
+      - _sceneName: 444
+        _isCompleted: 1
+    _coins: 20000000
