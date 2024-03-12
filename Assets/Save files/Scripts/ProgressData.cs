@@ -16,18 +16,28 @@ namespace Save_files.Scripts
             {
                 _levels.Add(new Level(progressDataLevel));
             }
-            _coins = progressData._coins;
+
+            _isMute = progressData.IsMute;
+            _volume = progressData.Volume;
         }
         
         [SerializeField] private List<Level> _levels;
-        [SerializeField] private int _coins;
+        [SerializeField] private bool _isMute = false;
+        [SerializeField, Range(0,1)] private float _volume = 1f;
 
-        public int Coins
+
+        public bool IsMute
         {
-            get => _coins;
-            set => _coins = value;
+            get => _isMute;
+            set => _isMute = value;
         }
 
+        public float Volume
+        {
+            get => _volume;
+            set => _volume = value;
+        }
+        
         public IReadOnlyList<Level> Levels
         {
             get => _levels;

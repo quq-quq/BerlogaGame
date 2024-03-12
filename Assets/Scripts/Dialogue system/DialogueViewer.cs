@@ -12,8 +12,9 @@ namespace Dialogue_system
         [SerializeField] private DialogueBunch _bunch;
         [SerializeField] private float _oneCharTime;
         [SerializeField] private bool _startOnStart;
-        [Space]
-        [Header("Links")]
+
+        [Space] [Header("Links")] 
+        [SerializeField] private GameObject _parent;
         [SerializeField] private Image _avatar;
         [SerializeField] private Transform _leftAvatarPositions;
         [SerializeField] private Transform _rightAvatarPositions;
@@ -35,6 +36,7 @@ namespace Dialogue_system
             {
                 StartDialogue();
             }
+            _parent.SetActive(_startOnStart);
         }
 
         private void Update()
@@ -57,6 +59,7 @@ namespace Dialogue_system
 
         public void StartDialogue()
         {
+            _parent.SetActive(true);
             _currentCharTime = _oneCharTime;
             _currentIndexDialogue = 0;
             _mainText.text = string.Empty;
@@ -68,6 +71,7 @@ namespace Dialogue_system
             _currentIndexDialogue = 0;
             _mainText.text = string.Empty;
             _isWriting = false;
+            _parent.SetActive(false);
         }
         
         public void NextDialogue()
@@ -90,7 +94,15 @@ namespace Dialogue_system
             _currentWriter = WriterDialogueFabric.GetWriterOfType(dialogue.WriteType, dialogue.MainText);
             SetSide(dialogue.Side);
             _background.sprite = dialogue.Background;
-            _avatar.sprite = dialogue.Avatar;
+            if (dialogue.Avatar != null)
+            {
+                _avatar.color = Color.white;
+                _avatar.sprite = dialogue.Avatar;
+            }
+            else
+            {
+                _avatar.color = Color.clear;
+            }
             _mainText.font = dialogue.Font;
             _mainText.color = dialogue.ColorText;
             _nameText.text = dialogue.CharacterName;
