@@ -19,6 +19,9 @@ namespace NodeObjects
         [SerializeField] private Color _zoneOnColor;
         [SerializeField] private Color _zoneOffColor;
 
+        [Space(40)]
+        [SerializeField] private float _volume;
+        [SerializeField] private AudioClip _zoneSound;
 
         private List<ISleeper> _sleepers = new List<ISleeper>();
         private bool _isStartSleep = false;
@@ -37,6 +40,8 @@ namespace NodeObjects
                 i.Sleep(this);
             }
             _spriteRange.color = _zoneOnColor;
+
+            SoundController.sounder.SetSound(_zoneSound, true, gameObject.name, _volume);
         }
         
         public void StopSleep()
@@ -47,6 +52,8 @@ namespace NodeObjects
                 i.WakeUp(this);
             }
             _spriteRange.color = _zoneOffColor;
+
+            SoundController.sounder.SetSound(null, false, gameObject.name, _volume);
         }
 
         private void OnZoneEnter(Collider2D other)

@@ -9,14 +9,14 @@ public class StarController : MonoBehaviour
 
     private void Start()
     {
-        _text.text = "Найдите сообщение-голограмму";
+        _text.text = "Найдите диск.";
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Entety"))
         {
-            _text.text = "Голограма найдена, поздравляем!";
+            _text.text = "Диск найден, поздравляем!";
         }
         Destroy(gameObject);
     }

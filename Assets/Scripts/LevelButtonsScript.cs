@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelButtonsScript : MonoBehaviour
 {
-    [SerializeField] GameObject _pausePanel;
+    [SerializeField] private GameObject _pausePanel;
+    [SerializeField] private AudioClip _backgroundSound;
+    [SerializeField] private float _volume;
     private bool _isPaused, _isMusicOff;
 
     private void Start()
@@ -15,11 +17,13 @@ public class LevelButtonsScript : MonoBehaviour
         _isMusicOff = false;
         _pausePanel.SetActive(false);
         _isPaused = false;
+
+        SoundController.sounder.SetSound(_backgroundSound, true, gameObject.name, _volume);
     }
 
     public void QuitLevel()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void Pause()
@@ -42,13 +46,11 @@ public class LevelButtonsScript : MonoBehaviour
     {
         if (!_isMusicOff)
         {
-
             AudioListener.pause = true;
             _isMusicOff = true;
         }
         else
         {
-
             AudioListener.pause = false;
             _isMusicOff = false;
         }
@@ -56,6 +58,9 @@ public class LevelButtonsScript : MonoBehaviour
 
     public void RestartScene()
     {
+        Time.timeScale = 1f;
+        _pausePanel.SetActive(false);
+        _isPaused = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

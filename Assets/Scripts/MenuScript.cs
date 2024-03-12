@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour
 {
     [SerializeField] private GameObject _menuButtons, _drake, _levelsButtons;
+    [SerializeField] private AudioClip _backgroundSound;
+    [SerializeField] private float _volume;
 
     private void Start()
     {
@@ -14,6 +16,9 @@ public class MenuScript : MonoBehaviour
         _menuButtons.SetActive(true);
         _drake.SetActive(false);
         _levelsButtons.SetActive(false);
+
+        SoundController.sounder.SetSound(_backgroundSound, true, gameObject.name, _volume);
+
     }
 
     public void LoadScene( int index)

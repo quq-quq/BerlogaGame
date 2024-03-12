@@ -1,0 +1,892 @@
+fileFormatVersion: 2
+guid: 5afa3922a30ef6141bca084fbb413141
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 38
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Altay_mishka_boots_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 215
+        width: 39
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854dc6af9b460414d85aa3d3bebc86fc
+      internalID: -1103950805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 215
+        width: 39
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3235e48a10407a6459b54e1808d3738e
+      internalID: 1843381855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_18
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 119
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad1f3ee70803574590d98e9e3823222
+      internalID: -373848593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_19
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 21
+        width: 41
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88882f9903be63e4e83acd1e824fe1d2
+      internalID: -1741444394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 215
+        width: 39
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0556e692d78a9154a8aa5aff1d881b1b
+      internalID: 1942713334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_20
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 21
+        width: 41
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c93e34c2d47be4b86fb9838bf9ee6a
+      internalID: -1617316284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_21
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 21
+        width: 42
+        height: 71
+      alignment: 9
+      pivot: {x: 0.52380955, y: 0.49295774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c86f6eab83ce76408ded004edeb58ed
+      internalID: -919999256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_22
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 21
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a41cfbc9b26ed43a09be21686ee3a9
+      internalID: -1642185505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_23
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 22
+        width: 46
+        height: 73
+      alignment: 9
+      pivot: {x: 0.5652174, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e5e39853a0c3f478f11a24838e1a2b
+      internalID: 58524306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_24
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 21
+        width: 42
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33317ce5242d7f54196b77e906b17169
+      internalID: -141919456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_25
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 22
+        width: 42
+        height: 73
+      alignment: 9
+      pivot: {x: 0.52380955, y: 0.49315068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22171c61fcbaa97478218fd48c601c5b
+      internalID: 1185073334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_26
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 22
+        width: 41
+        height: 73
+      alignment: 9
+      pivot: {x: 0.5121951, y: 0.49315068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b5c5e551fc64b64fa3f111ff0ff25f2
+      internalID: -1111549089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_10
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 119
+        width: 37
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d992c539ae2044fbe85fb63aab5962
+      internalID: -728464497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_27
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 22
+        width: 42
+        height: 75
+      alignment: 9
+      pivot: {x: 0.64285713, y: 0.49333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6486c93d02d9a944bc1046cf2b26911
+      internalID: -667412672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_28
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 22
+        width: 42
+        height: 74
+      alignment: 9
+      pivot: {x: 0.64285713, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20fe7ed72ef4d974099e4709b547238d
+      internalID: -1811846093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_29
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 22
+        width: 44
+        height: 75
+      alignment: 9
+      pivot: {x: 0.65909094, y: 0.49333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb255e089ddfe6488f20c20754b6675
+      internalID: 1958320074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 215
+        width: 40
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e42e8688011a44eaa44f450d57e94d
+      internalID: 438670735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_30
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 21
+        width: 44
+        height: 75
+      alignment: 9
+      pivot: {x: 0.6363636, y: 0.49333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3cd54c41bfaca438d16b979c390c3a
+      internalID: 406487470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_31
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 22
+        width: 45
+        height: 73
+      alignment: 9
+      pivot: {x: 0.64444447, y: 0.49315068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e3e120ed7b4cf42a2e6dab86d03b51
+      internalID: -1078379229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_32
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 22
+        width: 41
+        height: 74
+      alignment: 9
+      pivot: {x: 0.5121951, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2db124f621359a4dbaffa38f5476a4f
+      internalID: -347675017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 215
+        width: 39
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7f6cc55be621f4884e620835ed9d44
+      internalID: -1623863008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 215
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b24dd2c3d66eb54883fcdfaf122b77e
+      internalID: 1740495573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_6
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 215
+        width: 46
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4467058e2201d1b458487107a87a4634
+      internalID: 880177173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_11
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 120
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c8fe64e0fe563c4f9831a4d9b740bc6
+      internalID: -1840327654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 215
+        width: 46
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4aec7fc71e4594293c7c71e2fcc730
+      internalID: -486772386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 215
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e932d5df2cce79489e94dc587762889
+      internalID: -299272537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_9
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 119
+        width: 37
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2acc93c2848cc5145bb0cf037655ddcf
+      internalID: 1698707860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_12
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 135
+        width: 34
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e780bfe7cc59c4b8b154ca5acf0780
+      internalID: 735776684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_13
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 119
+        width: 40
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02cec7f0ecb17340b9432ac65ac3acf
+      internalID: 2107441562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_14
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 119
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2fa4f67de1fa24fafe16b99a318db2
+      internalID: -615454232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_15
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 119
+        width: 35
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f155c45417dc404fa2961223b2d2465
+      internalID: -2125212058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_16
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 118
+        width: 35
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb82da340f0ddf4d9ceee30b74298bb
+      internalID: -676155396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altay_mishka_boots_17
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 119
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f06fc6a5a39fd41ab7181e2924b260
+      internalID: 465712471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Altay_mishka_boots_0: -1103950805
+      Altay_mishka_boots_1: 1843381855
+      Altay_mishka_boots_10: -728464497
+      Altay_mishka_boots_11: -1840327654
+      Altay_mishka_boots_12: 735776684
+      Altay_mishka_boots_13: 2107441562
+      Altay_mishka_boots_14: -615454232
+      Altay_mishka_boots_15: -2125212058
+      Altay_mishka_boots_16: -676155396
+      Altay_mishka_boots_17: 465712471
+      Altay_mishka_boots_18: -373848593
+      Altay_mishka_boots_19: -1741444394
+      Altay_mishka_boots_2: 1942713334
+      Altay_mishka_boots_20: -1617316284
+      Altay_mishka_boots_21: -919999256
+      Altay_mishka_boots_22: -1642185505
+      Altay_mishka_boots_23: 58524306
+      Altay_mishka_boots_24: -141919456
+      Altay_mishka_boots_25: 1185073334
+      Altay_mishka_boots_26: -1111549089
+      Altay_mishka_boots_27: -667412672
+      Altay_mishka_boots_28: -1811846093
+      Altay_mishka_boots_29: 1958320074
+      Altay_mishka_boots_3: 438670735
+      Altay_mishka_boots_30: 406487470
+      Altay_mishka_boots_31: -1078379229
+      Altay_mishka_boots_32: -347675017
+      Altay_mishka_boots_4: -1623863008
+      Altay_mishka_boots_5: 1740495573
+      Altay_mishka_boots_6: 880177173
+      Altay_mishka_boots_7: -486772386
+      Altay_mishka_boots_8: -299272537
+      Altay_mishka_boots_9: 1698707860
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

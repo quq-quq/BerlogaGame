@@ -20,6 +20,10 @@ namespace NodeObjects
         [SerializeField] private SimpleTrigger _enterTrigger;
         [SerializeField] private SimpleTrigger _exitTrigger;
 
+        [Space(40)]
+        [SerializeField] private AudioClip _sleepAudio;
+        [SerializeField] private float _volume;
+
         private List<Detectable> _detectables = new List<Detectable>();
 
         private void Awake()
@@ -92,6 +96,8 @@ namespace NodeObjects
                 ExitTriggerInvoke();
             }
             _sleeper.Sleep(t, caller);
+
+            SoundController.sounder.SetSound(_sleepAudio, false, gameObject.name, _volume);
         }
 
         public void Sleep(object caller)
@@ -101,6 +107,8 @@ namespace NodeObjects
                 ExitTriggerInvoke();
             }
             _sleeper.Sleep(caller);
+
+            SoundController.sounder.SetSound(_sleepAudio, false, gameObject.name, _volume);
         }
 
         public void WakeUp(object caller)

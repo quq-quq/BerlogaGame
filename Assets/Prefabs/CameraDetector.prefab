@@ -128,6 +128,8 @@ MonoBehaviour:
   _isSleep: 0
   _enterTrigger: {fileID: 6085938711882188889}
   _exitTrigger: {fileID: 1366782148969895952}
+  _sleepAudio: {fileID: 8300000, guid: cb4085639a18dfe4da57c4eebefc358d, type: 3}
+  _volume: 1
 --- !u!1 &4867067537875629984
 GameObject:
   m_ObjectHideFlags: 0
