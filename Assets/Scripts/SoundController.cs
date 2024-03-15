@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -69,8 +64,6 @@ public class SoundController : MonoBehaviour
         {
             volume = 0;
         }
-
-        //это чо то мега важное
         //for (int i = 0; i < _sourcesCount; i++)
         //{
         //    if (!_audioDataArray[i].audioSource.isPlaying && !_audioDataArray[i].audioSource.loop && _audioDataArray[i].audioSource.clip != null)

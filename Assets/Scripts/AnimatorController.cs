@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
 {
-    private PlayerController _playerController;
+    private PlayerControllerOLD _playerController;
     private Animator _anim;
     
     private void Awake()
     {
         _anim = GetComponent<Animator>();
-        _playerController = GetComponent<PlayerController>();
+        _playerController = GetComponent<PlayerControllerOLD>();
     }
 
     private void OnEnable()

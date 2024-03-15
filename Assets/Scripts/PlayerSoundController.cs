@@ -6,11 +6,11 @@ public class PlayerSoundController : MonoBehaviour
 {
     [SerializeField] private AudioClip _runAudio, _jumpAudio;
     [SerializeField] private float _volume;
-    private PlayerController _playerController;
+    private PlayerControllerOLD _playerController;
 
     private void Awake()
     {
-        _playerController = GetComponent<PlayerController>();
+        _playerController = GetComponent<PlayerControllerOLD>();
     }
 
     private void OnEnable()
