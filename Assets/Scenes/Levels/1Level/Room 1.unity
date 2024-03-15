@@ -10896,7 +10896,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6699955966043934536, guid: 31febb831cb469f45abfb466b8e6f308, type: 3}
       propertyPath: m_text
-      value: "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u043F\u043E\u043C\u0435\u0445\u0438"
+      value: "\u0412\u044B\u0446\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u043F\u043E\u043C\u0435\u0445\u0438"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6699955966043934536, guid: 31febb831cb469f45abfb466b8e6f308, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6699955966043934536, guid: 31febb831cb469f45abfb466b8e6f308, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7595110353765917849, guid: 31febb831cb469f45abfb466b8e6f308, type: 3}
       propertyPath: m_text
