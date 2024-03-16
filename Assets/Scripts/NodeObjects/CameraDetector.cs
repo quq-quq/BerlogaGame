@@ -91,13 +91,13 @@ namespace NodeObjects
 
         public void Sleep(float t, object caller)
         {
-            if(_detectables.Count != 0)
+            SoundController.sounder.SetSound(_sleepAudio, false, gameObject.name, _volume);
+
+            if (_detectables.Count != 0)
             {
                 ExitTriggerInvoke();
             }
             _sleeper.Sleep(t, caller);
-
-            SoundController.sounder.SetSound(_sleepAudio, false, gameObject.name, _volume);
         }
 
         public void Sleep(object caller)

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5089163717266856136}
   - component: {fileID: 8277581412608047324}
   - component: {fileID: 6544084100566646734}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Entety
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6786489342853815272}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FeetPos
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -276,7 +276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6240693068158861397}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Quadrocopter position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
