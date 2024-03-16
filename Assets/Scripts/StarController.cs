@@ -6,7 +6,7 @@ using UnityEngine;
 public class StarController : MonoBehaviour
 {
     [SerializeField]  private TextMeshProUGUI _text;
-    [SerializeField] private DialogueToSomeone _DialogueRobot;
+    [SerializeField] private DialogueTrigger _DialogueRobot;
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class StarController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Entety"))
+        if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
             _text.text = "Диск найден...:D";
             _DialogueRobot.ChangeIndex();

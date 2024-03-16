@@ -37,7 +37,7 @@ public class StartEndScene : MonoBehaviour
     public void Hide()
     {
         StartCoroutine(HideCoroutine());
-        SoundController.sounder.SetSound(_endAudio, false, gameObject.name, _volume);
+        SoundController.sounder.SetSound(_endAudio, false, "BackGroundMusic", _volume);
         IEnumerator HideCoroutine()
         {
             var t = _transitTime;

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour
 {
     [SerializeField] private GameObject _menuButtons, _drake, _levelsButtons;
-    [SerializeField] private AudioClip _backgroundSound;
+    [SerializeField] private AudioClip _backgroundSound, _logoSound;
     [SerializeField] private float _volume;
 
     private void Start()
@@ -29,5 +29,10 @@ public class MenuScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void GetLogoSound()
+    {
+        SoundController.sounder.SetSound(_logoSound, false, gameObject.name, _volume);
     }
 }
