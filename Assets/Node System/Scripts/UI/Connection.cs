@@ -32,8 +32,10 @@ namespace UI
         public Connection(PointerCatcher end, GameObject solid, BaseConnector connector)
         {
             var parent = connector.transform;
-            _rectSolid = Object.Instantiate(solid, parent.parent).GetComponent<RectTransform>();
-            _endPoint = Object.Instantiate(end, parent.parent);
+            _rectSolid = Object.Instantiate(solid, parent.parent.parent.parent).GetComponent<RectTransform>();
+            _endPoint = Object.Instantiate(end, parent.parent.parent.parent);
+            _endPoint.transform.SetAsLastSibling();
+            _rectSolid.transform.SetAsFirstSibling();
             _rectSolid.gameObject.SetActive(true);
             _endPoint.gameObject.SetActive(true);
             _parent = parent;

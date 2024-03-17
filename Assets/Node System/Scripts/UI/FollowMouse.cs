@@ -9,8 +9,8 @@ namespace UI
     public class FollowMouse : MonoBehaviour
     {
         [SerializeField] private PointerCatcher _pointerCatcher;
-        [SerializeField] private RectTransform _barrier;
-        [SerializeField] private Vector2 _offsetBarrierPixels;
+        [SerializeField] private Vector2 _offsetBarrierPixels; 
+        private RectTransform _barrier;
         private bool _isClicked = false;
         private RectTransform _rect;
         private Vector3 _originMousePosition;
@@ -19,6 +19,7 @@ namespace UI
         private void Awake()
         {
             _rect = GetComponent<RectTransform>();
+            _barrier = transform.parent.GetComponent<RectTransform>();
         }
 
         public void Init(RectTransform rectBarrier)

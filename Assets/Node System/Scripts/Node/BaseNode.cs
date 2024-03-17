@@ -7,22 +7,27 @@ namespace Node
 {
     public abstract class BaseNode : MonoBehaviour
     {
-        [SerializeField] private string _name;
-        [SerializeField] private BaseConnector _connector;
+        private BaseConnector _connector;
 
-        public BaseConnector Connector => _connector;
-
-        public string NameNode
+        public BaseConnector Connector
         {
-            get => _name;
-            protected set => _name = value;
+            get
+            {
+                if (_connector == null)
+                {
+                    _connector = GetComponentInChildren<BaseConnector>();
+                }
+
+                return _connector;
+
+            }
         }
 
         public abstract void Do(GameObject go);
 
         public bool IsConnected(BaseNode node)
         {
-            var connectedNodes = _connector.GetConnectedNodes();
+            var connectedNodes = Connector.GetConnectedNodes();
             if(connectedNodes.Count == 0)
                 return false;
 

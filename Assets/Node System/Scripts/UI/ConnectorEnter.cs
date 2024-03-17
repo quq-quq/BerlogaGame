@@ -10,7 +10,7 @@ namespace UI
     public class ConnectorEnter : MonoBehaviour
     {
         
-        [SerializeField] private BaseNode _node;
+        private BaseNode _node;
 
         private bool _isSealed = false;
         private List<BaseConnector> _connections = new List<BaseConnector>();
@@ -62,6 +62,7 @@ namespace UI
 
         private void Awake()
         {
+            _node = GetComponentInParent<BaseNode>();
             _connectorEnters.Add(this);
         }
 

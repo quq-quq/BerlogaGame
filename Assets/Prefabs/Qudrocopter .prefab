@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3202336037175630675}
   - component: {fileID: 5854377371651471300}
   - component: {fileID: 9164443614805413052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'Qudrocopter '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 6417700779953590377}
   - component: {fileID: 7912478721560209715}
   - component: {fileID: 8692918274877474488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 2689927619115329875}
   - component: {fileID: 5837234236742927372}
   - component: {fileID: 109139294420909088}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5266368077608581206}
   - component: {fileID: 7163953178632349198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

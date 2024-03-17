@@ -10,6 +10,8 @@ namespace UI
 {
     public class ControllableConnector : BaseConnector
     {
+        [SerializeField] protected NodeConnectorType _nodeConnectorTypeRequired;
+
         private PointerCatcher _pointerCatcher;
         protected bool _isClicked = false;
         protected bool _isMoveConnection = false;
@@ -59,6 +61,17 @@ namespace UI
             }
             return false;
 
+        }
+
+        public void ClearConnections()
+        {
+            foreach (var connection in _connections)
+            {
+                _connections.Remove(connection);
+                connection.ClickedDownEvent -= OnClickDownConnection;
+                connection.ClickedUpEvent -= OnClickUpConnection;
+                connection.Die();
+            }
         }
 
         private void OnEnable()

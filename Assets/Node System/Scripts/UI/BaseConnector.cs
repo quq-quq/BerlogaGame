@@ -18,21 +18,21 @@ namespace UI
     [RequireComponent(typeof(PointerCatcher))]
     public abstract class BaseConnector : MonoBehaviour
     {
-        [SerializeField] protected BaseNode _node;
-        [SerializeField] protected NodeConnectorType _nodeConnectorTypeRequired;
+        [SerializeField] protected PointerCatcher _end;
+        [SerializeField] protected GameObject _solid;
+        
+        protected BaseNode _node;
         
         public BaseNode OwnerNode
         {
             get => _node;
         }
         
-        [SerializeField] protected PointerCatcher _end;
-        [SerializeField] protected GameObject _solid;
-        
         protected List<Connection> _connections = new List<Connection>();
         
         private void Awake()
         {
+            _node = GetComponentInParent<BaseNode>();
             _end.gameObject.SetActive(false);
             _solid.gameObject.SetActive(false);
             OnAwake();

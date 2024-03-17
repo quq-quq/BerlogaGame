@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,6 +9,7 @@ namespace UI
 {
     public class ScrollPointerCatcher : MonoBehaviour
     {
+        [SerializeField,Min(0f)] private float _scrollSensitivity = 1;
         [SerializeField] private PointerCatcher _pointerCatcher;
         [SerializeField] private Slider _slider;
         [SerializeField] private float _maxScale;
@@ -23,6 +25,11 @@ namespace UI
         {
             _rectPointerCatcher = _pointerCatcher.GetComponent<RectTransform>();
             _rect = GetComponent<RectTransform>();
+        }
+
+        public void Start()
+        { 
+            _rectPointerCatcher.sizeDelta = new Vector2(_rect.rect.width, _rect.rect.height) * (1 / _minScale);
         }
 
         public void OnEnable()
@@ -69,17 +76,20 @@ namespace UI
         }
         
         private void Update()
-        {
+        {   
+            _rectPointerCatcher.sizeDelta = new Vector2(_rect.rect.width, _rect.rect.height) * (1 / _minScale);
+            _slider.value -= (Input.GetAxis("Mouse ScrollWheel") * _scrollSensitivity);
             if(!_isClicked) return;
             SetAndClampLocalPositionPointerChecker(_pointerCatcherOriginLocalPosition + Input.mousePosition - _originMousePosition);
+
         }
 
         private void SetAndClampLocalPositionPointerChecker(Vector3 position)
         {
             var halfOfRectWidth = _rect.rect.width / 2;
             var halfOfRectHeight = _rect.rect.height / 2;
-            var halfOfPointerRectWidth = Mathf.Max(_rectPointerCatcher.rect.width * _pointerCatcher.transform.lossyScale.x / 2, halfOfRectWidth);
-            var halfOfPointerRectHeight = Mathf.Max(_rectPointerCatcher.rect.height * _pointerCatcher.transform.lossyScale.y / 2, halfOfRectHeight);
+            var halfOfPointerRectWidth = Mathf.Max(_rectPointerCatcher.sizeDelta.x  * _rectPointerCatcher.transform.localScale.x /2, halfOfRectWidth);
+            var halfOfPointerRectHeight = Mathf.Max(_rectPointerCatcher.sizeDelta.y * _rectPointerCatcher.transform.localScale.y /2, halfOfRectHeight);
             position.x = 
                 Mathf.Clamp(position.x, -halfOfPointerRectWidth + halfOfRectWidth, halfOfPointerRectWidth - halfOfRectWidth);
             position.y = 
