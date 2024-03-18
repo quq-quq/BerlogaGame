@@ -42,7 +42,6 @@ public class PlayerAnimator : MonoBehaviour
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            
             _anim.SetFloat(IdleSpeedKey,_idleSpeed);
             _anim.SetFloat(RunSpeedKey, _runSpeed);
         }

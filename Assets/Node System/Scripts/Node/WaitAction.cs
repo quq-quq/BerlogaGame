@@ -5,7 +5,7 @@ namespace Node_System.Scripts.Node
 {
     public class WaitAction : ActionNodeParameter
     {
-        public override void Do(GameObject go)
+        public override void Do(ObjectForNode go)
         {
             Camera.main.GetComponent<MonoBehaviour>().StartCoroutine(DoCoroutine());;
             IEnumerator DoCoroutine()
@@ -15,7 +15,7 @@ namespace Node_System.Scripts.Node
             }
         }
 
-        protected override void DoAction(GameObject go)
+        protected override void DoAction(ObjectForNode go)
         {
             
         }

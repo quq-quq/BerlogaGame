@@ -67,12 +67,13 @@ namespace UI
         {
             foreach (var connection in _connections)
             {
-                _connections.Remove(connection);
+                connection.Die();
                 connection.ClickedDownEvent -= OnClickDownConnection;
                 connection.ClickedUpEvent -= OnClickUpConnection;
-                connection.Die();
             }
+            _connections.Clear();
         }
+        
 
         private void OnEnable()
         {

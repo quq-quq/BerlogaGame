@@ -8,12 +8,12 @@ namespace Node_System.Scripts.Node
 {
     public abstract class ActionNode : BaseNode
     {
-        public override void Do(GameObject go)
+        public override void Do(ObjectForNode go)
         {
             DoAction(go);
             Connector.GetConnectedNodes().ForEach(i => i.Do(go));
         }
 
-        protected abstract void DoAction(GameObject go);
+        protected abstract void DoAction(ObjectForNode go);
     }
 }

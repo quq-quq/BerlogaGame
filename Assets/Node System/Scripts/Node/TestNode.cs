@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using Node_System.Scripts.Node;
+using UnityEngine;
 
 namespace Node
 {
     public class TestNode : BaseNode
     {
         [SerializeField] public string _print;
-        public override void Do(GameObject go)
+        public override void Do(ObjectForNode go)
         {
             print(_print);
         }

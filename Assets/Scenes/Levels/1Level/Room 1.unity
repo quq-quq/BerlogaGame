@@ -1590,6 +1590,10 @@ PrefabInstance:
       propertyPath: _gameObject
       value: 
       objectReference: {fileID: 618819080}
+    - target: {fileID: 2112771227486360271, guid: 286197c901885485aac14fd00a836828, type: 3}
+      propertyPath: _objectForNode
+      value: 
+      objectReference: {fileID: 2914201725738134448}
     - target: {fileID: 4763859895063298487, guid: 286197c901885485aac14fd00a836828, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7927,6 +7931,10 @@ PrefabInstance:
       propertyPath: _gameObject
       value: 
       objectReference: {fileID: 156490474}
+    - target: {fileID: 3771139091853002994, guid: fc71de49e58254453b26cf403114f2e0, type: 3}
+      propertyPath: _objectForNode
+      value: 
+      objectReference: {fileID: 2192517638324776079}
     - target: {fileID: 4045370567796584603, guid: fc71de49e58254453b26cf403114f2e0, type: 3}
       propertyPath: m_Name
       value: Door Node Variant
@@ -8492,6 +8500,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2042843029410869739, guid: 61ceb6f7aa6c9d74a91b2667f90853fd, type: 3}
   m_PrefabInstance: {fileID: 2192517638324776077}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2192517638324776079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1602733514234405033, guid: 61ceb6f7aa6c9d74a91b2667f90853fd, type: 3}
+  m_PrefabInstance: {fileID: 2192517638324776077}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156490474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7e2752df842424399ae9523754b7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2834705708181573713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8652,6 +8671,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3202336037175630675, guid: eac68492865fa734fa7e828862caea56, type: 3}
   m_PrefabInstance: {fileID: 2914201725738134446}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2914201725738134448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5854377371651471300, guid: eac68492865fa734fa7e828862caea56, type: 3}
+  m_PrefabInstance: {fileID: 2914201725738134446}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618819080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e9b32807e94abc88ff27046ef1a31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8967676354696764082
 PrefabInstance:
   m_ObjectHideFlags: 0

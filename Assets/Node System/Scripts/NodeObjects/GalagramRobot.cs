@@ -4,98 +4,109 @@ using DefaultNamespace;
 using InterfaceNode;
 using Node_System.Scripts.Node;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace NodeObjects
 {
-    [RequireComponent(typeof(Detectable), typeof(Rigidbody2D))]
-public class GalagramRobot : ObjectForNode, IHorizontalMover
-{
-    [SerializeField] private bool _isActive;
-    [SerializeField] private float _speed;
-    [SerializeField] private GameObject _skinOff;
-    [SerializeField] private GameObject _skinOn;
 
-    private Detectable _detectable;
-    private Rigidbody2D _rigidbody;
-
-    private Queue<float> _moving = new();
-
-    private bool _isNeedUpdate;
-    private float _currentMove = 0;
-    private bool _firstMove = false;
-
-    private void Start()
+    public enum GalagramRobotOperationType
     {
-        _detectable = GetComponent<Detectable>();
-        _rigidbody = GetComponent<Rigidbody2D>();
-        UpdateState();
+        Move,
+        ChangeActive
     }
 
-    public void UpdateState()
+    public class GalagramOperation
     {
-        _isNeedUpdate = false;
-        //_skinOff.SetActive(!_isActive); //i removed that to get active an animation of bot under the galagram
-        _skinOn.SetActive(_isActive);
-        _detectable.IsDetectable = _isActive;
-    }
+        public GalagramRobotOperationType OperationType { get; set; }
+        public float Distance { get; set; }
+        public bool Active { get; set; }
 
-    public void MoveHorizontal(float f)
-    {
-        if(!_isNeedUpdate)
-            _firstMove = true;
+        public GalagramOperation(float f)
+        {
+            OperationType = GalagramRobotOperationType.Move;
+            Distance = f;
+        }
         
-        _moving.Enqueue(f);
-    }
-
-    public void ActivateGalagram()
-    {
-        _isActive = true;
-
-        if(_firstMove)
-            _isNeedUpdate = true;
-        else
-            UpdateState();
+        public GalagramOperation(bool b)
+        {
+            OperationType = GalagramRobotOperationType.ChangeActive;
+            Active = b;
+        }
     }
     
-    public void DeactivateGalagram()
+    [RequireComponent(typeof(Detectable), typeof(Rigidbody2D))]
+    public class GalagramRobot : ObjectForNode, IHorizontalMover
     {
-        _isActive = false;
+        [SerializeField] private bool _isActive;
+        [SerializeField] private float _speed;
+        [SerializeField] private GameObject _skinOff;
+        [SerializeField] private GameObject _skinOn;
 
-        if(_firstMove)
-            _isNeedUpdate = true;
-        else
-            UpdateState();
-    }
+        private Detectable _detectable;
+        private Rigidbody2D _rigidbody;
 
-    private void FixedUpdate()
-    {
-        if(_currentMove == 0)
+        private Queue<GalagramOperation> _opertions = new();
+        
+        private bool _canDoNextOperation = true;
+
+        private void Start()
         {
-            if(_isNeedUpdate && ! _firstMove)
+            _detectable = GetComponent<Detectable>();
+            _rigidbody = GetComponent<Rigidbody2D>();
+            UpdateState(_isActive);
+        }
+
+        public void UpdateState(bool isActive)
+        {
+            _isActive = isActive;
+            //_skinOff.SetActive(!_isActive); //i removed that to get active an animation of bot under the galagram
+            _skinOn.SetActive(_isActive);
+            _detectable.IsDetectable = _isActive;
+            _canDoNextOperation = true;
+        }
+
+        public void MoveHorizontal(float f)
+        {
+            _opertions.Enqueue(new GalagramOperation(f));
+        }
+
+        public void ActivateGalagram()
+        {
+            _opertions.Enqueue(new GalagramOperation(true));
+        }
+        
+        public void DeactivateGalagram()
+        {
+            _opertions.Enqueue(new GalagramOperation(false));
+        }
+
+        private void FixedUpdate()
+        {
+            if (_opertions.Count == 0 || !_canDoNextOperation) return;
+            _canDoNextOperation = false;
+            var t = _opertions.Dequeue();
+            switch (t.OperationType)
             {
-                UpdateState();
-            }
-            if(_moving.Count != 0 && (!_isActive || _firstMove))
-            {
-                _currentMove = _moving.Dequeue();
-                StartCoroutine(Move());
+                case GalagramRobotOperationType.Move:
+                    StartCoroutine(Move(t.Distance));
+                    break;
+                case GalagramRobotOperationType.ChangeActive:
+                    UpdateState(t.Active);
+                    break;
             }
         }
-    }
 
-    IEnumerator Move()
-    {
-        var t = Mathf.Abs(_currentMove / _speed);
-        var tSpeed = _currentMove >= 0 ? _speed : -_speed;
-        while (t > 0)
+        IEnumerator Move(float f)
         {
-            _rigidbody.MovePosition(transform.position + Vector3.right * (tSpeed * Time.fixedDeltaTime));
-            t -= Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
+            var t = Mathf.Abs(f / _speed);
+            var tSpeed = f >= 0 ? _speed : -_speed;
+            while (t > 0)
+            {
+                _rigidbody.MovePosition(transform.position + Vector3.right * (tSpeed * Time.fixedDeltaTime));
+                t -= Time.fixedDeltaTime;
+                yield return new WaitForFixedUpdate();
+            }
+
+            _canDoNextOperation = true;
         }
-        _currentMove = 0;
-        _firstMove = false;
     }
-}
 }

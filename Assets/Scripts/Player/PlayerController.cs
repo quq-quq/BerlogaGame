@@ -82,6 +82,7 @@ using UnityEngine.Serialization;
             var filter = new ContactFilter2D();
             filter.useTriggers = false;
             filter.layerMask = ~stats.PlayerLayer;
+            filter.useLayerMask = true;
             
             // Ground and Ceiling
             //bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, (float)stats.GrounderDistance, ~stats.PlayerLayer);
@@ -90,7 +91,6 @@ using UnityEngine.Serialization;
                 stats.GrounderDistance) != 0;
             bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, filter, new RaycastHit2D[1],
                 stats.GrounderDistance) != 0;
-            
             // Hit a Ceiling
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
 

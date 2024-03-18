@@ -1,17 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ButtonOnOff : MonoBehaviour
 {
-    [SerializeField] private GameObject _gameObject;
+    [SerializeField] private List<GameObject> _gameObjects;
     [SerializeField] private bool _startActive;
 
     private void Start()
     {
-        _gameObject.SetActive(_startActive);
+        _gameObjects.ForEach(x => x.SetActive(_startActive));
     }
 
     public void Switch()
     {
-        _gameObject.SetActive(!_gameObject.activeSelf);
+        _gameObjects.ForEach(x => x.SetActive(!x.activeSelf));
+            ;
     }
 }

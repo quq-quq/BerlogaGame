@@ -6,7 +6,7 @@ namespace Node_System.Scripts.Node
 {
     public class ActionMoveRight : ActionNodeParameter
     {
-        protected override void DoAction(GameObject go)
+        protected override void DoAction(ObjectForNode go)
         {
             if(go.TryGetComponent(out IHorizontalMover horizontalMover))
             {

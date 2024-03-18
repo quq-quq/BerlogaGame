@@ -7,7 +7,7 @@ namespace Node_System.Scripts.Node
 {
     public class ActionOpen : ActionNode
     {
-        protected override void DoAction(GameObject go)
+        protected override void DoAction(ObjectForNode go)
         {
             if(go.TryGetComponent(out IOpenClose openClose))
             {

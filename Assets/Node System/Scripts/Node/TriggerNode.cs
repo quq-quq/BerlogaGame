@@ -14,7 +14,7 @@ namespace Node_System.Scripts.Node
             _trigger.SubscribeTrigger(() => Do(null));
         }
 
-        public override void Do(GameObject go)
+        public override void Do(ObjectForNode go)
         {
             Connector.GetConnectedNodes().ForEach(i => i.Do(go));
         }

@@ -9,7 +9,7 @@ namespace Node_System.Scripts.Node
     public class ObjectNode : BaseNode
     {
         [SerializeField] private string _objectName;
-        [SerializeField] private GameObject _gameObject;
+        [SerializeField] private ObjectForNode _objectForNode;
         [SerializeField] private TMP_Text _nameText;
 
 #if UNITY_EDITOR
@@ -22,9 +22,9 @@ namespace Node_System.Scripts.Node
         }
 #endif
 
-        public override void Do(GameObject go)
+        public override void Do(ObjectForNode go)
         {
-            Connector.GetConnectedNodes().ForEach(i => i.Do(_gameObject));
+            Connector.GetConnectedNodes().ForEach(i => i.Do(_objectForNode));
         }
     }
 }

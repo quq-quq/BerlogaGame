@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Node_System.Scripts.Node;
 using UI;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ namespace Node
             }
         }
 
-        public abstract void Do(GameObject go);
+        public abstract void Do(ObjectForNode go);
 
         public bool IsConnected(BaseNode node)
         {
