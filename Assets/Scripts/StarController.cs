@@ -10,14 +10,14 @@ public class StarController : MonoBehaviour
 
     private void Start()
     {
-        _text.text = "Найдите диск...:(";
+        _text.text = "РќР°РґР№Рё РґРёСЃРє...:(";
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
-            _text.text = "Диск найден...:D";
+            _text.text = "РЈСЂР° С‚Рё РЅР°С€РµР»...:D";
             _DialogueRobot.ChangeIndex();
         }
         Destroy(gameObject);

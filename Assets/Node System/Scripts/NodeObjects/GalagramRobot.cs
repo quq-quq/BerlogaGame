@@ -87,7 +87,14 @@ namespace NodeObjects
             switch (t.OperationType)
             {
                 case GalagramRobotOperationType.Move:
-                    StartCoroutine(Move(t.Distance));
+                    if (_isActive)
+                    {
+                        _canDoNextOperation = true;
+                    }
+                    else
+                    {
+                        StartCoroutine(Move(t.Distance));
+                    }
                     break;
                 case GalagramRobotOperationType.ChangeActive:
                     UpdateState(t.Active);
