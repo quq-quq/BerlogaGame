@@ -15,6 +15,8 @@ namespace UI
 
         [SerializeField] private Button _button;
 
+
+        private Image _image;
         private bool _isActive = true;
         private void OnEnable()
         {
@@ -23,6 +25,13 @@ namespace UI
         private void OnDisable()
         {
             _button.onClick.RemoveListener(Trigger);
+        }
+
+        private void Start()
+        {
+            _image = GetComponent<Image>();
+            _image.type = Image.Type.Filled;
+
         }
 
         private event Action _triger; 
@@ -43,9 +52,19 @@ namespace UI
 
             IEnumerator Coroutine()
             {
+                
                 _isActive = false;
                 _button.interactable = false;
-                yield return new WaitForSeconds(cooldown);
+                _image.fillAmount = 0;
+                float lerpTime = Time.time;
+
+                while (Time.time - lerpTime < cooldown)
+                {
+                    _image.fillAmount = (Time.time - lerpTime) / cooldown;
+
+                    yield return null;
+                }
+
                 _isActive = true;
                 _button.interactable = true;
             }

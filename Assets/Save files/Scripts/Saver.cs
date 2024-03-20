@@ -29,7 +29,7 @@ namespace Save_files.Scripts
         {
             if(!File.Exists(Path))
             {
-                Data = AssetDatabase.LoadAssetAtPath<ProgressDataConfig>(ProgressDataConfig.DefaultConfigPatch).Data;
+                Data = Resources.Load<ProgressDataConfig>(ProgressDataConfig.DefaultConfigPatch).Data;
                 return;
             }
             

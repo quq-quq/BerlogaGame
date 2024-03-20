@@ -526,7 +526,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3268,8 +3268,8 @@ Transform:
   m_GameObject: {fileID: 419105699}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.1319, y: -5.5792, z: 0}
-  m_LocalScale: {x: 2.9027069, y: 103.07004, z: 18.032}
+  m_LocalPosition: {x: 2.86, y: -4.57, z: 0}
+  m_LocalScale: {x: 5.2479258, y: 103.07004, z: 18.032}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 763661738}
@@ -3314,7 +3314,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 100d988aecc7d3845aa3fe6184ab6233, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3896,7 +3896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5701394321477261719, guid: e05a3613b2e116f4381e08ecb6b32af8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0542529
+      value: 3.0541942
       objectReference: {fileID: 0}
     - target: {fileID: 5701394321477261719, guid: e05a3613b2e116f4381e08ecb6b32af8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4316,7 +4316,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -9133,7 +9133,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -10860,7 +10860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5985743223954507786, guid: a0963c59759328342b77657dddbf8db0, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7422352735804287054, guid: a0963c59759328342b77657dddbf8db0, type: 3}
       propertyPath: m_LocalScale.x
