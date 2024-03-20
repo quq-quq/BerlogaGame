@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
+using Save_files.Scripts;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartEndScene : MonoBehaviour
@@ -52,6 +54,7 @@ public class StartEndScene : MonoBehaviour
                 _image.color = tColor;
                 yield return new WaitForEndOfFrame();
             }
+            Saver.Data.SetCompleted(SceneManager.GetActiveScene().name);
             LevelSwitcher.SwitchScene(_nameNextScene);
         }
     }

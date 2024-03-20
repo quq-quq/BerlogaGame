@@ -24,11 +24,10 @@ namespace Save_files.Scripts
         [SerializeField] private List<Level> _levels;
         [SerializeField] private bool _isMute = false;
         [SerializeField, Range(0,1)] private float _volume = 1f;
-
-
+        
         public bool IsMute
         {
-            get => _isMute;
+            get => Volume==0 || _isMute;
             set => _isMute = value;
         }
 
@@ -41,6 +40,24 @@ namespace Save_files.Scripts
         public IReadOnlyList<Level> Levels
         {
             get => _levels;
+        }
+        
+        public void SetCompleted(string sceneName)
+        {
+            foreach (var level in _levels)
+            {
+                foreach (var part in level.Parts)
+                {
+                    
+                    if (sceneName == part.SceneName)
+                    {
+                        part.IsCompleted = true;
+                        
+                    }
+                }
+            }
+
+            Saver.Save();
         }
 
         public bool IsLevelAvailableByIndex(int index)
@@ -103,6 +120,7 @@ namespace Save_files.Scripts
         public bool IsCompleted
         {
             get => _isCompleted;
+            set => _isCompleted = value;
         }
     }
 }
