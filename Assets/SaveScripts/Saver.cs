@@ -6,8 +6,7 @@ namespace Save_files.Scripts
 {
     public static class Saver
     {
-        [SerializeField] private static ProgressData _defaultProgressData;
-        private static readonly string Path = Application.dataPath + "/Save files/save.json";
+        private static readonly string Path = Application.dataPath + "/save.json";
         private static ProgressData _data;
 
         public static ProgressData Data
