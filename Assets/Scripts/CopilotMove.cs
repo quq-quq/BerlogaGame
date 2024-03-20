@@ -18,11 +18,9 @@ public class CopilotMove : MonoBehaviour
 [Space]
     private Vector3 _currentFollowPoint;
     private Vector3 _direction;
-
-    [SerializeField] private GameObject go;
     private float _currentSpeed = 0;
     private bool _reached = false;
-    
+    private bool _isGoToCorner = false;
 
     private void Awake()
     {
@@ -43,7 +41,10 @@ public class CopilotMove : MonoBehaviour
     
     private void FixedUpdate()
     {
-        go.transform.position = _currentFollowPoint;
+        if(!_reached && _isGoToCorner)
+        {
+            _currentFollowPoint = _followCorner.position;
+        }
 
         if ((transform.position - _followCorner.position).magnitude > _distanceTranquility )
         {
@@ -69,18 +70,23 @@ public class CopilotMove : MonoBehaviour
         
 
         var t = (_currentFollowPoint - transform.position).magnitude / _distanceTranquility;
-        transform.position += _direction * (_currentSpeed * Time.fixedDeltaTime) + Mathf.Lerp(0f,_gravity, t)*Vector3.down;
+        transform.position += _direction * (_currentSpeed * Time.fixedDeltaTime) +
+                              (_reached ? Vector3.zero : (Mathf.Lerp(0f, _gravity * Time.fixedDeltaTime, t) * Vector3.down));
 
     }
 
     private void ChangeFollowPoint()
     {
+        
         _reached = false;
         if ((transform.position - _followCorner.position).magnitude > _distanceTranquility)
         {
             _currentFollowPoint = _followCorner.position;
+            _isGoToCorner = true;
             return;
         }
+
+        _isGoToCorner = false;
         
         // var x = Random.Range(-_distanceTranquility, _distanceTranquility);
         // var y = Random.Range(-_distanceTranquility, _distanceTranquility);
