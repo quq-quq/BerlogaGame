@@ -31,12 +31,12 @@ namespace Dialogue_system
     
         private void Start()
         {
+            _parent.SetActive(false);
             _mainText.text = string.Empty;
             if(_startOnStart)
             {
                 StartDialogue();
             }
-            _parent.SetActive(_startOnStart);
         }
 
         private void Update()

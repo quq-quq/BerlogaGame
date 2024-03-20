@@ -496,11 +496,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pausePanel: {fileID: 1695400098189108548}
-  _backgroundSound: {fileID: 8300000, guid: 107d49f83b1b5e04abff9362e8c110bd, type: 3}
+  _backgroundSound: {fileID: 8300000, guid: 3c53427044e236145ae41411caa2af94, type: 3}
   _volume: 1
-  _muteButton: {fileID: 0}
-  _mute: {fileID: 0}
-  _unmute: {fileID: 0}
+  _muteButton: {fileID: 6390463726531072604}
+  _mute: {fileID: -73002040, guid: 7e6366b582a34934694b82bbe996aedc, type: 3}
+  _unmute: {fileID: -2067910333, guid: 7e6366b582a34934694b82bbe996aedc, type: 3}
 --- !u!1 &6398968792866586579
 GameObject:
   m_ObjectHideFlags: 0

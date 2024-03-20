@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7661a80d008dab04581d5bc5fe8b5b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameNextScene: menu
+  _nameNextScene: NEW menu
   _text: {fileID: 5814142440682644911}
   _transitTime: 4
   _image: {fileID: 3708674427988194811}

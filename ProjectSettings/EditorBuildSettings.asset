@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ComicsScene.unity
     guid: 34ec5b14fedf2244d854f51e2c9b3812
   - enabled: 1
-    path: Assets/Scenes/menu.unity
-    guid: 9481332fe4affaa4982cae21f86168d8
-  - enabled: 1
     path: Assets/Scenes/Levels/1Level/Room 1.unity
     guid: 661def668e1380742bc3f4a12de8748f
   - enabled: 1
@@ -26,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Tutorial1.unity
     guid: 66dc922628a7642edbb7ac241d900548
+  - enabled: 1
+    path: Assets/Scenes/NEW menu.unity
+    guid: 8d8f77e42af71df42a640dc5027b15c3
   m_configObjects: {}
