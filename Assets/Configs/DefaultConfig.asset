@@ -22,4 +22,4 @@ MonoBehaviour:
       - _sceneName: Room 3
         _isCompleted: 0
     _isMute: 0
-    _volume: 0
+    _volume: 1

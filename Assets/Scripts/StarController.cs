@@ -10,7 +10,7 @@ public class StarController : MonoBehaviour
 
     private void Start()
     {
-        _text.text = "Надйи диск...:(";
+        _text.text = "Найди диск...:(";
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

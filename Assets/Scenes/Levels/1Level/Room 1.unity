@@ -2160,17 +2160,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2165818724987926291, guid: cf779db9e379f43f7ab2751aa6237eb1, type: 3}
   m_PrefabInstance: {fileID: 1616262658}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &881100868 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6390463726531072604, guid: 5b6682b4d3c11964384be37fd282019f, type: 3}
-  m_PrefabInstance: {fileID: 1198732582}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1015893985 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3112056323028038146, guid: be544229f52b96845aad38b9ee16c045, type: 3}
@@ -2482,10 +2471,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 442413103667704423, guid: 5b6682b4d3c11964384be37fd282019f, type: 3}
-      propertyPath: _muteButton
-      value: 
-      objectReference: {fileID: 881100868}
     - target: {fileID: 6338652306544995830, guid: 5b6682b4d3c11964384be37fd282019f, type: 3}
       propertyPath: m_Name
       value: LevelCanvas
@@ -9466,30 +9451,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Controller
       objectReference: {fileID: 0}
-    - target: {fileID: 2969068311962969431, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
-      propertyPath: _Jump
-      value: 
-      objectReference: {fileID: 8300000, guid: c07ac3c123e32c6468cc36926b4f92fe, type: 3}
-    - target: {fileID: 2969068311962969431, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
-      propertyPath: _volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2969068311962969431, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
-      propertyPath: _footsteps
-      value: 
-      objectReference: {fileID: 8300000, guid: 4d70c49ee4a5c5d4c97cd22bf1014253, type: 3}
-    - target: {fileID: 2969068311962969431, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
-      propertyPath: _footsteps.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2969068311962969431, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
-      propertyPath: _footsteps.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: c07ac3c123e32c6468cc36926b4f92fe, type: 3}
-    - target: {fileID: 2969068311962969431, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
-      propertyPath: _footsteps.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1876767bf7cbf284394dc3817af9593c, type: 3}
     - target: {fileID: 2969068313154050967, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
       propertyPath: m_SortingOrder
       value: 3

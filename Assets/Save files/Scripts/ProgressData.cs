@@ -27,7 +27,7 @@ namespace Save_files.Scripts
         
         public bool IsMute
         {
-            get => Volume==0 || _isMute;
+            get => Volume==0?true : _isMute;
             set => _isMute = value;
         }
 

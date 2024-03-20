@@ -1,3 +1,4 @@
+using Save_files.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,29 +6,31 @@ using UnityEngine;
 
 namespace Menu
 {
-    [RequireComponent(typeof(AudioSource))]
     public class AmbientMenuSound : MonoBehaviour
     {
         [SerializeField] private float _cycleTime;
         [SerializeField] private List<AmbientSoundData> _sounds;
         [SerializeField] private bool _isEnableAmbientSound = true;
-        
-        private AudioSource _audioSource;
+        [SerializeField] private AudioClip _backgroundSound;
+        [SerializeField] private float _volume;
         
         public bool IsEnableAmbientSound
         {
             get => _isEnableAmbientSound;
             set
             {
-                _audioSource.volume = value?1f:0f;
                 _isEnableAmbientSound = value;
             }
         }
 
         private void Awake()
         {
-            _audioSource = GetComponent<AudioSource>();
             StartCoroutine(AmbientAudioSyncCoroutine());
+        }
+
+        private void Start()
+        {
+            SoundController.sounder.SetSound(_backgroundSound, true, "BackGroundMusic", _volume);
         }
 
         IEnumerator AmbientAudioSyncCoroutine()
@@ -48,9 +51,8 @@ namespace Menu
                 
                 yield return new WaitForSeconds(waitTime);
 
-                _audioSource.Stop();
-                _audioSource.clip = _sounds[i].Sound;
-                _audioSource.Play();
+                SoundController.sounder.SetSound(null, false, gameObject.name, _volume);
+                SoundController.sounder.SetSound(_sounds[i].Sound, false, gameObject.name, _volume);
                 i++;
             }
         }

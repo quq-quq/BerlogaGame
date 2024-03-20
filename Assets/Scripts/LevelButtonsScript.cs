@@ -33,7 +33,7 @@ public class LevelButtonsScript : MonoBehaviour
 
     public void QuitLevel()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(6);
     }
 
     public void Pause()

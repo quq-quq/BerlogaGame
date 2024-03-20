@@ -499,8 +499,8 @@ MonoBehaviour:
   _backgroundSound: {fileID: 8300000, guid: 3c53427044e236145ae41411caa2af94, type: 3}
   _volume: 1
   _muteButton: {fileID: 6390463726531072604}
-  _mute: {fileID: -73002040, guid: 7e6366b582a34934694b82bbe996aedc, type: 3}
-  _unmute: {fileID: -2067910333, guid: 7e6366b582a34934694b82bbe996aedc, type: 3}
+  _mute: {fileID: -2067910333, guid: 7e6366b582a34934694b82bbe996aedc, type: 3}
+  _unmute: {fileID: -73002040, guid: 7e6366b582a34934694b82bbe996aedc, type: 3}
 --- !u!1 &6398968792866586579
 GameObject:
   m_ObjectHideFlags: 0
