@@ -43,7 +43,7 @@ namespace Dialogue_system
         {
             if(!_isWriting) return;
 
-            if(Input.anyKeyDown)
+            if(Input.GetKeyDown(KeyCode.Return))
             {
                 if(_mainText.text == _currentWriter.EndText())
                 {
@@ -58,7 +58,9 @@ namespace Dialogue_system
         }
 
         public void StartDialogue()
-        {
+        { 
+            if(_parent.activeSelf)
+                return;
             _parent.SetActive(true);
             _currentCharTime = _oneCharTime;
             _currentIndexDialogue = 0;

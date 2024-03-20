@@ -1,3 +1,4 @@
+using Save_files.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,11 @@ public class SoundController : MonoBehaviour
     public static SoundController sounder { get; private set; }
 
     [SerializeField] private int _sourcesCount;
+
+    private float VolumeSaver
+    {
+        get => Saver.Data.Volume;
+    }
 
     private struct AudioData
     {
@@ -64,6 +70,8 @@ public class SoundController : MonoBehaviour
         {
             volume = 0;
         }
+
+        volume *= VolumeSaver;
         //for (int i = 0; i < _sourcesCount; i++)
         //{
         //    if (!_audioDataArray[i].audioSource.isPlaying && !_audioDataArray[i].audioSource.loop && _audioDataArray[i].audioSource.clip != null)
@@ -117,7 +125,7 @@ public class SoundController : MonoBehaviour
         {
             _audioDataArray[i].audioSource.clip = null;
             _audioDataArray[i].audioSource.loop = false;
-            _audioDataArray[i].audioSource.volume = 1;
+            _audioDataArray[i].audioSource.volume = Saver.Data.Volume;
         }
     }
 }

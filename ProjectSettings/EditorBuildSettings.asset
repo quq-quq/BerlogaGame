@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/1Level/Room 3.unity
     guid: cb497e085e56a484a80c1eec595b2c78
   - enabled: 1
-    path: Assets/Scenes/Levels/Tutorial.unity
+    path: Assets/Scenes/Levels/Tutorial1.unity
     guid: 66dc922628a7642edbb7ac241d900548
   m_configObjects: {}
