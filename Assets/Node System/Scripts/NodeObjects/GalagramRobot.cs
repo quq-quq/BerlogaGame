@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using InterfaceNode;
@@ -40,7 +41,8 @@ namespace NodeObjects
         [SerializeField] private float _speed;
         [SerializeField] private GameObject _skinOff;
         [SerializeField] private GameObject _skinOn;
-
+        public Action ActivateEvent;
+        public Action DisactivateEvent;
         private Detectable _detectable;
         private Rigidbody2D _rigidbody;
 
@@ -57,6 +59,14 @@ namespace NodeObjects
 
         public void UpdateState(bool isActive)
         {
+            if (isActive)
+            {
+                ActivateEvent?.Invoke();
+            }
+            else
+            {
+                DisactivateEvent?.Invoke();
+            }
             _isActive = isActive;
             //_skinOff.SetActive(!_isActive); //i removed that to get active an animation of bot under the galagram
             _skinOn.SetActive(_isActive);

@@ -20,6 +20,9 @@ namespace NodeObjects
         [SerializeField] private SimpleTrigger _enterTrigger;
         [SerializeField] private SimpleTrigger _exitTrigger;
 
+        public event Action EnterEvent;
+        public event Action ExitEvent;
+
         [Space(40)]
         [SerializeField] private AudioClip _sleepAudio;
         [SerializeField] private float _volume;
@@ -58,8 +61,13 @@ namespace NodeObjects
             {
                 d.StateChangedEvent += OnDetectableChangeState;
                 _detectables.Add(d);
-                if(d.IsDetectable) 
+                if(d.IsDetectable)
+                {
                     EnterTriggerInvoke();
+                    if(d.TryGetComponent(out PlayerController p ))
+                        EnterEvent?.Invoke();
+                }
+                    
             }
         }
 
@@ -68,8 +76,12 @@ namespace NodeObjects
             if(other.TryGetComponent(out Detectable d) && _detectables.Any(i => i == d))
             {
                 d.StateChangedEvent -= OnDetectableChangeState;
-                if(_detectables.Remove(d) && d.IsDetectable && _detectables.Count == 0) 
+                if(_detectables.Remove(d) && d.IsDetectable && _detectables.Count == 0)
+                {
                     ExitTriggerInvoke();
+                    if(d.TryGetComponent(out PlayerController p ))
+                        ExitEvent?.Invoke();
+                }
             }
         }
 

@@ -11,6 +11,12 @@ namespace NodeObjects
         [SerializeField] private GameObject _openSkin;
         [SerializeField] private GameObject _closeSkin;
         [SerializeField] private bool _isOpen;
+
+        public bool IsOpen => _isOpen;
+
+        public event Action OpenEvent;
+        public event Action CloseEvent;
+
         [SerializeField] private AudioClip _doorAudio;
         [SerializeField] private float _volume;
         private Collider2D _collider;
@@ -24,12 +30,14 @@ namespace NodeObjects
 
         public void Open()
         {
+            OpenEvent?.Invoke();
             SwitchStates(true);
             SoundController.sounder.SetSound(_doorAudio, false, gameObject.name, _volume);
         }
 
         public void Close()
         {
+            CloseEvent?.Invoke();
             SwitchStates(false);
             SoundController.sounder.SetSound(_doorAudio, false, gameObject.name, _volume);
         }

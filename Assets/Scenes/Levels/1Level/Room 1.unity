@@ -235,6 +235,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 829399898804249988, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
+      propertyPath: _cameraDontSee.Array.data[1]
+      value: "\u0422\u044B \u043D\u0435 \u0432\u043D\u0435 \u0432\u0437\u043E\u0440\u0430
+        \u043A\u0430\u043C\u0435\u0440\u044B"
+      objectReference: {fileID: 0}
     - target: {fileID: 2773044100417632834, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.56
