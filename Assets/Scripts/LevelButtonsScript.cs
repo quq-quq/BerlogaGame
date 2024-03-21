@@ -11,6 +11,7 @@ public class LevelButtonsScript : MonoBehaviour
     [SerializeField] private Image _muteButton;
     [SerializeField] private Sprite _mute;
     [SerializeField] private Sprite _unmute;
+    [SerializeField] private GameObject _manual;
     private bool _isPaused, _isMusicOff;
 
     private void Start()
@@ -69,6 +70,11 @@ public class LevelButtonsScript : MonoBehaviour
             Saver.Data.IsMute = false;
         }
         Saver.Save();
+    }
+
+    public void OpenCloseManual()
+    {
+       _manual.SetActive(!_manual.activeSelf);
     }
 
     public void RestartScene()
