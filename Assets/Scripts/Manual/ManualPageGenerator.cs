@@ -13,6 +13,7 @@ namespace DefaultNamespace.Manual
         public void CreateNodePage(NodeInfo nodeInfo)
         {
             _title.text = nodeInfo.Title;
+            _mainText.text = nodeInfo.MainText;
         }
     }
 }
