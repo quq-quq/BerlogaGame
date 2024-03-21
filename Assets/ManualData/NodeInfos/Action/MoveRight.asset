@@ -17,4 +17,6 @@ MonoBehaviour:
     \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0430\u044E\u0449\u0438\u0439 \u0435\u0435
     \u0432\u043F\u0440\u0430\u0432\u043E"
   _prefab: {fileID: 5367343018065978319, guid: 0e9a6cf5ab95c41388ca115b409372c9, type: 3}
-  _links: []
+  _links:
+  - {fileID: 11400000, guid: 4d0ad9899a70ce841a83766289828c06, type: 2}
+  - {fileID: 11400000, guid: 7936456480499634796924c9b0b41d24, type: 2}

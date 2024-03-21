@@ -15,4 +15,11 @@ MonoBehaviour:
   _title: "\u0414\u0440\u043E\u043D"
   _mainText: 
   _prefab: {fileID: 2112771227486360271, guid: 286197c901885485aac14fd00a836828, type: 3}
-  _links: []
+  _links:
+  - {fileID: 11400000, guid: b60e969f100b2164abb5eb4a617433d1, type: 2}
+  - {fileID: 11400000, guid: 338edec5eeea7ff4d9883ece840d8c5e, type: 2}
+  - {fileID: 11400000, guid: 61ee74eb52c73394393abb3cd530bcfd, type: 2}
+  - {fileID: 11400000, guid: a55ce81b7eceab041adba57be3d3e7e8, type: 2}
+  - {fileID: 11400000, guid: 15deaf923b7c9b24fa4db72610d9ccac, type: 2}
+  - {fileID: 11400000, guid: aaecddc8305a3474c9e761a45b1bac65, type: 2}
+  - {fileID: 11400000, guid: aaecddc8305a3474c9e761a45b1bac65, type: 2}
