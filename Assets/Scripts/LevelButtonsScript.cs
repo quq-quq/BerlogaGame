@@ -1,4 +1,5 @@
 using Save_files.Scripts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ public class LevelButtonsScript : MonoBehaviour
 
     private void Start()
     {
+        _manual.SetActive(false);
         AudioListener.pause = Saver.Data.IsMute;
         if(Saver.Data.IsMute)
         {
