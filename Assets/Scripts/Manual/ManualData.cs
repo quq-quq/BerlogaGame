@@ -11,5 +11,13 @@ namespace DefaultNamespace.Manual
         [SerializeField] private List<NodeInfo> _actionNodes;
         [SerializeField] private List<ConnectorInfo> _connectors;
 
+        public IReadOnlyCollection<NodeInfo> Triggers => _triggers;
+
+        public IReadOnlyCollection<NodeInfo> ObjectNodes => _objectNodes;
+
+        public IReadOnlyCollection<NodeInfo> ActionNodes => _actionNodes;
+
+        public IReadOnlyCollection<ConnectorInfo> Connectors => _connectors;
+
     }
 }

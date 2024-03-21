@@ -11,7 +11,8 @@ namespace Node_System.Scripts.Node
 
         private void Awake()  
         {
-            _trigger.SubscribeTrigger(() => Do(null));
+            if (_trigger != null)
+                _trigger.SubscribeTrigger(() => Do(null));
         }
 
         public override void Do(ObjectForNode go)
