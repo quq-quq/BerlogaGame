@@ -300,7 +300,7 @@ TextureImporter:
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 11, y: 0, z: 8, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -321,7 +321,7 @@ TextureImporter:
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 15, y: 0, z: 12, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -342,7 +342,7 @@ TextureImporter:
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 0, z: 7, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -363,7 +363,7 @@ TextureImporter:
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 14, y: 0, z: 13, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -384,7 +384,7 @@ TextureImporter:
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 9, y: 0, z: 7, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -426,7 +426,7 @@ TextureImporter:
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 9, y: 0, z: 7, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -447,7 +447,7 @@ TextureImporter:
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 0, z: 4, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -468,13 +468,34 @@ TextureImporter:
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 0, z: 7, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: c4217e6faea3a4eb1825c0bd3d101eb2
       internalID: 698863200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimHelperSheet_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 114
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79094bd36ab114f68a8af8de14424378
+      internalID: -879202521
       vertices: []
       indices: 
       edges: []
