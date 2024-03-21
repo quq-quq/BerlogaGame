@@ -5,7 +5,7 @@ namespace Save_files.Scripts
     [CreateAssetMenu(fileName = "new Progress Data", menuName = "ProgressData", order = 1)]
     public class ProgressDataConfig : ScriptableObject
     {
-        public static string DefaultConfigPatch = "/Configs/DefaultConfig.asset";
+        public static string DefaultConfigPatch = "DefaultConfig";
         
         [SerializeField] private ProgressData _progressData;
 

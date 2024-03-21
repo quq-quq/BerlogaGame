@@ -6,7 +6,7 @@ namespace Save_files.Scripts
 {
     public static class Saver
     {
-        private static readonly string Path = Application.dataPath + "/save.json";
+        private static readonly string Path =  "save";
         private static ProgressData _data;
 
         public static ProgressData Data
