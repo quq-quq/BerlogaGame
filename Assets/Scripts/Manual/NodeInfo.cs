@@ -9,7 +9,7 @@ namespace DefaultNamespace.Manual
     public class NodeInfo : ScriptableObject
     {
         [SerializeField] private string _title;
-        [SerializeField] private string _mainText;
+        [SerializeField,Multiline] private string _mainText;
         [SerializeField] private BaseNode _prefab;
         [SerializeField] private List<NodeInfo> _links;
 

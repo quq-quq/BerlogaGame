@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5701394321477261719, guid: e05a3613b2e116f4381e08ecb6b32af8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.431052
+      value: 7.4310517
       objectReference: {fileID: 0}
     - target: {fileID: 5701394321477261719, guid: e05a3613b2e116f4381e08ecb6b32af8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1207,6 +1207,10 @@ PrefabInstance:
     - target: {fileID: 5816616585125821768, guid: 0d51b9eada3fe014183857b5c559f4d7, type: 3}
       propertyPath: m_Name
       value: StartEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010658082931702070, guid: 0d51b9eada3fe014183857b5c559f4d7, type: 3}
+      propertyPath: _nameNextScene
+      value: Tutorial2
       objectReference: {fileID: 0}
     - target: {fileID: 6029447320654612421, guid: 0d51b9eada3fe014183857b5c559f4d7, type: 3}
       propertyPath: m_Size.x

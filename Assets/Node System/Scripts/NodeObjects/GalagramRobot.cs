@@ -59,14 +59,6 @@ namespace NodeObjects
 
         public void UpdateState(bool isActive)
         {
-            if (isActive)
-            {
-                ActivateEvent?.Invoke();
-            }
-            else
-            {
-                DisactivateEvent?.Invoke();
-            }
             _isActive = isActive;
             //_skinOff.SetActive(!_isActive); //i removed that to get active an animation of bot under the galagram
             _skinOn.SetActive(_isActive);
@@ -81,11 +73,15 @@ namespace NodeObjects
 
         public void ActivateGalagram()
         {
+            ActivateEvent?.Invoke();
+
             _opertions.Enqueue(new GalagramOperation(true));
         }
         
         public void DeactivateGalagram()
         {
+            DisactivateEvent?.Invoke();
+
             _opertions.Enqueue(new GalagramOperation(false));
         }
 

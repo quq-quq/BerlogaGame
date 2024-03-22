@@ -36,6 +36,15 @@ namespace Save_files.Scripts
             Data = JsonUtility.FromJson<ProgressData>(json);
         }
 
+        public static void DeleteSaves()
+        {
+            var isMute = Data.IsMute;
+            Data = Resources.Load<ProgressDataConfig>(ProgressDataConfig.DefaultConfigPatch).Data;
+            Data.IsMute = isMute;
+            var json = JsonUtility.ToJson(Data);
+            File.WriteAllText(Path,json);
+        }
+        
         public static void Save()
         {
             var json = JsonUtility.ToJson(Data);

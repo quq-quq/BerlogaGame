@@ -36,9 +36,12 @@ public class CopilotMonolog : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float _chanceCamera;
     [SerializeField, Multiline] private List<string> _cameraSee;
     [SerializeField, Multiline] private List<string> _cameraDontSee;
+    [SerializeField, Multiline] private List<string> _starDialog;
+
     private List<Door> _doors;
     private List<GalagramRobot> _galagrams;
     private List<CameraDetector> _camers;
+    private List<StarController> _stars;
     
 
     private void Start()
@@ -54,6 +57,7 @@ public class CopilotMonolog : MonoBehaviour
         _doors = FindObjectsOfType<Door>().ToList();
         _camers = FindObjectsOfType<CameraDetector>().ToList();
         _galagrams = FindObjectsOfType<GalagramRobot>().ToList();
+
         foreach (var door in _doors)
         {
             door.OpenEvent += OnDoorOpen;
@@ -70,6 +74,22 @@ public class CopilotMonolog : MonoBehaviour
             galagram.DisactivateEvent += OnGalagramOff;
         }
     }
+
+    private bool _starHint = false;
+    private void FixedUpdate()
+    {
+        _stars = FindObjectsOfType<StarController>().ToList();
+
+        foreach (var star in _stars)
+        {
+            if ((star.transform.position - transform.position).magnitude <= _interactDis&&!_starHint)
+            {
+                _starHint = true;
+                _phrases.Enqueue(_starDialog[Random.Range(0,_starDialog.Count)], 1);
+            }
+        }
+    }
+
     private void OnDisable()
     {
         foreach (var door in _doors)
@@ -91,31 +111,31 @@ public class CopilotMonolog : MonoBehaviour
 
     private void OnDoorOpen()
     {
-        EnqueueChance(_chanceDoor,_doorOpen[Random.Range(0,_doorOpen.Count)],1);
+        EnqueueChance(_chanceDoor,_doorOpen[Random.Range(0,_doorOpen.Count)],2);
     }
     private void OnDoorClose()
     {
-        EnqueueChance(_chanceDoor,_doorClose[Random.Range(0,_doorClose.Count)],1);
+        EnqueueChance(_chanceDoor,_doorClose[Random.Range(0,_doorClose.Count)],2);
 
     }
     private void OnCamEnter()
     {
-        EnqueueChance(_chanceCamera,_cameraSee[Random.Range(0,_cameraSee.Count)],1);
+        EnqueueChance(_chanceCamera,_cameraSee[Random.Range(0,_cameraSee.Count)],2);
 
     }
     private void OnCamExit()
     {
-        EnqueueChance(_chanceCamera,_cameraDontSee[Random.Range(0,_cameraDontSee.Count)],1);
+        EnqueueChance(_chanceCamera,_cameraDontSee[Random.Range(0,_cameraDontSee.Count)],2);
 
     }
     private void OnGalagramOff()
     {
-        EnqueueChance(_chanceGalagram,_galagramOff[Random.Range(0,_galagramOff.Count)],1);
+        EnqueueChance(_chanceGalagram,_galagramOff[Random.Range(0,_galagramOff.Count)],2);
 
     }
     private void OnGalagramOn()
     {
-        EnqueueChance(_chanceGalagram,_galagramOn[Random.Range(0,_galagramOn.Count)],1);
+        EnqueueChance(_chanceGalagram,_galagramOn[Random.Range(0,_galagramOn.Count)],2);
 
     }
 

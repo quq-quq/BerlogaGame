@@ -20,7 +20,3 @@ MonoBehaviour:
   _links:
   - {fileID: 11400000, guid: b5d2f6a59d5578c429aec1c6e4dea72b, type: 2}
   - {fileID: 11400000, guid: 15deaf923b7c9b24fa4db72610d9ccac, type: 2}
-  - {fileID: 11400000}
-  - {fileID: 11400000, guid: 61ee74eb52c73394393abb3cd530bcfd, type: 2}
-  - {fileID: 11400000, guid: a55ce81b7eceab041adba57be3d3e7e8, type: 2}
-  - {fileID: 11400000, guid: 15deaf923b7c9b24fa4db72610d9ccac, type: 2}
