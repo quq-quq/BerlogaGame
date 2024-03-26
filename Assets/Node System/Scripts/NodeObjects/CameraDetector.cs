@@ -55,6 +55,13 @@ namespace NodeObjects
             _enterTrigger.Invoke();
         }
 
+        public void FixedUpdate()
+        {
+            if (_detectables.All(x => !x.IsDetectable))
+                ExitTriggerInvoke();
+                
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if(other.TryGetComponent(out Detectable d) && _detectables.All(i => i != d))

@@ -34,7 +34,14 @@ namespace Save_files.Scripts
         public float Volume
         {
             get => _volume;
-            set => _volume = value;
+            set
+            {
+                _volume = value;
+                if (value >= 0)
+                {
+                    
+                }
+            }
         }
         
         public IReadOnlyList<Level> Levels

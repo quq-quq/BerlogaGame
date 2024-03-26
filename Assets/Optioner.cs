@@ -51,4 +51,9 @@ public class Optioner : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    private void OnSliderValueChange(float f)
+    {
+        Saver.Data.Volume = f;
+    }
+
 }
