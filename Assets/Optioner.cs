@@ -10,6 +10,7 @@ public class Optioner : MonoBehaviour
     [SerializeField] private Image _muteButton;
     [SerializeField] private Sprite _mute;
     [SerializeField] private Sprite _unmute;
+    [SerializeField] private Slider _volumeSlider;
     private bool _isMusicOff;
 
     private void Start()
@@ -24,6 +25,7 @@ public class Optioner : MonoBehaviour
             _muteButton.sprite = _unmute;
         }
         _isMusicOff = Saver.Data.IsMute;
+        _volumeSlider.value = Saver.Data.Volume;
     }
    
     public void StopMusic()
@@ -51,9 +53,10 @@ public class Optioner : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void OnSliderValueChange(float f)
+    public void OnSliderValueChange(float f)
     {
         Saver.Data.Volume = f;
+        SoundController.sounder.VolumeChange();
     }
 
 }

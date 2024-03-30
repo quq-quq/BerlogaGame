@@ -32,14 +32,12 @@ namespace NodeObjects
         {
             OpenEvent?.Invoke();
             SwitchStates(true);
-            SoundController.sounder.SetSound(_doorAudio, false, gameObject.name, _volume);
         }
 
         public void Close()
         {
             CloseEvent?.Invoke();
             SwitchStates(false);
-            SoundController.sounder.SetSound(_doorAudio, false, gameObject.name, _volume);
         }
 
         private void SwitchStates(bool isOpen)

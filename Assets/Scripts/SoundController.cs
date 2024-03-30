@@ -1,4 +1,5 @@
 using Save_files.Scripts;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -72,6 +73,8 @@ public class SoundController : MonoBehaviour
         }
 
         volume *= VolumeSaver;
+
+        //                                          вродь это нужно...
         //for (int i = 0; i < _sourcesCount; i++)
         //{
         //    if (!_audioDataArray[i].audioSource.isPlaying && !_audioDataArray[i].audioSource.loop && _audioDataArray[i].audioSource.clip != null)
@@ -109,17 +112,26 @@ public class SoundController : MonoBehaviour
         }
     }
 
-    void OnEnable()
+    public void VolumeChange()
+    {
+        for (int i = 0; i < _sourcesCount; i++)
+        {
+            _audioDataArray[i].audioSource.volume = 1;
+            _audioDataArray[i].audioSource.volume *= VolumeSaver;
+        }
+    }
+
+    private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         for (int i = 0; i < _sourcesCount; i++)
         {
