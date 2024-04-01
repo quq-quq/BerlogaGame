@@ -23,6 +23,8 @@ namespace NodeObjects
         public event Action EnterEvent;
         public event Action ExitEvent;
 
+        private bool _isDetected = false;
+
         [Space(40)]
         [SerializeField] private AudioClip _sleepAudio;
         [SerializeField] private float _volume;
@@ -57,9 +59,16 @@ namespace NodeObjects
 
         public void FixedUpdate()
         {
-            if (_detectables.All(x => !x.IsDetectable))
+            if (_detectables.Count(p => p.IsDetectable) == 1 && !_isDetected)
+            {
+                _isDetected = true;
+                EnterTriggerInvoke();
+            }
+            if (_detectables.All(x => !x.IsDetectable) && _isDetected)
+            {
+                _isDetected = false;
                 ExitTriggerInvoke();
-                
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -101,10 +110,20 @@ namespace NodeObjects
 
         private void OnDetectableChangeState(bool newState)
         {
-            if(newState)
-                EnterTriggerInvoke();
+           /* if(newState)
+            {
+                if (_detectables.Count(p => p.IsDetectable) == 1)
+                {
+                    EnterTriggerInvoke();
+                }
+            }
             else
-                ExitTriggerInvoke();
+            {
+                if (_detectables.All(x => !x.IsDetectable))
+                {
+                    ExitTriggerInvoke();
+                }
+            }*/
             
         }
 
