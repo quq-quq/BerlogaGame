@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -577,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06849b91af5faa64f8cf5ba30f40f234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sourcesCount: 211
+  _sourcesCount: 10
 --- !u!1 &1834985049
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,13 +662,13 @@ MonoBehaviour:
       - m_Target: {fileID: 564833031}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 8
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: NEW menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1834985052

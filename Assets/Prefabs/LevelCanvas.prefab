@@ -2483,13 +2483,13 @@ MonoBehaviour:
       - m_Target: {fileID: 442413103667704423}
         m_TargetAssemblyTypeName: LevelButtonsScript, Assembly-CSharp
         m_MethodName: QuitLevel
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: New menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6013700292930088433
@@ -3577,7 +3577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -22.64209}
+  m_AnchoredPosition: {x: 0, y: -22.64212}
   m_SizeDelta: {x: 0, y: 45.2842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4132911506003390240
@@ -3769,7 +3769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30.728516}
+  m_AnchoredPosition: {x: 0, y: -30.728546}
   m_SizeDelta: {x: 0, y: 61.457}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6349183804853446067

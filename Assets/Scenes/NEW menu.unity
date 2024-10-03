@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1509,7 +1508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: By JPEGMAFIA team. NTO project 2024
+  m_text: By JPEGMAFIA team. Project 2024
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1536,7 +1535,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.6
+  m_fontSize: 68.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3428,8 +3427,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 51299140}
   m_HandleRect: {fileID: 51299138}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.54520464
+  m_Value: 1
+  m_Size: 0.54507434
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -15,7 +15,7 @@ MonoBehaviour:
   _dialogues:
   - _mainText: "\u0423\u0440\u0430, \u0442\u044B \u043D\u0430\u0448\u0435\u043B \u0434\u0438\u0441\u043A!
       \u041C\u043E\u043B\u043E\u0434\u0435\u0446!"
-    _characterName: "\u0410\u043B\u0442\u0430\u0439"
+    _characterName: "\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0442\u043E\u0440"
     _avatar: {fileID: 0}
     _background: {fileID: 21300000, guid: 0c5b99773f177384093ff19a85545265, type: 3}
     _font: {fileID: 11400000, guid: e0e3d31ec67cd5947af98021db1d6973, type: 2}

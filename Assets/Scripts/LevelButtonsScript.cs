@@ -34,9 +34,9 @@ public class LevelButtonsScript : MonoBehaviour
         SoundController.sounder.SetSound(_backgroundSound, true, "BackGroundMusic", _volume);
     }
 
-    public void QuitLevel()
+    public void QuitLevel(string sceneName)
     {
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void Pause()
@@ -84,6 +84,6 @@ public class LevelButtonsScript : MonoBehaviour
         Time.timeScale = 1f;
         _pausePanel.SetActive(false);
         _isPaused = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

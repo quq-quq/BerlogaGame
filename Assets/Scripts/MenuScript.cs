@@ -21,9 +21,9 @@ public class MenuScript : MonoBehaviour
 
     }
 
-    public void LoadScene( int index)
+    public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void QuitGame()
