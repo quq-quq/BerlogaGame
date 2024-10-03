@@ -5156,6 +5156,7 @@ GameObject:
   - component: {fileID: 2773044100417632834}
   - component: {fileID: 8275264953353994395}
   - component: {fileID: 829399898804249988}
+  - component: {fileID: 2446154640616505426}
   m_Layer: 6
   m_Name: Copilot
   m_TagString: Untagged
@@ -5292,6 +5293,22 @@ MonoBehaviour:
     \u0435\u0433\u043E!"
   - "\u0413\u0434\u0435-\u0442\u043E \u0441\u043E\u0432\u0441\u0435\u043C \u0440\u044F\u0434\u043E\u043C
     \u0435\u0441\u0442\u044C \u0434\u0438\u0441\u043A!"
+--- !u!114 &2446154640616505426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6322006695908716407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45945b2908f085c4fb5a2b45b4dbb8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _copilotTransform: {fileID: 0}
+  _notInTheFrameTime: 60
+  _inTheFrameTime: 15
+  _distance: 13
 --- !u!1 &6381150112445599563
 GameObject:
   m_ObjectHideFlags: 0

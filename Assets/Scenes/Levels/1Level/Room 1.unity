@@ -239,6 +239,10 @@ PrefabInstance:
       value: "\u0422\u044B \u043D\u0435 \u0432\u043D\u0435 \u0432\u0437\u043E\u0440\u0430
         \u043A\u0430\u043C\u0435\u0440\u044B"
       objectReference: {fileID: 0}
+    - target: {fileID: 2446154640616505426, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
+      propertyPath: _copilotTransform
+      value: 
+      objectReference: {fileID: 741980290}
     - target: {fileID: 2773044100417632834, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.56
@@ -346,10 +350,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6322006695908716407, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1790319972}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
 --- !u!224 &163971509 stripped
 RectTransform:
@@ -8144,27 +8145,6 @@ Transform:
   - {fileID: 1198732583}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1790319968 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6322006695908716407, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
-  m_PrefabInstance: {fileID: 157625097}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1790319972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790319968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45945b2908f085c4fb5a2b45b4dbb8b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _copilotTransform: {fileID: 741980290}
-  _notInTheFrameTime: 60
-  _inTheFrameTime: 15
-  _distance: 13
 --- !u!1001 &1824027195
 PrefabInstance:
   m_ObjectHideFlags: 0

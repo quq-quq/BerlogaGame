@@ -19,6 +19,7 @@ public class ComicsMover : MonoBehaviour
 
     private int _i = 0;
     private Tween _currentTween;
+    private bool _isHiding = false;
 
     void Start()
     {
@@ -43,7 +44,7 @@ public class ComicsMover : MonoBehaviour
             _cameraTransform.DORotate(_transformPoints[_i].rotation.eulerAngles, _duration);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !_isHiding)
         {
             Hide();          
         }
@@ -61,6 +62,7 @@ public class ComicsMover : MonoBehaviour
 
     public void Hide()
     {
+        _isHiding = true;
         StartCoroutine(HideCoroutine());
         IEnumerator HideCoroutine()
         {
