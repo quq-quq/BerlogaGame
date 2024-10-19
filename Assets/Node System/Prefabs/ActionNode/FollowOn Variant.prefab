@@ -90,11 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7224504323725965322, guid: 94d40253ffdaded4da01367f1ef86f7b, type: 3}
       propertyPath: m_text
-      value: "\u041D\u0430\u0447\u0430\u0442\u044C \u043F\u0440\u0438\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C"
+      value: "\u041D\u0430\u0447\u0430\u0442\u044C \u043F\u0440\u0435\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C"
       objectReference: {fileID: 0}
     - target: {fileID: 7224504323725965322, guid: 94d40253ffdaded4da01367f1ef86f7b, type: 3}
       propertyPath: m_fontSize
-      value: 26.2
+      value: 26.25
       objectReference: {fileID: 0}
     - target: {fileID: 7654464312198924064, guid: 94d40253ffdaded4da01367f1ef86f7b, type: 3}
       propertyPath: m_Name
