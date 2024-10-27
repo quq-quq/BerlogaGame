@@ -2,7 +2,6 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using Save_files.Scripts;
 using UnityEngine.UI;
@@ -73,7 +72,7 @@ public class ComicsMover : MonoBehaviour
             while (t > 0)
             {
                 a = Mathf.Lerp(1, 0, t / _transitTime);
-                t -= Time.deltaTime;
+                t -= Time.deltaTime*4;
                 tColor.a = a;
                 _image.color = tColor;
                 yield return new WaitForEndOfFrame();
@@ -107,7 +106,7 @@ public class ComicsMover : MonoBehaviour
 
             while (t >= 0)
             {
-                a = Mathf.Lerp(0, 1, t / (_transitTime / 2));
+                a = Mathf.Lerp(0, 1, t / _transitTime);
                 t -= Time.deltaTime;
                 tColor.a = a;
                 //_text.color = tColor;
