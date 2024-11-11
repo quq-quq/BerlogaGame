@@ -2,57 +2,64 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasController : MonoBehaviour
 {
-    [SerializeField] private Canvas _menuLevels;
-    [SerializeField] private Canvas _options;
-    [SerializeField] private Canvas _resetQuestionMenu;
-    [SerializeField] private Canvas _comicsMenu;
+    [SerializeField] private List<Canvas> canvasList;
+    [Space(20)]
+    [SerializeField] private float _showTransitTime;
+    [SerializeField] Image _image;
 
+
+    private void Awake()
+    {
+        _image.color = Color.black;
+    }
 
     private void Start()
     {
-        _menuLevels.gameObject.SetActive(false);
-        _options.gameObject.SetActive(false);
-        _resetQuestionMenu.gameObject.SetActive(false);
-        _comicsMenu.gameObject.SetActive(false);
+        foreach (Canvas i in canvasList)
+        {
+
+           i.gameObject.SetActive(false);
+        }
+        Show();
     }
 
-    public void SwitchLevelMenu()
+    public void SwitchMenu(Canvas currentCanvas)
     {
-        _menuLevels.gameObject.SetActive(!_menuLevels.gameObject.activeSelf);
-        _options.gameObject.SetActive(false);
-        _resetQuestionMenu.gameObject.SetActive(false);
-        _comicsMenu.gameObject.SetActive(false);
-    }
+        currentCanvas.gameObject.SetActive(!currentCanvas.gameObject.activeSelf);
 
-    public void SwitchOptions()
-    {
-        _options.gameObject.SetActive(!_options.gameObject.activeSelf);
-        _menuLevels.gameObject.SetActive(false);
-        _resetQuestionMenu.gameObject.SetActive(false);
-        _comicsMenu.gameObject.SetActive(false);
-    }
-
-    public void SwitchResetQuestionMenu()
-    {
-        _resetQuestionMenu.gameObject.SetActive(!_resetQuestionMenu.gameObject.activeSelf);
-        _menuLevels.gameObject.SetActive(false);
-        _options.gameObject.SetActive(false);
-        _comicsMenu.gameObject.SetActive(false);
-    }
-
-    public void SwitchComicsMenu()
-    {
-        _comicsMenu.gameObject.SetActive(!_comicsMenu.gameObject.activeSelf);
-        _menuLevels.gameObject.SetActive(false);
-        _options.gameObject.SetActive(false);
-        _resetQuestionMenu.gameObject.SetActive(false);
+        foreach (Canvas i in canvasList)
+        {
+            if(i != currentCanvas)
+                i.gameObject.SetActive(false);
+        }
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void Show()
+    {
+        StartCoroutine(ShowCoroutine());
+        IEnumerator ShowCoroutine()
+        {
+            var t = _showTransitTime;
+            var tColor = Color.black;
+            var a = 1f;
+
+            while (t > 0)
+            {
+                a = Mathf.Lerp(0, 1, t / _showTransitTime);
+                t -= Time.deltaTime;
+                tColor.a = a;
+                _image.color = tColor;
+                yield return new WaitForEndOfFrame();
+            }
+        }
     }
 }

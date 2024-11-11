@@ -5308,7 +5308,7 @@ MonoBehaviour:
   _copilotTransform: {fileID: 0}
   _notInTheFrameTime: 60
   _inTheFrameTime: 15
-  _distance: 13
+  _distance: 20
 --- !u!1 &6381150112445599563
 GameObject:
   m_ObjectHideFlags: 0

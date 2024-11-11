@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Save_files.Scripts;
 using TMPro;
@@ -19,12 +20,12 @@ namespace Menu
         [SerializeField] private Sprite _close;
         [SerializeField] private Sprite _incomplite;
         [SerializeField] private Sprite _complited;
-        [Space] [SerializeField] private bool _isHanded = false;
+        [Space][SerializeField] private bool _isHanded = false;
         [SerializeField] private string _handedSceneName;
-        
 
         private bool _isAvailable;
         private LevelPart _levelPart;
+
         public void Init(LevelPart levelPart, int ordinal, bool enable)
         {
             _lock.gameObject.SetActive(!enable);
@@ -65,16 +66,15 @@ namespace Menu
                 SceneManager.LoadScene(_handedSceneName);
                 return;
             }
-            
+
             if (_isAvailable)
             {
                 SceneManager.LoadScene(_levelPart.SceneName);
             }
             else
             {
-                //show message that say u cant play this level
+                LockLevelTextScript.SingleTone.ShowLockButtonText();
             }
         }
-        
     }
 }

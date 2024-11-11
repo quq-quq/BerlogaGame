@@ -11,8 +11,9 @@ public class ComicsMover : MonoBehaviour
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private Transform[] _transformPoints;
     [Space(20)]
-    [SerializeField] private float _duration;
-    [SerializeField] private float _transitTime;
+    [SerializeField] private float _tweenDuration;
+    [SerializeField] private float _showTransitTime;
+    [SerializeField] private float _hideTransitTime;
     [Space(20)]
     [SerializeField] private Image _image;
 
@@ -32,15 +33,15 @@ public class ComicsMover : MonoBehaviour
         {
             StopTween();
             _i++;
-            _cameraTransform.DOMove(_transformPoints[_i].position, _duration);
-            _cameraTransform.DORotate(_transformPoints[_i].rotation.eulerAngles, _duration);
+            _cameraTransform.DOMove(_transformPoints[_i].position, _tweenDuration);
+            _cameraTransform.DORotate(_transformPoints[_i].rotation.eulerAngles, _tweenDuration);
         }
         if (Input.GetKeyDown(KeyCode.A) && _i>0)
         {
             StopTween();
             _i--;
-            _cameraTransform.DOMove(_transformPoints[_i].position, _duration);
-            _cameraTransform.DORotate(_transformPoints[_i].rotation.eulerAngles, _duration);
+            _cameraTransform.DOMove(_transformPoints[_i].position, _tweenDuration);
+            _cameraTransform.DORotate(_transformPoints[_i].rotation.eulerAngles, _tweenDuration);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && !_isHiding)
@@ -65,14 +66,14 @@ public class ComicsMover : MonoBehaviour
         StartCoroutine(HideCoroutine());
         IEnumerator HideCoroutine()
         {
-            var t = _transitTime;
+            var t = _hideTransitTime;
             var tColor = Color.black;
             var a = 0f;
 
             while (t > 0)
             {
-                a = Mathf.Lerp(1, 0, t / _transitTime);
-                t -= Time.deltaTime*4;
+                a = Mathf.Lerp(1, 0, t / _hideTransitTime);
+                t -= Time.deltaTime;
                 tColor.a = a;
                 _image.color = tColor;
                 yield return new WaitForEndOfFrame();
@@ -87,29 +88,16 @@ public class ComicsMover : MonoBehaviour
         StartCoroutine(ShowCoroutine());
         IEnumerator ShowCoroutine()
         {
-            var t = _transitTime;
+            var t = _showTransitTime;
             var tColor = Color.black;
             var a = 1f;
 
             while (t > 0)
             {
-                a = Mathf.Lerp(0, 1, t / _transitTime);
+                a = Mathf.Lerp(0, 1, t / _showTransitTime);
                 t -= Time.deltaTime;
                 tColor.a = a;
                 _image.color = tColor;
-                yield return new WaitForEndOfFrame();
-            }
-            /////
-            t = _transitTime / 2;
-            //tColor = _text.color;
-            a = 1f;
-
-            while (t >= 0)
-            {
-                a = Mathf.Lerp(0, 1, t / _transitTime);
-                t -= Time.deltaTime;
-                tColor.a = a;
-                //_text.color = tColor;
                 yield return new WaitForEndOfFrame();
             }
         }
