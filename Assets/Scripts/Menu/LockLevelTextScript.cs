@@ -30,10 +30,17 @@ public class LockLevelTextScript : MonoBehaviour
 
     public void ShowLockButtonText()
     {
-        if(_tweenColor != null)
+        StopCoroutine(FullWhiteCoroutine());
+        if (_tweenColor != null)
             _tweenColor.Kill();
 
         _lockButtonText.color = Color.white;
-        _tweenColor = _lockButtonText.DOColor(new Color(0, 0, 0, 0), _delayOfHidingText);
+        StartCoroutine(FullWhiteCoroutine());
+
+        IEnumerator FullWhiteCoroutine()
+        {
+            yield return new WaitForSeconds(_delayOfHidingText/2);
+            _tweenColor = _lockButtonText.DOColor(new Color(0, 0, 0, 0), _delayOfHidingText/2);
+        }
     }
 }
