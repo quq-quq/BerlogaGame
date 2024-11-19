@@ -1,14 +1,13 @@
 using DG.Tweening;
 using System.Collections;
-using System.Collections.Generic;
+using Core.Gameplay.SceneManagement;
 using UnityEngine;
-//using UnityEngine.UIElements;
-using UnityEngine.SceneManagement;
-using Save_files.Scripts;
 using UnityEngine.UI;
+using VContainer;
 
 public class ComicsMover : MonoBehaviour
 {
+    [SerializeField] private SceneData _nextSceneData;
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private Transform[] _transformPoints;
     [Space(20)]
@@ -19,7 +18,15 @@ public class ComicsMover : MonoBehaviour
 
     private int _i = 0;
     private Tween _currentTween;
+    
+    private SceneLoader _sceneLoader;
 
+    [Inject]
+    private void Inject(SceneLoader loader)
+    {
+        _sceneLoader = loader;
+    }
+    
     void Start()
     {
         _cameraTransform.position = _transformPoints[0].position;
@@ -76,8 +83,8 @@ public class ComicsMover : MonoBehaviour
                 _image.color = tColor;
                 yield return new WaitForEndOfFrame();
             }
-            SceneManager.LoadScene("NEW menu");
 
+            _sceneLoader.LoadScene(_nextSceneData);
         }
     }
 
