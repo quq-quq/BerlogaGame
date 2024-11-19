@@ -23,20 +23,9 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8d8f77e42af71df42a640dc5027b15c3
-    m_Address: New menu
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9481332fe4affaa4982cae21f86168d8
     m_Address: Menu
     m_ReadOnly: 0
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d0a3a015e91554b24b6b5845e2197a72
-    m_Address: sd_Menu
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e8d248797cb9c49acbc7f888e04060d5
     m_Address: sd_LogoScene
@@ -45,7 +34,7 @@ MonoBehaviour:
     - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fc16375c4c0714c53bff4224a8a6b511
-    m_Address: sd_New menu
+    m_Address: sd_Menu
     m_ReadOnly: 0
     m_SerializedLabels:
     - SceneData
