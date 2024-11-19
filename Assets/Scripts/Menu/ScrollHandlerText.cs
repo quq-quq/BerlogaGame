@@ -11,10 +11,10 @@ using UnityEngine.UI;
 public class ScrollHandlerText : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField]private RectTransform _content;
-    [SerializeField] private float _speed, _currentCoroutine;
+    [SerializeField] private float _speed, _currentCoroutineTime;
    
     private Vector2 _start , _end;
-    private Coroutine _curentcoroutine;
+    private Coroutine _currentCoroutine;
     private ScrollRect _scrollRect;
     private Tween _currentTween;
 
@@ -53,11 +53,11 @@ public class ScrollHandlerText : MonoBehaviour, IBeginDragHandler, IEndDragHandl
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        _curentcoroutine = StartCoroutine(BeforeMovingPause());
+        _currentCoroutine = StartCoroutine(BeforeMovingPause());
 
         IEnumerator BeforeMovingPause()
         {
-            yield return new WaitForSeconds(_currentCoroutine);
+            yield return new WaitForSeconds(_currentCoroutineTime);
             float duration = Math.Max(_content.rect.height - _scrollRect.viewport.rect.height, 0) / _speed;
             _currentTween = _content.DOAnchorPosY(math.max(_content.rect.height - _scrollRect.viewport.rect.height, 0), duration).SetEase(Ease.Linear);
         }
@@ -65,10 +65,10 @@ public class ScrollHandlerText : MonoBehaviour, IBeginDragHandler, IEndDragHandl
 
     private void StopCurrentCoroutine()
     {
-        if (_curentcoroutine != null)
+        if (_currentCoroutine != null)
         {
-            StopCoroutine(_curentcoroutine);
-            _curentcoroutine = null;
+            StopCoroutine(_currentCoroutine);
+            _currentCoroutine = null;
         }
     }
 }
