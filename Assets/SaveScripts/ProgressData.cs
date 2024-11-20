@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Gameplay.SceneManagement;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Save_files.Scripts
 {
@@ -11,7 +13,6 @@ namespace Save_files.Scripts
         public ProgressData(ProgressData progressData)
         {
             _levels = new List<Level>();
-
             foreach (var progressDataLevel in progressData.Levels)
             {
                 _levels.Add(new Level(progressDataLevel));
@@ -49,14 +50,13 @@ namespace Save_files.Scripts
             get => _levels;
         }
         
-        public void SetCompleted(string sceneName)
+        public void SetCompleted(SceneData sceneData)
         {
             foreach (var level in _levels)
             {
                 foreach (var part in level.Parts)
                 {
-                    
-                    if (sceneName == part.SceneName)
+                    if (sceneData == part.SceneData)
                     {
                         part.IsCompleted = true;
                         
@@ -112,16 +112,16 @@ namespace Save_files.Scripts
     {
         public LevelPart(LevelPart levelPart)
         {
-            _sceneName = levelPart.SceneName;
+            _sceneData = levelPart.SceneData;
             _isCompleted = levelPart.IsCompleted;
         }
         
-        [SerializeField] private string _sceneName;
+        [SerializeField] private SceneData _sceneData;
         [SerializeField] private bool _isCompleted;
-        public string SceneName
+        public SceneData SceneData
         {
-            get => _sceneName;
-            set => _sceneName = value;
+            get => _sceneData;
+            set => _sceneData = value;
         }
 
         public bool IsCompleted

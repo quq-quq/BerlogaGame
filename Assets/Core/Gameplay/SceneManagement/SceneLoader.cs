@@ -14,15 +14,18 @@ namespace Core.Gameplay.SceneManagement
     public class SceneLoader
     {
         private List<SceneData> _scenes;
+        private SceneData _lastScene;
 
         private SceneLoader()
         {
             _scenes = Addressables.LoadAssetsAsync<SceneData>("SceneData",
                 sd => Debug.Log($"SceneData ({sd.SceneName}) Loaded")).WaitForCompletion().ToList();
+            _lastScene = GetSceneData(SceneManager.GetActiveScene().name);
         }
         
         public Task<SceneInstance> LoadScene(SceneData data, LoadSceneMode mode = LoadSceneMode.Single)
         {
+            _lastScene = data;
             var handle = Addressables.LoadSceneAsync(data.SceneName, mode);
             return handle.Task;
         }
@@ -36,6 +39,8 @@ namespace Core.Gameplay.SceneManagement
             if (res == null) throw new ArgumentException($"Can't find SceneData with name {sceneName}");
             return res;
         }
+
+        public SceneData GetCurrentScene() => _lastScene;
 
     }
 }

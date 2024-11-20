@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Core.Gameplay.SceneManagement;
 using Save_files.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
+using VContainer;
 
 namespace Menu
 {
@@ -21,13 +18,21 @@ namespace Menu
         [SerializeField] private Sprite _incomplite;
         [SerializeField] private Sprite _complited;
         [Space][SerializeField] private bool _isHanded = false;
-        [SerializeField] private string _handedSceneName;
+        [SerializeField] private SceneData _handedSceneData;
 
         private bool _isAvailable;
         private LevelPart _levelPart;
+        private SceneLoader _sceneLoader;
 
+        [Inject]
+        private void Inject(SceneLoader sceneLoader)
+        {
+            _sceneLoader = sceneLoader;
+        }
+        
         public void Init(LevelPart levelPart, int ordinal, bool enable)
         {
+            
             _lock.gameObject.SetActive(!enable);
             _levelPart = levelPart;
             _text.text = ordinal.ToString();
@@ -63,13 +68,13 @@ namespace Menu
         {
             if (_isHanded)
             {
-                SceneManager.LoadScene(_handedSceneName);
+                _sceneLoader.LoadScene(_handedSceneData);
                 return;
             }
 
             if (_isAvailable)
             {
-                SceneManager.LoadScene(_levelPart.SceneName);
+                _sceneLoader.LoadScene(_levelPart.SceneData);
             }
             else
             {

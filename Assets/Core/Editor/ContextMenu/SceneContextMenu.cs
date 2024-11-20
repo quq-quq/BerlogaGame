@@ -43,6 +43,7 @@ namespace Core.Editor.ContextMenu
             Directory.CreateDirectory(PathContainer.SceneDataPath);
             AssetDatabase.CreateAsset(instance, path);
             AssetDatabase.SaveAssets();
+            SceneDataEditor.InitSceneData(instance);
         }
     
     }

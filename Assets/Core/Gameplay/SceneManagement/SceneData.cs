@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Core.Extensions;
 using UnityEditor;
@@ -7,7 +8,7 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 
 namespace Core.Gameplay.SceneManagement
 {
-    [CreateAssetMenu(fileName = "NewSceneData", menuName = "SceneData")]
+    [CreateAssetMenu(fileName = "NewSceneData", menuName = "SceneData"), Serializable]
     public class SceneData : ScriptableObject
     {
         [SerializeField] private string _sceneName;
@@ -37,7 +38,20 @@ namespace Core.Gameplay.SceneManagement
             
             base.OnInspectorGUI();
         }
-        
+
+        public static void InitSceneData(SceneData data)
+        {
+            var hande = Addressables.LoadResourceLocationsAsync(data.SceneName).WaitForCompletion();
+            var resource = hande.FirstOrDefault(x => x.ResourceType == typeof(SceneInstance));
+            if(resource != null)
+            {
+                data.MakeAddressable("sd_"+data.SceneName, labels: new []{"SceneData"});
+            }
+            else
+            {
+                Debug.LogWarning("Scene NOT found");
+            }
+        }
     }
 #endif
 }

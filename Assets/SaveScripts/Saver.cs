@@ -1,5 +1,5 @@
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using File = System.IO.File;
 
 namespace Save_files.Scripts
@@ -28,7 +28,7 @@ namespace Save_files.Scripts
         {
             if(!File.Exists(Path))
             {
-                Data = Resources.Load<ProgressDataConfig>(ProgressDataConfig.DefaultConfigPatch).Data;
+                Data = LoadDefaultConfig();
                 return;
             }
             
@@ -39,11 +39,14 @@ namespace Save_files.Scripts
         public static void DeleteSaves()
         {
             var isMute = Data.IsMute;
-            Data = Resources.Load<ProgressDataConfig>(ProgressDataConfig.DefaultConfigPatch).Data;
+            Data = LoadDefaultConfig();
             Data.IsMute = isMute;
             var json = JsonUtility.ToJson(Data);
             File.WriteAllText(Path,json);
         }
+        
+        private static ProgressData LoadDefaultConfig()
+        => Addressables.LoadAssetAsync<ProgressDataConfig>(ProgressDataConfig.DefaultConfigPatch).WaitForCompletion().Data;
         
         public static void Save()
         {

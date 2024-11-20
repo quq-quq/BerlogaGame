@@ -473,4 +473,4 @@ MonoBehaviour:
   _incomplite: {fileID: 19009149, guid: 7e6366b582a34934694b82bbe996aedc, type: 3}
   _complited: {fileID: -4891329, guid: 7e6366b582a34934694b82bbe996aedc, type: 3}
   _isHanded: 0
-  _handedSceneName: 
+  _handedSceneData: {fileID: 0}

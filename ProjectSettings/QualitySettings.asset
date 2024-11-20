@@ -13,7 +13,7 @@ QualitySettings:
     shadowResolution: 2
     shadowProjection: 1
     shadowCascades: 4
-    shadowDistance: 150
+    shadowDistance: 637.2446
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
@@ -56,19 +56,4 @@ QualitySettings:
     terrainMaxTrees: 50
     excludedTargetPlatforms: []
   m_TextureMipmapLimitGroupNames: []
-  m_PerPlatformDefaultQuality:
-    Android: 0
-    GameCoreScarlett: 0
-    GameCoreXboxOne: 0
-    Lumin: 0
-    Nintendo Switch: 0
-    PS4: 0
-    PS5: 0
-    Server: 0
-    Stadia: 0
-    Standalone: 0
-    WebGL: 0
-    Windows Store Apps: 0
-    XboxOne: 0
-    iPhone: 0
-    tvOS: 0
+  m_PerPlatformDefaultQuality: {}

@@ -1,8 +1,8 @@
+using Core.Gameplay.SceneManagement;
 using Save_files.Scripts;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using VContainer;
 
 public class LevelButtonsScript : MonoBehaviour
 {
@@ -13,8 +13,16 @@ public class LevelButtonsScript : MonoBehaviour
     [SerializeField] private Sprite _mute;
     [SerializeField] private Sprite _unmute;
     [SerializeField] private GameObject _manual;
+    [SerializeField] private SceneData _menuScene;
     private bool _isPaused, _isMusicOff;
-
+    private SceneLoader _sceneLoader;
+    
+    [Inject]
+    private void Inject(SceneLoader sceneLoader)
+    {
+        _sceneLoader = sceneLoader;
+    }
+    
     private void Start()
     {
         _manual.SetActive(false);
@@ -34,9 +42,10 @@ public class LevelButtonsScript : MonoBehaviour
         SoundController.sounder.SetSound(_backgroundSound, true, "BackGroundMusic", _volume);
     }
 
-    public void QuitLevel(string sceneName)
+    public void QuitLevel()
     {
-        SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1f;
+        _sceneLoader.LoadScene(_menuScene);
     }
 
     public void Pause()
@@ -84,6 +93,6 @@ public class LevelButtonsScript : MonoBehaviour
         Time.timeScale = 1f;
         _pausePanel.SetActive(false);
         _isPaused = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        _sceneLoader.LoadScene(_sceneLoader.GetCurrentScene());
     }
 }

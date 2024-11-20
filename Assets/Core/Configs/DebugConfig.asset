@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a43c31afed1146c0922dcc6d03dd7956, type: 3}
-  m_Name: DefaultConfig
+  m_Name: DebugConfig
   m_EditorClassIdentifier: 
   _progressData:
     _levels:
     - _parts:
-      - _sceneName: Room 1
-        _isCompleted: 0
-      - _sceneName: Room 2
-        _isCompleted: 0
-      - _sceneName: Room 3
-        _isCompleted: 0
+      - _sceneData: {fileID: 11400000, guid: 02ff845132bc7438c83f56a1b8b44521, type: 2}
+        _isCompleted: 1
+      - _sceneData: {fileID: 11400000, guid: 4cdb1df4381cd4c40bad1039c40a8fbf, type: 2}
+        _isCompleted: 1
+      - _sceneData: {fileID: 11400000, guid: 7653e5fed264c4fcba68296db83097bb, type: 2}
+        _isCompleted: 1
     _isMute: 0
-    _volume: 1
+    _volume: 0
