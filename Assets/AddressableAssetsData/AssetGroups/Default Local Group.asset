@@ -30,12 +30,7 @@ MonoBehaviour:
     - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 28fa0782408518f41b3ab4af81e28967
-    m_Address: Boot
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 30e6dcb716c10cf43a07fdd9d72be2dc
-    m_Address: LogoScene
+    m_Address: Comics
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -99,16 +94,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9aacdc5e0c2db46db9ef7ba5ae7fab9d
+    m_Address: sd_Comics
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SceneData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cb497e085e56a484a80c1eec595b2c78
     m_Address: Room 3
     m_ReadOnly: 0
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e8d248797cb9c49acbc7f888e04060d5
-    m_Address: sd_LogoScene
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fc16375c4c0714c53bff4224a8a6b511
     m_Address: sd_Menu
