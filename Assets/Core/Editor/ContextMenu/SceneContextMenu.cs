@@ -1,5 +1,7 @@
 using System.IO;
+#if UnityEditor
 using Core.Extensions;
+#endif
 using Core.Gameplay.SceneManagement;
 using UnityEditor;
 using UnityEngine;
@@ -28,8 +30,10 @@ namespace Core.Editor.ContextMenu
         {
             var sceneAsset = Selection.activeObject as SceneAsset;
             if (sceneAsset == null) return;
+#if UnityEditor
             sceneAsset.MakeAddressable(sceneAsset.name);
-            
+#endif
+
             var path = Path.Combine(PathContainer.SceneDataPath, sceneAsset.name.Replace(" ", "") + ".asset");
             if (File.Exists(path))
             {

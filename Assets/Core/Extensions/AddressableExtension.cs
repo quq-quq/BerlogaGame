@@ -1,3 +1,4 @@
+#if UnityEditor
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
@@ -48,3 +49,4 @@ namespace Core.Extensions
         }
     }
 }
+#endif

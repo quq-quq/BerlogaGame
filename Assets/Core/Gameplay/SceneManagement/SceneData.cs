@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
+#if UnityEditor
 using Core.Extensions;
+#endif
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -29,7 +31,9 @@ namespace Core.Gameplay.SceneManagement
             if(resource != null)
             {
                 EditorGUILayout.HelpBox("Scene found successful", MessageType.None);
+#if UnityEditor
                 data.MakeAddressable("sd_"+data.SceneName, labels: new []{"SceneData"});
+#endif
             }
             else
             {
@@ -45,7 +49,9 @@ namespace Core.Gameplay.SceneManagement
             var resource = hande.FirstOrDefault(x => x.ResourceType == typeof(SceneInstance));
             if(resource != null)
             {
+#if UnityEditor
                 data.MakeAddressable("sd_"+data.SceneName, labels: new []{"SceneData"});
+#endif
             }
             else
             {
@@ -54,4 +60,4 @@ namespace Core.Gameplay.SceneManagement
         }
     }
 #endif
-}
+            }
