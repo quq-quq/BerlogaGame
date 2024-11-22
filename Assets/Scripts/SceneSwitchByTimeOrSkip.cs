@@ -30,7 +30,7 @@ public class SceneSwitchByTimeOrSkipWithFade : MonoBehaviour
      {
           if(Input.anyKeyDown)
           {
-               DOTween.Kill(_sequence);
+               _sequence.Kill();
                _fade.DOFade(1, 1f).OnComplete(LoadNext);
           }
      }
