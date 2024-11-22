@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Core.Gameplay.SceneManagement;
 using Save_files.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using VContainer;
 
 public class Optioner : MonoBehaviour
 {
@@ -12,6 +14,15 @@ public class Optioner : MonoBehaviour
     [SerializeField] private Sprite _unmute;
     [SerializeField] private Slider _volumeSlider;
     private bool _isMusicOff;
+
+    private SceneLoader _sceneLoader;
+
+    [Inject]
+    private void Inject(SceneLoader loader)
+    {
+        _sceneLoader = loader;
+    }
+
 
     private void Start()
     {
@@ -50,7 +61,7 @@ public class Optioner : MonoBehaviour
     public void DeleteSave()
     {
         Saver.DeleteSaves();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        _sceneLoader.LoadScene(_sceneLoader.GetCurrentScene());
     }
 
     public void OnSliderValueChange(float f)

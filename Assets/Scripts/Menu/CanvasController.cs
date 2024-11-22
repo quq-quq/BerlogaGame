@@ -1,8 +1,10 @@
+using Core.Gameplay.SceneManagement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VContainer;
 
 public class CanvasController : MonoBehaviour
 {
@@ -11,6 +13,13 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private float _showTransitTime;
     [SerializeField] Image _image;
 
+    private SceneLoader _sceneLoader;
+
+    [Inject]
+    private void Inject(SceneLoader loader)
+    {
+        _sceneLoader = loader;
+    }
 
     private void Awake()
     {
