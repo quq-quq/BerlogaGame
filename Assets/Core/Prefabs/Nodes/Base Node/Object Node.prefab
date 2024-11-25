@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4454633972521266618}
   - component: {fileID: 4523798754824423538}
   m_Layer: 5
-  m_Name: Move Point
+  m_Name: Move Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,11 +33,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4154868369324151913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -10, y: 10}
-  m_SizeDelta: {x: 41.689, y: 43.378}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7289472461982916115
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59,14 +59,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1789066050, guid: c7ff65fd7fdf042d6a354e7f288fc291, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -196,9 +196,9 @@ RectTransform:
   m_Children:
   - {fileID: 6434241088849702361}
   - {fileID: 5084783678940364520}
+  - {fileID: 4722170031163318503}
   - {fileID: 2240882948146249869}
   - {fileID: 6212606102360911865}
-  - {fileID: 4722170031163318503}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectName: "\u0414\u0432\u0435\u0440\u044C"
-  _gameObject: {fileID: 0}
+  _objectForNode: {fileID: 0}
   _nameText: {fileID: 8030396468998461170}
 --- !u!1 &7745323638023103465
 GameObject:
