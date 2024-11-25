@@ -4,7 +4,7 @@ using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 
-namespace Core.Extensions
+namespace Core.Editor.Extensions
 {
     public static class AddressableExtension
     {

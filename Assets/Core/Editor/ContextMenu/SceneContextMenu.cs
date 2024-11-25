@@ -1,5 +1,6 @@
 using System.IO;
-using Core.Extensions;
+using Core.Editor.CustomInspector;
+using Core.Editor.Extensions;
 using Core.Gameplay.SceneManagement;
 using UnityEditor;
 using UnityEngine;
