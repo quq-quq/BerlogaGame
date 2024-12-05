@@ -4,12 +4,15 @@ using Core.Gameplay.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
+using System.Collections.Generic;
 
 public class ComicsMover : MonoBehaviour
 {
-    [SerializeField] private SceneData _nextSceneData;
+    [SerializeField]private List<Transform> _transformPoints;
     [SerializeField] private Transform _cameraTransform;
-    [SerializeField] private Transform[] _transformPoints;
+    [SerializeField]private Transform _parentOfPoints;
+    [Space(20)]
+    [SerializeField] private SceneData _nextSceneData;
     [Space(20)]
     [SerializeField] private float _tweenDuration;
     [SerializeField] private float _showTransitTime;
@@ -17,9 +20,9 @@ public class ComicsMover : MonoBehaviour
     [Space(20)]
     [SerializeField] private Image _image;
 
-    private int _i = 0;
-    private Tween _currentTween;
+    private int _index = 0;
     private bool _isHiding = false;
+    private Tween _currentTween;
     private SceneLoader _sceneLoader;
 
     [Inject]
@@ -28,27 +31,29 @@ public class ComicsMover : MonoBehaviour
         _sceneLoader = loader;
     }
     
-    void Start()
+    private void Start()
     {
+
         _cameraTransform.position = _transformPoints[0].position;
+
         Show();
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D) && _i < _transformPoints.Length-1)
+        if (Input.GetKeyDown(KeyCode.D) && _index < _transformPoints.Count-1)
         {
             StopTween();
-            _i++;
-            _cameraTransform.DOMove(_transformPoints[_i].position, _tweenDuration);
-            _cameraTransform.DORotate(_transformPoints[_i].rotation.eulerAngles, _tweenDuration);
+            _index++;
+            _cameraTransform.DOMove(_transformPoints[_index].position, _tweenDuration);
+            _cameraTransform.DORotate(_transformPoints[_index].rotation.eulerAngles, _tweenDuration);
         }
-        if (Input.GetKeyDown(KeyCode.A) && _i>0)
+        if (Input.GetKeyDown(KeyCode.A) && _index>0)
         {
             StopTween();
-            _i--;
-            _cameraTransform.DOMove(_transformPoints[_i].position, _tweenDuration);
-            _cameraTransform.DORotate(_transformPoints[_i].rotation.eulerAngles, _tweenDuration);
+            _index--;
+            _cameraTransform.DOMove(_transformPoints[_index].position, _tweenDuration);
+            _cameraTransform.DORotate(_transformPoints[_index].rotation.eulerAngles, _tweenDuration);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && !_isHiding)
@@ -58,13 +63,30 @@ public class ComicsMover : MonoBehaviour
 
     }
 
-    void StopTween()
+    private void StopTween()
     {
         if (_currentTween != null)
         {
             _currentTween.Kill();
             _currentTween = null;
         }
+    }
+
+    public void CreateTransformPointForEditor()
+    {
+        _transformPoints.RemoveAll(t => t == null);
+        for(int i = 0; i < _transformPoints.Count; i++)
+        {
+            _transformPoints[i].gameObject.name = $"TransformPoint{i}";
+        }
+
+        GameObject newPoint = new GameObject($"TransformPoint{_transformPoints.Count}");
+        
+        newPoint.GetComponentInParent<Transform>().position = _cameraTransform.position;
+        newPoint.GetComponentInParent<Transform>().rotation = _cameraTransform.rotation;
+        newPoint.transform.parent = _parentOfPoints;
+
+        _transformPoints.Add(newPoint.transform);
     }
 
     public void Hide()
