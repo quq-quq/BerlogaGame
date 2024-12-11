@@ -91,7 +91,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 836ce5e3fed6b294d95aed677f937f33
-    m_Address: Assets/Core/Configs/DefaultConfig.asset
+    m_Address: Assets/Core/Data/Save/DefaultConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
