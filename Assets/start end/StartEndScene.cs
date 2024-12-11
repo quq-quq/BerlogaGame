@@ -1,16 +1,15 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
+using Core.Gameplay.SceneManagement;
 using DefaultNamespace;
 using Save_files.Scripts;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using VContainer;
 
 public class StartEndScene : MonoBehaviour
 {
-    [SerializeField] private string _nameNextScene;
+    [SerializeField] private SceneData _nextScene;
     [SerializeField] private TMP_Text _text;
     [SerializeField] private float _transitTime;
     [SerializeField] private Image _image;
@@ -18,7 +17,15 @@ public class StartEndScene : MonoBehaviour
     [SerializeField] private TriggerZone _zone;
     [SerializeField] private AudioClip _endAudio;
     [SerializeField] private float _volume;
-
+    
+    private SceneLoader _sceneLoader;
+    
+    [Inject]
+    private void Inject(SceneLoader sceneLoader)
+    {
+        _sceneLoader = sceneLoader;
+    }
+    
     private void Awake()
     {
         _canvas.SetActive(true);
@@ -54,8 +61,8 @@ public class StartEndScene : MonoBehaviour
                 _image.color = tColor;
                 yield return new WaitForEndOfFrame();
             }
-            Saver.Data.SetCompleted(SceneManager.GetActiveScene().name);
-            LevelSwitcher.SwitchScene(_nameNextScene);
+            Saver.Data.SetCompleted(_sceneLoader.GetCurrentScene());
+            _sceneLoader.LoadScene(_nextScene);
         }
     }
 
