@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using TMPro.Examples;
 using UnityEditor;
 using UnityEngine;
@@ -22,3 +23,4 @@ public class ComicsMoverEditor : Editor
     }
 }
 
+#endif
