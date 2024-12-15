@@ -1,152 +1,103 @@
-using System;
-using System.Collections;
-using TMPro;
-using System.Collections.Generic;
-using System.Linq;
 using Dialogue_system;
-using Node_System.Scripts.Node;
-using NodeObjects;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using Utils;
-using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
+using UnityEngine.UIElements;
 
 public class CopilotMonolog : MonoBehaviour
 {
+    [System.Serializable]
+    private struct Zone
+    {
+        public Collider2D collider2D;
+        public CopilotPhrasesConfig phrasesConfig;
+        [HideInInspector]public int indexOfPhrase;
+    }
+
+    [Header("Suggestion Parametrs")]
+    [SerializeField] private Collider2D _player;
     [SerializeField] private TMP_Text _text;
-    [SerializeField, Multiline] private List<string> idlePhrase;
-    [SerializeField,Min(0f)] private float _timeIdlePhrase;
-    [SerializeField,Min(0f)] private float _timeShowPhrase;
-    [SerializeField,Min(0f)] private float _timeTextAnimation;
-    [SerializeField,Min(0f)] private float _animatorTimeOffset;
-    [SerializeField,Min(0f)] private float _charTime;
-    [SerializeField] private Animator _speechBalloon;
-    private PriorityQueue<string, int> _phrases;
-    private static readonly int ShowKey = Animator.StringToHash("Show");
-    private static readonly int HideKey = Animator.StringToHash("Hide");
+    [SerializeField] private Animator _speechBableAnimator;
+    [SerializeField] private AnimationClip _hideKeyAnimationClip;
+    [Space(10)]
+    [SerializeField] private float _charTime;
+    [SerializeField, Min(0f)] private float _timeAnimatorOffset;
+    [SerializeField, Min(0)] private float _timeShowPhrase;
+    [SerializeField, Min(0f)] private float _timeTextAnimation;
+    [Space(30)]
+    [SerializeField] private List<Zone> _zones;
+    [Space(30)]
+    [Header("Appearence Parametrs")]
+    [SerializeField] private Transform _copilotPointsTransform;
+    [SerializeField] private CopilotMove _copilotMove;
+    [Space(10)]
+    [SerializeField, Min(0)] private float _distance;
+
+    private int _currentZoneIndex;
     private WriterDialogue _writer;
+    private Coroutine _currentCoroutine;
+    private readonly int ShowKey = Animator.StringToHash("Show");
+    private readonly int HideKey = Animator.StringToHash("Hide");
 
-    [SerializeField,Min(0f)] private float _interactDis;
-    [SerializeField, Range(0f, 1f)] private float _chanceDoor;
-    [SerializeField, Multiline] private List<string> _doorOpen;
-    [SerializeField, Multiline] private List<string> _doorClose;
-    [SerializeField, Range(0f, 1f)] private float _chanceGalagram;
-    [SerializeField, Multiline] private List<string> _galagramOn;
-    [SerializeField, Multiline] private List<string> _galagramOff;
-    [SerializeField, Range(0f, 1f)] private float _chanceCamera;
-    [SerializeField, Multiline] private List<string> _cameraSee;
-    [SerializeField, Multiline] private List<string> _cameraDontSee;
-    [SerializeField, Multiline] private List<string> _starDialog;
-
-    private List<Door> _doors;
-    private List<GalagramRobot> _galagrams;
-    private List<CameraDetector> _camers;
-    private List<StarController> _stars;
-    
-
-    private void Start()
+    public void TakeSuggestion()
     {
-        _phrases = new PriorityQueue<string, int>();
-        StartCoroutine(IdlePhraseEnqueue());
-        StartCoroutine(ShowPhrase());
-    }
-
-    private void OnEnable()
-    {
-        
-        _doors = FindObjectsOfType<Door>().ToList();
-        _camers = FindObjectsOfType<CameraDetector>().ToList();
-        _galagrams = FindObjectsOfType<GalagramRobot>().ToList();
-
-        foreach (var door in _doors)
+        if (_currentCoroutine == null)
         {
-            door.OpenEvent += OnDoorOpen;
-            door.CloseEvent += OnDoorClose;
-        }
-        foreach (var cam in _camers)
-        {
-            cam.EnterEvent += OnCamEnter;
-            cam.ExitEvent += OnCamExit;
-        }
-        foreach (var galagram in _galagrams)
-        {
-            galagram.ActivateEvent += OnGalagramOn;
-            galagram.DisactivateEvent += OnGalagramOff;
+            _currentCoroutine = StartCoroutine(ShowPhrase());
         }
     }
 
-    private bool _starHint = false;
-    private void FixedUpdate()
+    private void Awake()
     {
-        _stars = FindObjectsOfType<StarController>().ToList();
+        _currentCoroutine = null;
+        _copilotPointsTransform.Translate(Vector3.up * _distance);
+    }
 
-        foreach (var star in _stars)
+    private IEnumerator ShowPhrase()
+    {
+        _copilotPointsTransform.Translate(Vector3.down * _distance);
+        float _timeAppearence = _distance/_copilotMove.MaxSpeed/2;
+        yield return new WaitForSeconds(_timeAppearence);
+
+        _currentZoneIndex = CheckZoneIndex();
+
+        if (_zones[_currentZoneIndex].phrasesConfig.Phrases.Count > 0)
         {
-            if ((star.transform.position - transform.position).magnitude <= _interactDis&&!_starHint)
+            _text.text = "";
+            _speechBableAnimator.SetTrigger(ShowKey);
+            StartCoroutine(TextShow());
+            yield return new WaitForSeconds(_timeAnimatorOffset);
+            yield return WriteTextCoroutine(_zones[_currentZoneIndex].phrasesConfig.Phrases[_zones[_currentZoneIndex].indexOfPhrase]);
+            yield return new WaitForSeconds(_timeShowPhrase);
+            yield return TextHide();
+            _speechBableAnimator.SetTrigger(HideKey);
+            yield return new WaitForSeconds(_hideKeyAnimationClip.length);
+            yield return new WaitForSeconds(_timeAnimatorOffset);
+
+            if (_zones[_currentZoneIndex].indexOfPhrase < _zones[_currentZoneIndex].phrasesConfig.Phrases.Count - 1)
             {
-                _starHint = true;
-                _phrases.Enqueue(_starDialog[Random.Range(0,_starDialog.Count)], 1);
+                Zone zone = _zones[_currentZoneIndex];
+                zone.indexOfPhrase++;
+                _zones[_currentZoneIndex] = zone;
+            }
+            else
+            {
+                Zone zone = _zones[_currentZoneIndex];
+                zone.indexOfPhrase = 0;
+                _zones[_currentZoneIndex] = zone;
             }
         }
+
+        _currentCoroutine = null;
+
+        _copilotPointsTransform.Translate(Vector3.up * _distance);
+
+        yield return null;
     }
 
-    private void OnDisable()
-    {
-        foreach (var door in _doors)
-        {
-            door.OpenEvent -= OnDoorOpen;
-            door.CloseEvent -= OnDoorClose;
-        }
-        foreach (var cam in _camers)
-        {
-            cam.EnterEvent -= OnCamEnter;
-            cam.ExitEvent -= OnCamExit;
-        }
-        foreach (var galagram in _galagrams)
-        {
-            galagram.ActivateEvent -= OnGalagramOn;
-            galagram.DisactivateEvent -= OnGalagramOff;
-        }
-    }
 
-    private void OnDoorOpen()
-    {
-        EnqueueChance(_chanceDoor,_doorOpen[Random.Range(0,_doorOpen.Count)],2);
-    }
-    private void OnDoorClose()
-    {
-        EnqueueChance(_chanceDoor,_doorClose[Random.Range(0,_doorClose.Count)],2);
-
-    }
-    private void OnCamEnter()
-    {
-        EnqueueChance(_chanceCamera,_cameraSee[Random.Range(0,_cameraSee.Count)],2);
-
-    }
-    private void OnCamExit()
-    {
-        EnqueueChance(_chanceCamera,_cameraDontSee[Random.Range(0,_cameraDontSee.Count)],2);
-
-    }
-    private void OnGalagramOff()
-    {
-        EnqueueChance(_chanceGalagram,_galagramOff[Random.Range(0,_galagramOff.Count)],2);
-
-    }
-    private void OnGalagramOn()
-    {
-        EnqueueChance(_chanceGalagram,_galagramOn[Random.Range(0,_galagramOn.Count)],2);
-
-    }
-
-    private void EnqueueChance(float chance, string phrase, int prior)
-    {
-        var t = Random.Range(0f, 1f);
-        if (t<=chance)
-        {
-            _phrases.Enqueue(phrase, prior);
-        }
-    }
     private IEnumerator WriteTextCoroutine(string text)
     {
         _writer = new DecodingWriterDialogue(text);
@@ -156,56 +107,12 @@ public class CopilotMonolog : MonoBehaviour
             yield return new WaitForSeconds(_charTime);
         }
     }
-    
-    private IEnumerator IdlePhraseEnqueue()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(_timeIdlePhrase);
-            _phrases.Enqueue(idlePhrase[Random.Range(0, idlePhrase.Count)], 3);
-        }
-    }
 
-    private IEnumerator ShowPhrase()
-    {
-        while (true)
-        {
-            if (_phrases.Count != 0)
-            {
-                _text.text = "";
-                _speechBalloon.SetTrigger(ShowKey);
-                StartCoroutine(TextShow());
-                yield return new WaitForSeconds(_animatorTimeOffset);
-                yield return WriteTextCoroutine(_phrases.Dequeue());
-                yield return new WaitForSeconds(_timeShowPhrase);
-                yield return TextHide(); 
-                _speechBalloon.SetTrigger(HideKey);
-                yield return new WaitForSeconds(_animatorTimeOffset);
-            }
-
-            yield return new WaitForFixedUpdate();
-        }
-    }
-
-    private IEnumerator TextShow()
-    {
-        _text.gameObject.SetActive(true);
-        var c = _text.color;
-        var t = 0f;
-        while (t<=_timeTextAnimation)
-        {
-            c.a = Mathf.Lerp(0, 1, t / _timeTextAnimation);
-            _text.color = c;
-            yield return new WaitForFixedUpdate();
-            t += Time.fixedDeltaTime;
-        }
-    }
-    
     private IEnumerator TextHide()
     {
         var c = _text.color;
         var t = 0f;
-        while (t<=_timeTextAnimation)
+        while (t <= _timeTextAnimation)
         {
             c.a = Mathf.Lerp(1, 0, t / _timeTextAnimation);
             _text.color = c;
@@ -215,4 +122,29 @@ public class CopilotMonolog : MonoBehaviour
         _text.gameObject.SetActive(false);
     }
 
+    private IEnumerator TextShow()
+    {
+        _text.gameObject.SetActive(true);
+        var c = _text.color;
+        var t = 0f;
+        while (t <= _timeTextAnimation)
+        {
+            c.a = Mathf.Lerp(0, 1, t / _timeTextAnimation);
+            _text.color = c;
+            yield return new WaitForFixedUpdate();
+            t += Time.fixedDeltaTime;
+        }
+    }
+
+    private int CheckZoneIndex()
+    {
+        foreach (var zone in _zones)
+        {
+            if (zone.collider2D.IsTouching(_player))
+            {
+                return _zones.IndexOf(zone);
+            }
+        }
+        return _currentZoneIndex;
+    }
 }

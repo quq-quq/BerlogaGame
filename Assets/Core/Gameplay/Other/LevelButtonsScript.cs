@@ -1,5 +1,7 @@
 using Core.Gameplay.SceneManagement;
 using Save_files.Scripts;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -14,9 +16,13 @@ public class LevelButtonsScript : MonoBehaviour
     [SerializeField] private Sprite _unmute;
     [SerializeField] private GameObject _manual;
     [SerializeField] private SceneData _menuScene;
-    private bool _isPaused, _isMusicOff;
+    [SerializeField] private Button _suggestionButton;
+    [SerializeField, Min(0f)] private float _suggestionCooldown = 5f;
+    [SerializeField] private CopilotMonolog _copilotMonolog;
+    private bool _isPaused, _isMusicOff, _suggestionIsActive = true, _isCoolDownAccepted = false;
     private SceneLoader _sceneLoader;
-    
+    private Image _suggestionImage;
+
     [Inject]
     private void Inject(SceneLoader sceneLoader)
     {
@@ -40,6 +46,9 @@ public class LevelButtonsScript : MonoBehaviour
         _isPaused = false;
 
         SoundController.sounder.SetSound(_backgroundSound, true, "BackGroundMusic", _volume);
+
+        _suggestionImage = _suggestionButton.gameObject.GetComponent<Image>();
+        _suggestionImage.type = Image.Type.Filled;
     }
 
     public void QuitLevel()
@@ -94,5 +103,33 @@ public class LevelButtonsScript : MonoBehaviour
         _pausePanel.SetActive(false);
         _isPaused = false;
         _sceneLoader.LoadScene(_sceneLoader.GetCurrentScene());
+    }
+    public void Suggestion()
+    {
+         _copilotMonolog.TakeSuggestion();
+
+        if (_suggestionIsActive)
+        {
+            StartCoroutine(Coroutine());
+        }
+
+        IEnumerator Coroutine()
+        {
+
+            _suggestionIsActive = false;
+            _suggestionButton.interactable = false;
+            _suggestionImage.fillAmount = 0;
+            float lerpTime = Time.time;
+
+            while (Time.time - lerpTime < _suggestionCooldown)
+            {
+                _suggestionImage.fillAmount = (Time.time - lerpTime) / _suggestionCooldown;
+
+                yield return null;
+            }
+
+            _suggestionIsActive = true;
+            _suggestionButton.interactable = true;
+        }
     }
 }

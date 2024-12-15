@@ -7,6 +7,11 @@ using Random = UnityEngine.Random;
 
 public class CopilotMove : MonoBehaviour
 {
+    public float MaxSpeed
+    {
+        get => _maxSpeed;
+    }
+
     [SerializeField] private List<Transform> _points;
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _acceleration;
@@ -15,7 +20,6 @@ public class CopilotMove : MonoBehaviour
     [SerializeField, Min(0f)] private float _distanceTranquility;
     [SerializeField, Min(0f)] private float _distanceReachPoint;
     [SerializeField] private float _timeChangePosition;
-[Space]
     private Vector3 _currentFollowPoint;
     private Vector3 _direction;
     private float _currentSpeed = 0;
