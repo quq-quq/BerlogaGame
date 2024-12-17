@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Node;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -13,6 +12,9 @@ namespace UI
         private BaseNode _node;
 
         private bool _isSealed = false;
+        
+        public bool IsSealed => _isSealed;
+
         private List<BaseConnector> _connections = new List<BaseConnector>();
 
         public BaseNode Node
@@ -20,30 +22,35 @@ namespace UI
             get => _node;
             private set => _node = value;
         }
-
+        
         private static List<ConnectorEnter> _connectorEnters = new List<ConnectorEnter>();
         
         public static List<ConnectorEnter> GetConnectorEnters()
         {
             var newL = new List<ConnectorEnter>(_connectorEnters.Count);
-            _connectorEnters.ForEach(i => newL.Add(i));
+            _connectorEnters.Where(i => i._node != null).ToList().ForEach(i => newL.Add(i));
             return newL;
         }
-
-        public bool Connect(BaseConnector connection)
+        
+        public bool IsConnectable(BaseConnector connection)
         {
             if(_isSealed)
                 return false;
-            
-            if(_connections.All(item => item != connection) && !_node.IsConnected(connection.OwnerNode))
-            {
-                _connections.Add(connection);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return _connections.All(item => item != connection) && !_node.IsConnected(connection.OwnerNode);
+        }
+
+        public bool TryConnect(BaseConnector connection)
+        {
+            var able = IsConnectable(connection);
+            if(able)
+                Connect(connection);
+            return able;
+        }
+        
+        public void Connect(BaseConnector connection)
+        {
+            if (!IsConnectable(connection)) throw new AggregateException($"Can't connect able from {connection.OwnerNode} node, to {Node}");
+            _connections.Add(connection);
         }
 
         public void Disconnect(BaseConnector connection)
@@ -60,9 +67,18 @@ namespace UI
             _isSealed = true;
         }
 
-        private void Awake()
+        public void SealedConnect(BaseConnector connection)
         {
-            _node = GetComponentInParent<BaseNode>();
+            _isSealed = false;
+            if (!IsConnectable(connection)) throw new AggregateException($"Can't connect able from {connection.OwnerNode} node, to {Node}");
+            _connections.Add(connection);
+            _isSealed = true;
+        }
+        
+
+        public void Boot()
+        {
+            _node = GetComponentInParent<BaseNode>(true);
             _connectorEnters.Add(this);
         }
 

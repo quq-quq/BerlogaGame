@@ -26,9 +26,9 @@ namespace UI
         
         public event Action<Connection> ClickedDownEvent;
         public event Action<Connection> ClickedUpEvent;
-
-        public bool IsClicked { get; private set; }
-
+        
+        private bool _isDragging;
+        
         public Connection(PointerCatcher end, GameObject solid, BaseConnector connector)
         {
             var parent = connector.transform;
@@ -48,18 +48,21 @@ namespace UI
         
         private void OnPointerDown(PointerEventData pointerEventData)
         {
-            IsClicked = true;
+            _isDragging = true;
             ClickedDownEvent?.Invoke(this);
         }
     
         private void OnPointerUp(PointerEventData pointerEventData)
         {
-            IsClicked = false;
+            _isDragging = false;
             ClickedUpEvent?.Invoke(this);
         }
         
         public void MoveConnect(Vector2 vector2)
         {
+            if(IsConnectable(vector2, out var enter) && (_currentConnectEnter == null|| _isDragging)) 
+                vector2 = enter.transform.position;
+            
             var delta = (vector2 - (Vector2) _parent.position); 
             _endPoint.transform.position = _parent.position + (Vector3) delta;
             var newPosition = _parent.position + (Vector3) (delta / 2);
@@ -75,27 +78,38 @@ namespace UI
             MoveConnect(_currentConnectEnter.transform.position);
         }
 
-        public bool FinishConnect()
+        public bool TryFinishConnect()
         {
-            var listEnters = ConnectorEnter.GetConnectorEnters();
-            if(listEnters.Count != 0)
+            var able = IsConnectable(_endPoint.transform.position, out var enter);
+            if (able)
             {
-                listEnters = listEnters.OrderBy(i => Vector2.Distance(i.transform.position, _endPoint.transform.position)).ToList();
-                var closest = listEnters[0];
-                if (Vector2.Distance(closest.transform.position, _endPoint.transform.position) <= _stickDistance 
-                    && closest.Connect(_connector) && closest.Node != _connector.OwnerNode)
-                {
-                    if(_currentConnectEnter != null)
-                        _currentConnectEnter.Disconnect(_connector);
-                    _currentConnectEnter = closest;
-                    
-                    MoveConnect(closest.transform.position);
-                    ConnectedBaseNode = closest.Node;
-                    return true;
-                }
+                FinishConnect(enter);
+                return true;
             }
             Die();
             return false;
+        }
+
+        public void FinishConnect(ConnectorEnter enter)
+        {
+            if (_currentConnectEnter != null)
+                _currentConnectEnter.Disconnect(_connector);
+                
+            _currentConnectEnter = enter;
+            _currentConnectEnter.Connect(_connector);
+            MoveConnect(enter.transform.position);
+            ConnectedBaseNode = enter.Node;
+        }
+        
+        public void SealedConnect(ConnectorEnter enter)
+        {
+            if (_currentConnectEnter != null)
+                _currentConnectEnter.Disconnect(_connector);
+                
+            _currentConnectEnter = enter;
+            _currentConnectEnter.SealedConnect(_connector);
+            MoveConnect(enter.transform.position);
+            ConnectedBaseNode = enter.Node;
         }
 
         public void Die()
@@ -108,6 +122,41 @@ namespace UI
             Object.Destroy(_rectSolid.gameObject);
             Object.Destroy(_endPoint.gameObject);
         }
-            
+
+        private bool IsConnectable(Vector2 position, out ConnectorEnter connectorEnter)
+        {
+            var listEnters = ConnectorEnter.GetConnectorEnters()
+                .Where(x =>
+                    x.IsConnectable(_connector)
+                    && _connector.CheckoutMode(x.Node)
+                    && x.Node != _connector.OwnerNode
+                    && !x.IsSealed).ToList();
+            if(listEnters.Count != 0)
+            {
+                var overlap = listEnters.FirstOrDefault(x =>
+                {
+                    Vector2 s = x.Node.transform.lossyScale;
+                    Vector2 d = (Vector2)x.Node.transform.position - position;
+                    d = new Vector2(d.x/s.x, d.y/s.y);
+                    return x.Node.RectTransform.rect.Contains(d);
+                });
+                if(overlap != null)
+                {
+                    connectorEnter = overlap;
+                    return true;
+                }
+                //nearest
+                listEnters = listEnters.OrderBy(i => 
+                    Vector2.Distance(i.transform.position, position)).ToList();
+                var closest = listEnters[0];
+                if (Vector2.Distance(closest.transform.position, position) * closest.Node.transform.localScale.x <= _stickDistance)
+                {
+                    connectorEnter = closest;
+                    return true;
+                }
+            }
+            connectorEnter = null;
+            return false;
+        }
     }
 }

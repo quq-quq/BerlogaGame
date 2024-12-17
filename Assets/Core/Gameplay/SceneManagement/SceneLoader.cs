@@ -25,6 +25,7 @@ namespace Core.Gameplay.SceneManagement
         {
             _lastScene = data;
             var handle = Addressables.LoadSceneAsync(data.SceneName, mode);
+            Time.timeScale = 1;
             return handle.Task;
         }
 

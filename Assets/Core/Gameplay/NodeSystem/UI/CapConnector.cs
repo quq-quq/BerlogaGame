@@ -1,4 +1,6 @@
-﻿namespace UI
+﻿using Node;
+
+namespace UI
 {
     public class CapConnector : BaseConnector
     {
@@ -11,7 +13,7 @@
         {
         }
 
-        protected override bool CheckoutMode()
+        public override bool CheckoutMode(BaseNode node)
         {
             return true;
         }

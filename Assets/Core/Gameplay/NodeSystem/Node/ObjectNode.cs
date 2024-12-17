@@ -22,6 +22,10 @@ namespace Node_System.Scripts.Node
         }
 #endif
 
+        public override void Boot()
+        {
+        }
+
         public override void Do(ObjectForNode go)
         {
             Connector.GetConnectedNodes().ForEach(i => i.Do(_objectForNode));

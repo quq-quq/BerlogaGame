@@ -16,6 +16,7 @@ namespace UI
         [SerializeField] private Button _button;
 
 
+        private MonoBehaviour _alwaysOnGO;
         private Image _image;
         private bool _isActive = true;
         private void OnEnable()
@@ -27,11 +28,11 @@ namespace UI
             _button.onClick.RemoveListener(Trigger);
         }
 
-        private void Start()
+        private void Awake()
         {
             _image = GetComponent<Image>();
             _image.type = Image.Type.Filled;
-
+            _alwaysOnGO = Camera.main.GetComponent<MonoBehaviour>();
         }
 
         private event Action _triger; 
@@ -47,7 +48,7 @@ namespace UI
             {
                 SoundController.sounder.SetSound(_calculation, false, gameObject.name, _volume);
                 _triger?.Invoke();
-                StartCoroutine(Coroutine());
+                _alwaysOnGO.StartCoroutine(Coroutine());
             }
 
             IEnumerator Coroutine()

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Node;
 using Node_System.Scripts.Node;
 using UnityEngine;
@@ -12,14 +10,14 @@ namespace UI
     {
         [SerializeField] protected NodeConnectorType _nodeConnectorTypeRequired;
 
-        private PointerCatcher _pointerCatcher;
+        [SerializeField] private PointerCatcher _pointerCatcher;
         protected bool _isClicked = false;
         protected bool _isMoveConnection = false;
         private Connection _currentConnection = null;
-        
+
+
         protected override void OnAwake()
         {
-            _pointerCatcher = GetComponent<PointerCatcher>();
         }
 
         protected override void OnLateUpdate()
@@ -34,14 +32,11 @@ namespace UI
             ManageNewConnection();
         }
 
-        protected override bool CheckoutMode()
+        public override bool CheckoutMode(BaseNode node)
         {
-            var node = _currentConnection.ConnectedBaseNode;
-            if(node == null)
-            {
+            if(node == null) 
                 return false;
-            }
-            var baseType = node.GetType().BaseType;
+            
             var isAction = node is ActionNode;
             var isObject = node is ObjectNode;
 
@@ -100,19 +95,19 @@ namespace UI
 
         private void SubscribeConnection(Connection connect)
         {
-            if(_connections.Any(i => i == _currentConnection))
+            if(_connections.Any(i => i == connect))
                 return;
             
-            _connections.Add(_currentConnection);
-            _currentConnection.ClickedDownEvent += OnClickDownConnection;
-            _currentConnection.ClickedUpEvent += OnClickUpConnection;
+            _connections.Add(connect);
+            connect.ClickedDownEvent += OnClickDownConnection;
+            connect.ClickedUpEvent += OnClickUpConnection;
         }
         
         private void UnsubscribeConnection(Connection connect)
         {
-            _connections.Remove(_currentConnection);
-            _currentConnection.ClickedDownEvent -= OnClickDownConnection;
-            _currentConnection.ClickedUpEvent -= OnClickUpConnection;
+            _connections.Remove(connect);
+            connect.ClickedDownEvent -= OnClickDownConnection;
+            connect.ClickedUpEvent -= OnClickUpConnection;
         }
 
         private void OnClickDownConnection(Connection connect)
@@ -124,10 +119,9 @@ namespace UI
         private void OnClickUpConnection(Connection connect = null)
         {
             if(connect != _currentConnection && connect != null) return;
-            
             _isMoveConnection = false;
-            var finish = _currentConnection.FinishConnect();
-            if (finish && CheckoutMode())
+            var finish = _currentConnection.TryFinishConnect();
+            if (finish && CheckoutMode(_currentConnection.ConnectedBaseNode))
             {
                 SubscribeConnection(_currentConnection);
             }

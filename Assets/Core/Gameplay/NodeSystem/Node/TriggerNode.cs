@@ -1,6 +1,4 @@
-﻿using System;
-using Node;
-using TMPro;
+﻿using Node;
 using UnityEngine;
 
 namespace Node_System.Scripts.Node
@@ -9,7 +7,7 @@ namespace Node_System.Scripts.Node
     {
         [SerializeField] private TriggerForNode _trigger;
 
-        private void Awake()  
+        public override void Boot()  
         {
             if (_trigger != null)
                 _trigger.SubscribeTrigger(() => Do(null));
@@ -17,7 +15,11 @@ namespace Node_System.Scripts.Node
 
         public override void Do(ObjectForNode go)
         {
-            Connector.GetConnectedNodes().ForEach(i => i.Do(go));
+            var t = Connector.GetConnectedNodes();
+            foreach (var i in t)
+            {
+                i.Do(go);
+            }
         }
     }
 }

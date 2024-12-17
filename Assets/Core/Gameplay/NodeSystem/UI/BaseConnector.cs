@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Node;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -30,9 +26,9 @@ namespace UI
         
         protected List<Connection> _connections = new List<Connection>();
         
-        private void Awake()
+        public void Boot()
         {
-            _node = GetComponentInParent<BaseNode>();
+            _node = GetComponentInParent<BaseNode>(true);
             _end.gameObject.SetActive(false);
             _solid.gameObject.SetActive(false);
             OnAwake();
@@ -55,6 +51,6 @@ namespace UI
             return r;
         }
 
-        protected abstract bool CheckoutMode();
+        public abstract bool CheckoutMode(BaseNode node);
     }
 }

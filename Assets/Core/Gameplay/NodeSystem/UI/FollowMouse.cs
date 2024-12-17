@@ -1,8 +1,5 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.PlayerLoop;
-using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -59,7 +56,6 @@ namespace UI
             
             var deltaPositionWithPointer = transform.position - _pointerCatcher.transform.position;
             var newPosition = Input.mousePosition + deltaPositionWithPointer + _deltaBetweenOriginMouseAndOriginPointer;
-            
             if(_barrier != null)
             {
                 var halfBarrierWight = _barrier.rect.width * _barrier.transform.lossyScale.x / 2;

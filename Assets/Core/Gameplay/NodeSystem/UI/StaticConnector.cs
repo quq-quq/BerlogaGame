@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Node;
 using UnityEngine;
 
 namespace UI
@@ -7,31 +7,29 @@ namespace UI
     public class StaticConnector : BaseConnector
     {
         [SerializeField] private List<ConnectorEnter> _enters;
+        private bool _isSealed = false;
 
         protected override void OnAwake()
         {
             foreach (var enter in _enters)
             {
+                if (enter == null)
+                    continue;
                 var c = new Connection(_end, _solid, this);
+                c.SealedConnect(enter);
                 c.MoveConnect(enter.transform.position);
-                c.FinishConnect();
                 _connections.Add(c);
             }
-            
-        }
-
-        private void Start()
-        {
-            _enters.ForEach(i => i.MakeSealed());
+            _isSealed = true;
         }
 
         protected override void OnLateUpdate()
         {
         }
 
-        protected override bool CheckoutMode()
+        public override bool CheckoutMode(BaseNode node)
         {
-            return true;
+            return !_isSealed;
             
         }
     }

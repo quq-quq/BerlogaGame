@@ -27,7 +27,7 @@ namespace Node_System.Scripts.Node
             }
         }
 
-        private void Awake()
+        public override void Boot()
         {
             _textValue.text = _value.ToString();
             _increaseButton.onClick.AddListener(() => Value+=_step);
