@@ -21,6 +21,8 @@ namespace Dialogue_system
         [SerializeField] private Image _background;
         [SerializeField] private TMP_Text _mainText;
         [SerializeField] private TMP_Text _nameText;
+        [SerializeField] private StateOfPlayerController _stateOfPlayerController;
+        [SerializeField] private LevelButtonsScript _levelButtonsScript;
         
         private int _currentIndexDialogue = 0;
         private bool _isWriting = false;
@@ -66,6 +68,9 @@ namespace Dialogue_system
             _currentIndexDialogue = 0;
             _mainText.text = string.Empty;
             ViewDialog(CurrentDialogue);
+
+            _stateOfPlayerController.SetStateOfComponent();
+            _levelButtonsScript.SetAllButtonsOff();
         }
         
         public void EndDialogue()
@@ -74,6 +79,9 @@ namespace Dialogue_system
             _mainText.text = string.Empty;
             _isWriting = false;
             _parent.SetActive(false);
+
+            _stateOfPlayerController.SetStateOfComponent();
+            _levelButtonsScript.SetAllButtonsOn();
         }
         
         public void NextDialogue()

@@ -25,6 +25,7 @@ public class ScrollHandlerText : MonoBehaviour, IBeginDragHandler, IEndDragHandl
         _scrollRect.content = _content;
 
         _content.pivot = new Vector2(0.5f , 1);
+        _scrollRect.viewport.pivot = new Vector2(0.5f, 1);
         _start = new Vector2(0, 0);
     }
 
@@ -58,7 +59,7 @@ public class ScrollHandlerText : MonoBehaviour, IBeginDragHandler, IEndDragHandl
         IEnumerator BeforeMovingPause()
         {
             yield return new WaitForSeconds(_currentCoroutineTime);
-            float duration = Math.Max(_content.rect.height - _scrollRect.viewport.rect.height, 0) / _speed;
+            float duration = Math.Max(_scrollRect.viewport.anchoredPosition.y -  (_content.anchoredPosition.y - _content.rect.height), 0) / _speed;
             _currentTween = _content.DOAnchorPosY(math.max(_content.rect.height - _scrollRect.viewport.rect.height, 0), duration).SetEase(Ease.Linear);
         }
     }

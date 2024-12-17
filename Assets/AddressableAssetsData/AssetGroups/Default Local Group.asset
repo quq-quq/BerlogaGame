@@ -30,7 +30,7 @@ MonoBehaviour:
     - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 28fa0782408518f41b3ab4af81e28967
-    m_Address: Comics
+    m_Address: ComicsEnter
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -45,6 +45,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SceneData
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c29a134ef65b13478f19a9845283a97
+    m_Address: sd_ComicsAfter1Lvl
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SceneData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 43f1f9937a36a442585bada35e7e2de1
     m_Address: sd_Tutorial2
     m_ReadOnly: 0
@@ -53,6 +59,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4cdb1df4381cd4c40bad1039c40a8fbf
     m_Address: sd_Room 2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SceneData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5cf6b65d9d044aa4dbf8bdfd86c7957f
+    m_Address: sd_ComicsEnter
     m_ReadOnly: 0
     m_SerializedLabels:
     - SceneData
@@ -79,7 +91,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 836ce5e3fed6b294d95aed677f937f33
-    m_Address: Assets/Core/Configs/DefaultConfig.asset
+    m_Address: Assets/Core/Data/Save/DefaultConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -94,11 +106,10 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9aacdc5e0c2db46db9ef7ba5ae7fab9d
-    m_Address: sd_Comics
+  - m_GUID: 97ae548a9defb80429d52a5176e04fbd
+    m_Address: ComicsAfter1Lvl
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - SceneData
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cb497e085e56a484a80c1eec595b2c78
     m_Address: Room 3

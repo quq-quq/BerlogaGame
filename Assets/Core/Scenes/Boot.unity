@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fffe2309f3e4c539580c783b9d4e225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextScene: {fileID: 11400000, guid: 9aacdc5e0c2db46db9ef7ba5ae7fab9d, type: 2}
+  _nextScene: {fileID: 11400000, guid: 5cf6b65d9d044aa4dbf8bdfd86c7957f, type: 2}
   _fade: {fileID: 349928924}
   _time: 6
 --- !u!1 &790668986
