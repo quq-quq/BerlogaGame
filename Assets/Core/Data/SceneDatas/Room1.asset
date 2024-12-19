@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Room1
   m_EditorClassIdentifier: 
   _sceneName: Room 1
-  _musicBackground: {fileID: 0}
+  _backgroundMusic: {fileID: 8300000, guid: 260ffd09a6f3fee4e83b04432aa81737, type: 3}
