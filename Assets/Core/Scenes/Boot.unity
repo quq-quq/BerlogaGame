@@ -535,7 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _backgroundSound: {fileID: 0}
   _logoSound: {fileID: 8300000, guid: 30f2c5de56f35d5428981ac3140af8bd, type: 3}
-  _volume: 1
+  _volume: 0.3
 --- !u!95 &512598495
 Animator:
   serializedVersion: 5

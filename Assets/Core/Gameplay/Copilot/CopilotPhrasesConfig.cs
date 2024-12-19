@@ -7,8 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Copilot Phrases Config", menuName = "Copilot Phrases Config")]
 public class CopilotPhrasesConfig : ScriptableObject
 {
-    [Header("Set phrases to the priory meaning of suggestion.")]
-    [Header("If suggestion less helpful, keep it higher")]
+    [Tooltip("Set phrases to the priory meaning of suggestion. If suggestion less helpful, keep it higher")]
     [Space(10)]
     [SerializeField, Multiline] private List<string> _phrases;
 

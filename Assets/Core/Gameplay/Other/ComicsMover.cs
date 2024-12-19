@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System.Collections;
 using Core.Gameplay.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,11 +17,9 @@ public class ComicsMover : MonoBehaviour
     [SerializeField] private float _showTransitTime;
     [SerializeField] private float _hideTransitTime;
     [Space(20)]
-    [SerializeField] private Image _image;
+    [SerializeField] private Image _fadeImage;
 
     private int _index = 0;
-    private bool _isHiding = false;
-    private Tween _currentTween;
     private SceneLoader _sceneLoader;
 
     [Inject]
@@ -43,34 +40,33 @@ public class ComicsMover : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D) && _index < _transformPoints.Count-1)
         {
-            StopTween();
             _index++;
+            _cameraTransform.DOKill();
             _cameraTransform.DOMove(_transformPoints[_index].position, _tweenDuration);
             _cameraTransform.DORotate(_transformPoints[_index].rotation.eulerAngles, _tweenDuration);
         }
         if (Input.GetKeyDown(KeyCode.A) && _index>0)
         {
-            StopTween();
             _index--;
+            _cameraTransform.DOKill();
             _cameraTransform.DOMove(_transformPoints[_index].position, _tweenDuration);
             _cameraTransform.DORotate(_transformPoints[_index].rotation.eulerAngles, _tweenDuration);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !_isHiding)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Hide();          
         }
-
     }
 
-    private void StopTween()
-    {
-        if (_currentTween != null)
-        {
-            _currentTween.Kill();
-            _currentTween = null;
-        }
-    }
+    //private void StopTween(Tween tween)
+    //{
+    //    if (tween != null)
+    //    {
+    //        tween.Kill();
+    //        tween = null;
+    //    }
+    //}
 
     public void CreateTransformPointForEditor()
     {
@@ -91,44 +87,15 @@ public class ComicsMover : MonoBehaviour
 
     public void Hide()
     {
-        _isHiding = true;
-        StartCoroutine(HideCoroutine());
-        IEnumerator HideCoroutine()
-        {
-            var t = _hideTransitTime;
-            var tColor = Color.black;
-            var a = 0f;
-
-            while (t > 0)
-            {
-                a = Mathf.Lerp(1, 0, t / _hideTransitTime);
-                t -= Time.deltaTime;
-                tColor.a = a;
-                _image.color = tColor;
-                yield return new WaitForEndOfFrame();
-            }
-
+        _fadeImage.DOKill();
+        _cameraTransform.DOKill();
+        _fadeImage.DOColor(Color.black, _hideTransitTime).OnComplete(() => {
             _sceneLoader.LoadScene(_nextSceneData);
-        }
+        });
     }
 
     public void Show()
     {
-        StartCoroutine(ShowCoroutine());
-        IEnumerator ShowCoroutine()
-        {
-            var t = _showTransitTime;
-            var tColor = Color.black;
-            var a = 1f;
-
-            while (t > 0)
-            {
-                a = Mathf.Lerp(0, 1, t / _showTransitTime);
-                t -= Time.deltaTime;
-                tColor.a = a;
-                _image.color = tColor;
-                yield return new WaitForEndOfFrame();
-            }
-        }
+        _fadeImage.DOColor(Color.clear, _hideTransitTime);
     }
 }

@@ -12,7 +12,7 @@ public class CopilotMove : MonoBehaviour
         get => _maxSpeed;
     }
 
-    [SerializeField] private List<Transform> _points;
+    
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _acceleration;
     [SerializeField] private float _gravity;
@@ -20,6 +20,7 @@ public class CopilotMove : MonoBehaviour
     [SerializeField, Min(0f)] private float _distanceTranquility;
     [SerializeField, Min(0f)] private float _distanceReachPoint;
     [SerializeField] private float _timeChangePosition;
+    private List<Transform> _points = new List<Transform>();
     private Vector3 _currentFollowPoint;
     private Vector3 _direction;
     private float _currentSpeed = 0;
@@ -29,6 +30,11 @@ public class CopilotMove : MonoBehaviour
     private void Awake()
     {
         StartCoroutine(ChangeFollowPointCoroutine());
+        foreach(Transform point in _followCorner.parent)
+        {
+            if(_followCorner != point)
+                _points.Add(point);
+        }
     }
 
     private IEnumerator ChangeFollowPointCoroutine()

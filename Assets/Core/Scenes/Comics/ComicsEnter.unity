@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 1301094156}
   - component: {fileID: 1301094155}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   _tweenDuration: 1.5
   _showTransitTime: 2.5
   _hideTransitTime: 0.8
-  _image: {fileID: 1301094155}
+  _fadeImage: {fileID: 1301094155}
 --- !u!1001 &6717460048895867597
 PrefabInstance:
   m_ObjectHideFlags: 0
