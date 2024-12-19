@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tutorial2
   m_EditorClassIdentifier: 
   _sceneName: Tutorial2
-  _musicBackground: {fileID: 0}
+  _backgroundMusic: {fileID: 8300000, guid: 043b84fddbfb120469498b1a43819e07, type: 3}

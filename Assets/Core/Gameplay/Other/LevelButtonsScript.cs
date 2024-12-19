@@ -54,7 +54,6 @@ public class LevelButtonsScript : MonoBehaviour
         _pausePanel.SetActive(false);
         _isPaused = false;
 
-        SoundController.sounder.SetSound(_backgroundSound, true, "BackGroundMusic", _volume);
 
         _suggestionImage = _suggestionButton.gameObject.GetComponent<Image>();
         _suggestionImage.type = Image.Type.Filled;

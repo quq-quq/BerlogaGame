@@ -1,13 +1,29 @@
+using Core.Extension;
+using Core.Gameplay.SceneManagement;
+using Core.Gameplay.UISystem;
 using Save_files.Scripts;
 using System;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using VContainer;
 
 public class SoundController : MonoBehaviour
 {
     public static SoundController sounder { get; private set; }
 
     [SerializeField] private int _sourcesCount;
+    [Space]
+    [SerializeField, Range(0, 1)] private float _volumeOfBackgroundMusic;
+
+    private SceneLoader _sceneLoader;
+
+    [Inject]
+    private void Inject(SceneLoader sceneLoader)
+    {
+        _sceneLoader = sceneLoader;
+    }
 
     private float VolumeSaver
     {
@@ -27,7 +43,6 @@ public class SoundController : MonoBehaviour
         if (sounder==null)
         {
             sounder = this;
-            DontDestroyOnLoad(this);
         }
         else
         {
@@ -49,6 +64,15 @@ public class SoundController : MonoBehaviour
             _audioDataArray[i].audioSource.clip = null;
             _audioDataArray[i].audioSource.loop = false;
             _audioDataArray[i].audioSource.volume = 1;
+        }
+    }
+
+    private void Start()
+    {
+        if (_sceneLoader.GetCurrentScene() != null)
+        {
+            AudioClip backgroundMusic = _sceneLoader.GetCurrentScene().BackgroundMusic;
+            SetSound(backgroundMusic, true, "BackgroundMusic", _volumeOfBackgroundMusic);
         }
     }
 

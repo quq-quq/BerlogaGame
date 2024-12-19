@@ -11,8 +11,7 @@ namespace Menu
         [SerializeField] private float _cycleTime;
         [SerializeField] private List<AmbientSoundData> _sounds;
         [SerializeField] private bool _isEnableAmbientSound = true;
-        [SerializeField] private AudioClip _backgroundSound;
-        [SerializeField] private float _volume;
+        [SerializeField, Range(0, 1)] private float _volume;
         
         public bool IsEnableAmbientSound
         {
@@ -26,11 +25,6 @@ namespace Menu
         private void Awake()
         {
             StartCoroutine(AmbientAudioSyncCoroutine());
-        }
-
-        private void Start()
-        {
-            SoundController.sounder.SetSound(_backgroundSound, true, "BackGroundMusic", _volume);
         }
 
         IEnumerator AmbientAudioSyncCoroutine()
