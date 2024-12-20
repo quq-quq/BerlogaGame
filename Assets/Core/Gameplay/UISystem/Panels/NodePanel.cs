@@ -35,6 +35,9 @@ namespace Core.Gameplay.UISystem
         [SerializeField] private Button _staticDeskButton;
         [SerializeField] private GameObject _staticDesk;
         [SerializeField] private GameObject _defaultDesk;
+        [Space]
+        [SerializeField] private Button _glassesModeButton;
+        [SerializeField] private string _glassesModePanelName;
 
         private UIPanelController _panelController;
         private List<BaseConnector> _baseConnectors = new List<BaseConnector>();
@@ -65,6 +68,7 @@ namespace Core.Gameplay.UISystem
             _fastRunButton.onClick.AddListener(Exit);
             _manualButton.onClick.AddListener(OpenManual);
             _staticDeskButton.onClick.AddListener(SwitchDesk);
+            _glassesModeButton.onClick.AddListener(SwitchToGlassesMode);
         }
 
         private void OnDisable()
@@ -73,8 +77,14 @@ namespace Core.Gameplay.UISystem
             _fastRunButton.onClick.RemoveListener(Exit);
             _manualButton.onClick.RemoveListener(OpenManual);
             _staticDeskButton.onClick.RemoveListener(SwitchDesk);
+            _glassesModeButton.onClick.RemoveListener(SwitchToGlassesMode);
         }
 
+        private void SwitchToGlassesMode()
+        {
+            _panelController.OpenPanelAlone(_glassesModePanelName);
+        }
+        
         private void SwitchDesk()
         {
             _staticDesk.SetActive(!_staticDesk.activeSelf);

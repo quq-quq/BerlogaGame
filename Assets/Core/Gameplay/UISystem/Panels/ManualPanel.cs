@@ -43,8 +43,11 @@ namespace Core.Gameplay.UISystem
 
         private void Exit()
         {
-            if(PreviousPanel != null) 
-                _panelController.SwitchPanel(this, PreviousPanel);
+            if (PreviousPanelState != null)
+            {
+                _panelController.LoadState(PreviousPanelState, this);
+                HideAnimation();
+            }
             _panelController.ClosePanel(this);
         }
 

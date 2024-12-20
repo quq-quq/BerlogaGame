@@ -14,7 +14,6 @@ namespace Core.Gameplay.UISystem
             if(_panels.Contains(panel)) throw new ArgumentException("Panel already registered");
             _panels.Add(panel);
         }
-        
         public void UnregisterPanel(UIPanel panel)
         {
             if(!_panels.Remove(panel)) throw new ArgumentException("Panel not registered");
@@ -24,40 +23,33 @@ namespace Core.Gameplay.UISystem
         public void OpenPanel(UIPanel panel)
         {
             if(!_panels.Contains(panel)) throw new ArgumentException("Panel not registered");
-            panel.Show();
-        }
-        
-        public void OpenPanelFrom(string panelName, UIPanel from) => OpenPanelFrom(GetPanel(panelName), from); 
-        public void OpenPanelFrom(UIPanel panel, UIPanel from)
-        {
-            if(!_panels.Contains(panel)) throw new ArgumentException("Panel not registered");
-            if(!_panels.Contains(from)) throw new ArgumentException($"Panel {from} not registered");
-            panel.PreviousPanel = from;
-            panel.Show();
+            panel.Show(GetState());
         }
         
         public void OpenPanelAlone(string panelName) => OpenPanelAlone(GetPanel(panelName));
         public void OpenPanelAlone(UIPanel panel)
         {
             if(!_panels.Contains(panel)) throw new ArgumentException("Panel not registered");
+            var s = GetState();
             CloseAllPanel();
-            panel.Show();
+            panel.Show(s);
         }
         
         public void ClosePanel(string panelName) => ClosePanel(GetPanel(panelName)); 
         public void ClosePanel(UIPanel panel)
         {
             if(!_panels.Contains(panel)) throw new ArgumentException("Panel not registered");
-            panel.Hide();
+            panel.Hide(GetState());
         }
-
-        public void CloseAllPanel()
+        
+        private void CloseAllPanel()
         {
+            var s = GetState();
             _panels.ForEach(x =>
             {
                 if (x.IsHided)
                     return;
-                x.Hide();
+                x.Hide(s, false);
             });
         }
         
@@ -68,16 +60,33 @@ namespace Core.Gameplay.UISystem
         {
             if(!_panels.Contains(from)) throw new ArgumentException($"Panel ({from.PanelName}) not registered");
             if(!_panels.Contains(to)) throw new ArgumentException($"Panel ({to.PanelName}) not registered");
-            from.Hide();
-            to.PreviousPanel = from;
-            to.Show();
+            var s = GetState();
+            from.Hide(s);
+            to.Show(s);
         }
 
+        public void LoadState(PanelState state, params UIPanel[] ignorePanels)
+        {
+            var s = GetState();
+            foreach (var configuration in state.Configurations)
+            {
+                var panel = GetPanel(configuration.PanelName);
+                if (ignorePanels!= null && ignorePanels.Contains(panel))
+                    continue;
+                if (configuration.IsHidden)
+                    panel.Hide(s, false);
+                else
+                    panel.Show(s, false);
+            }
+        }
+        
         public UIPanel GetPanel(string name)
         {
             var panel = _panels.FirstOrDefault(x => x.PanelName == name);
             if(panel == null) throw new ArgumentException("Panel not registered");
             return panel;
         }
+
+        public PanelState GetState() => new PanelState(_panels);
     }
 }

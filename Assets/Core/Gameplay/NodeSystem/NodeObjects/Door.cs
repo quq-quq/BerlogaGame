@@ -24,7 +24,6 @@ namespace NodeObjects
         private void Awake()
         {
             _collider = GetComponent<Collider2D>();
-
             SwitchStates(_isOpen);
         }
 
