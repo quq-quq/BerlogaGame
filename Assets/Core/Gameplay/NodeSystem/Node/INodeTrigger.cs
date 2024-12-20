@@ -12,6 +12,7 @@ namespace Node_System.Scripts.Node
         public virtual void SetTitle(string title)
         {
             _title.SetText(title);
+            _title.Hide();
         }
     }
 }

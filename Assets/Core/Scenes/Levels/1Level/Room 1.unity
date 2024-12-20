@@ -2507,7 +2507,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -4908088323986498870, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6032385596668176822, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
       insertIndex: -1
@@ -2746,6 +2747,10 @@ PrefabInstance:
       propertyPath: _trigger
       value: 
       objectReference: {fileID: 1033384980}
+    - target: {fileID: 8540903282245466085, guid: 30eaf0c0c809c42a2b3de8260dfd8009, type: 3}
+      propertyPath: _titleName
+      value: "\u041A\u0430\u043C\u0435\u0440\u0430"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8431990753377406312, guid: 30eaf0c0c809c42a2b3de8260dfd8009, type: 3}
@@ -9097,6 +9102,10 @@ PrefabInstance:
       propertyPath: _trigger
       value: 
       objectReference: {fileID: 343105649}
+    - target: {fileID: 2479909224132870402, guid: 36469a92d58d0459fa7cb59cc4204f5c, type: 3}
+      propertyPath: _titleName
+      value: "\u041A\u0430\u043C\u0435\u0440\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 4439157496882589656, guid: 36469a92d58d0459fa7cb59cc4204f5c, type: 3}
       propertyPath: m_Name
       value: CamEnterTrigger

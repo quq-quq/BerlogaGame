@@ -3953,6 +3953,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1089565281}
     m_Modifications:
+    - target: {fileID: 807824309109774113, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 807824309109774113, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 807824309109774113, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 807824309109774113, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1842679332694421655, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.41045
@@ -17631,6 +17647,10 @@ PrefabInstance:
       propertyPath: _trigger
       value: 
       objectReference: {fileID: 580346397}
+    - target: {fileID: 2479909224132870402, guid: 36469a92d58d0459fa7cb59cc4204f5c, type: 3}
+      propertyPath: _titleName
+      value: "\u041A\u0430\u043C\u0435\u0440\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 4439157496882589656, guid: 36469a92d58d0459fa7cb59cc4204f5c, type: 3}
       propertyPath: m_Name
       value: CamEnterTrigger Variant
@@ -17925,6 +17945,10 @@ PrefabInstance:
       propertyPath: _trigger
       value: 
       objectReference: {fileID: 519938718}
+    - target: {fileID: 8540903282245466085, guid: 30eaf0c0c809c42a2b3de8260dfd8009, type: 3}
+      propertyPath: _titleName
+      value: "\u041A\u0430\u043C\u0435\u0440\u0430"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8431990753377406312, guid: 30eaf0c0c809c42a2b3de8260dfd8009, type: 3}
@@ -20563,6 +20587,10 @@ PrefabInstance:
       propertyPath: _trigger
       value: 
       objectReference: {fileID: 1320478111}
+    - target: {fileID: 8297518682579619468, guid: 60078ec54480c4f77b317f126ccab6ce, type: 3}
+      propertyPath: _titleName
+      value: "\u0421\u043C\u043E\u0442\u0440\u0438\u0442\u0435\u043B\u044C \u0434\u0440\u043E\u043D\u0430"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8117076308167914497, guid: 60078ec54480c4f77b317f126ccab6ce, type: 3}
@@ -21091,6 +21119,10 @@ PrefabInstance:
       propertyPath: _trigger
       value: 
       objectReference: {fileID: 98027969}
+    - target: {fileID: 3776188527877335652, guid: 47b666fc89e54459c9db7e6500a2b091, type: 3}
+      propertyPath: _titleName
+      value: "\u0421\u043C\u043E\u0442\u0440\u0438\u0442\u0435\u043B\u044C \u0434\u0440\u043E\u043D\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 8577582379888409240, guid: 47b666fc89e54459c9db7e6500a2b091, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
