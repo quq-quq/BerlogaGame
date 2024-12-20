@@ -45,7 +45,6 @@ namespace Menu
                 
                 yield return new WaitForSeconds(waitTime);
 
-                SoundController.sounder.SetSound(null, false, gameObject.name, _volume);
                 SoundController.sounder.SetSound(_sounds[i].Sound, false, gameObject.name, _volume);
                 i++;
             }

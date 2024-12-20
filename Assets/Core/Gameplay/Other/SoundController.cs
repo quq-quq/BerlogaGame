@@ -33,6 +33,7 @@ public class SoundController : MonoBehaviour
     private struct AudioData
     {
         public AudioSource audioSource;
+        public float personalVolume;
         public string objectName;
     }
 
@@ -63,7 +64,7 @@ public class SoundController : MonoBehaviour
             _audioDataArray[i].audioSource = gameObject.GetComponents<AudioSource>()[i];
             _audioDataArray[i].audioSource.clip = null;
             _audioDataArray[i].audioSource.loop = false;
-            _audioDataArray[i].audioSource.volume = 1;
+            _audioDataArray[i].audioSource.volume = 0;
         }
     }
 
@@ -83,20 +84,22 @@ public class SoundController : MonoBehaviour
             _audioDataArray[index].audioSource.clip = clip;
             _audioDataArray[index].audioSource.loop = isLooped;
             _audioDataArray[index].audioSource.volume = volume;
+            _audioDataArray[index].personalVolume = volume;
             _audioDataArray[index].objectName = objectName;
+
+            if (volume > 1)
+            {
+                volume = 1;
+            }
+            else if (volume < 0)
+            {
+                volume = 0;
+            }
+
+            VolumeChange();
+
             _audioDataArray[index].audioSource.Play();
         }
-
-        if(volume > 1)
-        {
-            volume = 1;
-        }
-        else if (volume < 0)
-        {
-            volume = 0;
-        }
-
-        volume *= VolumeSaver;
 
         //                                          вродь это нужно...
         //for (int i = 0; i < _sourcesCount; i++)
@@ -140,8 +143,7 @@ public class SoundController : MonoBehaviour
     {
         for (int i = 0; i < _sourcesCount; i++)
         {
-            _audioDataArray[i].audioSource.volume = 1;
-            _audioDataArray[i].audioSource.volume *= VolumeSaver;
+            _audioDataArray[i].audioSource.volume = _audioDataArray[i].personalVolume*VolumeSaver;
         }
     }
 
@@ -161,7 +163,9 @@ public class SoundController : MonoBehaviour
         {
             _audioDataArray[i].audioSource.clip = null;
             _audioDataArray[i].audioSource.loop = false;
-            _audioDataArray[i].audioSource.volume = Saver.Data.Volume;
+            _audioDataArray[i].objectName = null;
+            _audioDataArray[i].personalVolume = 0;
+            _audioDataArray[i].audioSource.volume = 0;
         }
     }
 }

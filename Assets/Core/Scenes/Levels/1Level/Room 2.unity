@@ -4008,6 +4008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sourcesCount: 6
+  _volumeOfBackgroundMusic: 0
 --- !u!4 &582357621
 Transform:
   m_ObjectHideFlags: 0
@@ -10365,7 +10366,7 @@ PrefabInstance:
     - target: {fileID: 6010658082931702070, guid: 0d51b9eada3fe014183857b5c559f4d7, type: 3}
       propertyPath: _endAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 0f9e43b8412e05d4893996491a56c777, type: 3}
+      objectReference: {fileID: 8300000, guid: a44cdffed82192b4e8a08cfb3d68f829, type: 3}
     - target: {fileID: 6010658082931702070, guid: 0d51b9eada3fe014183857b5c559f4d7, type: 3}
       propertyPath: _nextScene
       value: 

@@ -443,14 +443,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7661a80d008dab04581d5bc5fe8b5b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameNextScene: NEW menu
+  _nextScene: {fileID: 0}
   _text: {fileID: 5814142440682644911}
-  _transitTime: 4
   _image: {fileID: 3708674427988194811}
   _canvas: {fileID: 3200337157179128891}
   _zone: {fileID: 1699524045456666386}
-  _endAudio: {fileID: 8300000, guid: 0f9e43b8412e05d4893996491a56c777, type: 3}
-  _volume: 1
+  _endAudio: {fileID: 8300000, guid: a44cdffed82192b4e8a08cfb3d68f829, type: 3}
+  _volume: 0.7
+  _ofsetBeforeAudioClip: 0.5
 --- !u!1 &6667222616582634847
 GameObject:
   m_ObjectHideFlags: 0
