@@ -90,13 +90,14 @@ public class PlayerAnimator : MonoBehaviour
     {
         _anim.SetBool(RunKey, _grounded && _player.FrameInput.x != 0);
         if (_grounded && _player.FrameInput.x != 0)
-            SoundController.sounder.SetSound(_footsteps, true, "PlayerRun", _volume);
-        if ((_grounded && _player.FrameInput.x == 0) || !_grounded)
-            SoundController.sounder.SetSound(null, false,"PlayerRun", _volume);
+            SoundController.sounder.SetSound(_footsteps, false, "PlayerRun", _volume);
+        //if ((_grounded && _player.FrameInput.x == 0) || !_grounded)
+        //    SoundController.sounder.SetSound(null, false,"PlayerRun", _volume);
     }
 
     private void OnJumped()
     {
+        SoundController.sounder.SetSound(_Jump, false, "PlayerJump", _volume);
         _anim.SetTrigger(JumpKey);
         _anim.ResetTrigger(GroundedKey);
 
@@ -114,7 +115,6 @@ public class PlayerAnimator : MonoBehaviour
         if (grounded)
         {
             _anim.SetTrigger(GroundedKey);
-            SoundController.sounder.SetSound(_Jump, false, "PlayerJump", _volume);
             _moveParticles.Play();
 
             _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, 40, impact);

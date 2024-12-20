@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Node_System.Scripts.Node;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ namespace UI
 {
     public class StartTrigger : TriggerForNode
     {
-        [SerializeField] private AudioClip _calculation;
+        [SerializeField] private List<AudioClip> _calculations;
         [SerializeField] private float _volume;
 
         [SerializeField, Min(0f)] private float cooldown=5f;
@@ -46,7 +47,7 @@ namespace UI
         { 
             if (_isActive)
             {
-                SoundController.sounder.SetSound(_calculation, false, gameObject.name, _volume);
+                SoundController.sounder.SetSound(GetRandomAudioClip(_calculations), false, gameObject.name, _volume);
                 _triger?.Invoke();
                 _alwaysOnGO.StartCoroutine(Coroutine());
             }
@@ -73,6 +74,18 @@ namespace UI
 
         public override void SetTitle(string title)
         {
+        }
+
+        private AudioClip GetRandomAudioClip(List<AudioClip> list)
+        {
+            if (list == null || list.Count == 0)
+            {
+                return null;
+            }
+
+            System.Random random = new System.Random();
+            int randomIndex = random.Next(list.Count);
+            return list[randomIndex];
         }
     }
 }

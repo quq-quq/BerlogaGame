@@ -23,10 +23,6 @@ namespace NodeObjects
         public event Action EnterEvent;
         public event Action ExitEvent;
 
-        [Space(40)]
-        [SerializeField] private AudioClip _sleepAudio;
-        [SerializeField] private float _volume;
-
         private List<Detectable> _detectables = new List<Detectable>();
 
         private void Awake()
@@ -110,8 +106,6 @@ namespace NodeObjects
 
         public void Sleep(float t, object caller)
         {
-            SoundController.sounder.SetSound(_sleepAudio, false, gameObject.name, _volume);
-
             if (_detectables.Count != 0)
             {
                 ExitTriggerInvoke();
@@ -126,8 +120,6 @@ namespace NodeObjects
                 ExitTriggerInvoke();
             }
             _sleeper.Sleep(caller);
-
-            SoundController.sounder.SetSound(_sleepAudio, false, gameObject.name, _volume);
         }
 
         public void WakeUp(object caller)

@@ -52,8 +52,10 @@ MonoBehaviour:
   _openSkin: {fileID: 8990458039417401295}
   _closeSkin: {fileID: 3638098042785037162}
   _isOpen: 1
-  _doorAudio: {fileID: 8300000, guid: 960b0e5c1f5914249ae62842f9852b27, type: 3}
-  _volume: 1
+  _doorAudio: {fileID: 8300000, guid: d5a20234990ec174483c30332364420a, type: 3}
+  _volume: 0.5
+  _distanceUp: 4
+  _durationForMove: 0.4
 --- !u!61 &7534965949066658507
 BoxCollider2D:
   m_ObjectHideFlags: 0

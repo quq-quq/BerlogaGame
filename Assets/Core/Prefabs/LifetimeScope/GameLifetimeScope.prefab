@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sourcesCount: 6
-  _volumeOfBackgroundMusic: 0.3
+  _volumeOfBackgroundMusic: 0.2
 --- !u!1 &842704138924144521
 GameObject:
   m_ObjectHideFlags: 0
