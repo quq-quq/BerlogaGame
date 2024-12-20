@@ -12,6 +12,8 @@ namespace Core.Gameplay.UISystem
         [SerializeField] private Button _button;
         [SerializeField] private Direction _direction;
         [SerializeField] private bool _isHided;
+        public bool IsHided => _isHided;
+        public event Action OnSwitch;
         
         private RectTransform _rectTransform;
         private Vector2 _originalPosition;
@@ -52,13 +54,14 @@ namespace Core.Gameplay.UISystem
             _button.onClick.RemoveListener(SwitchPosition);
         }
 
-        private void SwitchPosition()
+        public void SwitchPosition()
         {
            var destination = _isHided ? _originalPosition : _hidePosition;
             DOTween.To(() => _rectTransform.anchoredPosition, 
                 x => _rectTransform.anchoredPosition = x,
                 destination, TimeHide).SetEase(Ease.OutBounce);
             _isHided = !_isHided;
+            OnSwitch?.Invoke();
         }
 
         public enum Direction

@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7415103865824298769, guid: 2e8890bb5fb0ffd43a5e7efa8fcc78a8, type: 3}
+      propertyPath: _nodeName
+      value: "\u0414\u0432\u0435\u0440\u044C"
+      objectReference: {fileID: 0}
     - target: {fileID: 7680451227489697656, guid: 2e8890bb5fb0ffd43a5e7efa8fcc78a8, type: 3}
       propertyPath: m_Name
       value: Door Node Variant

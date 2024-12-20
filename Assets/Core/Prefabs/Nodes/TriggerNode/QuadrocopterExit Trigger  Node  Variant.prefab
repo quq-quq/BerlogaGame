@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 28.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5399628563277836413, guid: d789c9534d4e6084598c4b5c88f8cbeb, type: 3}
+      propertyPath: _nodeName
+      value: "\u0414\u0440\u043E\u043D \u043F\u043E\u0442\u0435\u0440\u044F\u043D"
+      objectReference: {fileID: 0}
     - target: {fileID: 6133396798970994343, guid: d789c9534d4e6084598c4b5c88f8cbeb, type: 3}
       propertyPath: m_Name
       value: QuadrocopterExit Trigger  Node  Variant

@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CloseNode Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7843696398165380406, guid: 94d40253ffdaded4da01367f1ef86f7b, type: 3}
+      propertyPath: _nodeName
+      value: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

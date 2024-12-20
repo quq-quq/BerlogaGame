@@ -15,5 +15,13 @@ namespace Node_System.Scripts.Node
                 openClose?.Close();
             }
         }
+
+        public override bool CanExecute(ObjectNode node)
+        {
+            var res = node.ObjectForNode.TryGetComponent(out IOpenClose x);
+            if(!res)
+                Console.NewMessage($"{node.NodeName} не может выполнить действие \"{NodeName}\"");
+            return res;
+        }
     }
 }

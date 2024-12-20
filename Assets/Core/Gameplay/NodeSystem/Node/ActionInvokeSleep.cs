@@ -15,5 +15,13 @@ namespace Node_System.Scripts.Node
                 q.StartSleep();
             }
         }
+        
+        public override bool CanExecute(ObjectNode node)
+        {
+            var res = node.ObjectForNode.TryGetComponent(out Quadrocopter x);
+            if(!res)
+                Console.NewMessage($"{node.NodeName} не может выполнить действие \"{NodeName}\"");
+            return res;
+        }
     }
 }

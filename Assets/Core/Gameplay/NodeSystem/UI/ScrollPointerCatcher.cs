@@ -18,6 +18,7 @@ namespace UI
         private RectTransform _rectPointerCatcher;
         private RectTransform _rect;
         private bool _isClicked = false;
+        private bool _hovered = false;
         private Vector3 _originMousePosition;
         private Vector3 _pointerCatcherOriginLocalPosition;
 
@@ -37,6 +38,8 @@ namespace UI
             _slider.value = (_pointerCatcher.transform.localScale.x - _minScale) / (_maxScale - _minScale);
             _pointerCatcher.PointerDownEvent += OnPointerDown;
             _pointerCatcher.PointerUpEvent += OnPointerUp;
+            _pointerCatcher.PointerEnterEvent += OnPointerEnter;
+            _pointerCatcher.PointerExitEvent += OnPointerExit;
             _slider.onValueChanged.AddListener(OnSliderValueChanged);
         }
 
@@ -45,6 +48,8 @@ namespace UI
             _isClicked = false;
             _pointerCatcher.PointerDownEvent -= OnPointerDown;
             _pointerCatcher.PointerUpEvent -= OnPointerUp;
+            _pointerCatcher.PointerEnterEvent -= OnPointerEnter;
+            _pointerCatcher.PointerExitEvent -= OnPointerExit;
             _slider.onValueChanged.RemoveListener(OnSliderValueChanged);
         }
 
@@ -74,11 +79,21 @@ namespace UI
             _pointerCatcherOriginLocalPosition = _pointerCatcher.transform.localPosition;
             _originMousePosition = Input.mousePosition;
         }
+
+        private void OnPointerEnter(PointerEventData pointerEventData)
+        {
+            _hovered = true;
+        }
+
+        private void OnPointerExit(PointerEventData pointerEventData)
+        {
+            _hovered = false;
+        }
         
         private void Update()
         {   
             _rectPointerCatcher.sizeDelta = new Vector2(_rect.rect.width, _rect.rect.height) * (1 / _minScale);
-            _slider.value -= (Input.GetAxis("Mouse ScrollWheel") * _scrollSensitivity);
+            if(_hovered) _slider.value -= (Input.GetAxis("Mouse ScrollWheel") * _scrollSensitivity);
             if(!_isClicked) return;
             SetAndClampLocalPositionPointerChecker(_pointerCatcherOriginLocalPosition + Input.mousePosition - _originMousePosition);
 

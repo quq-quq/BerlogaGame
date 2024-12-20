@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Node;
 using UnityEngine;
 
@@ -18,6 +19,13 @@ namespace UI
         [SerializeField] protected GameObject _solid;
         
         protected BaseNode _node;
+        
+        public event Action<Connection> OnConnect;
+
+        protected void InvokeConnection(Connection connection)
+        {
+            OnConnect?.Invoke(connection);
+        }
         
         public BaseNode OwnerNode
         {

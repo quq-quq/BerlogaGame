@@ -13,5 +13,13 @@ namespace Node_System.Scripts.Node
                 horizontalMover.MoveHorizontal(-Value);
             }
         }
+        
+        public override bool CanExecute(ObjectNode node)
+        {
+            var res = node.ObjectForNode.TryGetComponent(out IHorizontalMover x);
+            if(!res)
+                Console.NewMessage($"{node.NodeName} не может выполнить действие \"{NodeName}\"");
+            return res;
+        }
     }
 }

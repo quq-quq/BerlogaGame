@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 28.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5399628563277836413, guid: d789c9534d4e6084598c4b5c88f8cbeb, type: 3}
+      propertyPath: _nodeName
+      value: "\u041A\u0430\u043C\u0435\u0440\u0430 \u0443\u0432\u0438\u0434\u0435\u043B\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 6133396798970994343, guid: d789c9534d4e6084598c4b5c88f8cbeb, type: 3}
       propertyPath: m_Name
       value: CamEnterTrigger Variant
