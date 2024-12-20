@@ -18479,10 +18479,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2024412586}
     m_Modifications:
-    - target: {fileID: 1036269905849014888, guid: dd448164b4126d04383118fc151f592e, type: 3}
-      propertyPath: m_SortingOrder
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 2529740278109738970, guid: dd448164b4126d04383118fc151f592e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.77
@@ -18551,11 +18547,8 @@ PrefabInstance:
       propertyPath: _dialogueCanvas.Array.data[1]
       value: 
       objectReference: {fileID: 1304296712}
-    - target: {fileID: 8822260195417014874, guid: dd448164b4126d04383118fc151f592e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.11
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5223138484256141038, guid: dd448164b4126d04383118fc151f592e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

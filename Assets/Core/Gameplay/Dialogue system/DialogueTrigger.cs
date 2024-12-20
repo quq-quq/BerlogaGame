@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Dialogue_system;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,13 +7,16 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueViewer[] _dialogueCanvas;
-    private Animator _anim;
+    [SerializeField] private Transform _signE;
+    [SerializeField] private float _distanceUp;
+    [SerializeField] private float _durationForMove;
+    private float _currentDistance;
     private bool _canPressing;
     private int _indexDialogueCanvas;
 
-    private void Start()
+    private void Awake()
     {
-        _anim = GetComponent<Animator>();
+        _currentDistance = _signE.transform.localPosition.y;
     }
 
     //private void Update()
@@ -45,7 +49,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.TryGetComponent(out PlayerController player))
         {
-            _anim.SetBool("IsPressing", true);
+            _signE.DOKill();
+            _signE.DOLocalMoveY(_currentDistance + _distanceUp, _durationForMove);
             if (_canPressing)
             {
                 _dialogueCanvas[_indexDialogueCanvas].StartDialogue();
@@ -59,7 +64,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.TryGetComponent(out PlayerController player))
         {
-            _anim.SetBool("IsPressing", false);
+            _signE.DOKill();
+            _signE.DOLocalMoveY(_currentDistance, _durationForMove);
             _canPressing = false;
         }
     }

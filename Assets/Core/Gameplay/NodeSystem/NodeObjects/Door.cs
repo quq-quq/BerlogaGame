@@ -41,7 +41,6 @@ namespace NodeObjects
 
         public void Close()
         {
-            
             CloseEvent?.Invoke();
             SwitchStates(false);
         }
@@ -53,8 +52,7 @@ namespace NodeObjects
             _closeSkin.SetActive(!isOpen);
             if (_isOpen != isOpen)
             {
-                Move(isOpen);
-                SoundController.sounder.SetSound(_doorAudio, false, gameObject.name, _volume);
+                Move(isOpen);                
             }
             _isOpen = isOpen;
         }
@@ -70,7 +68,8 @@ namespace NodeObjects
             {
                 transform.DOLocalMoveY(_currentDistance, _durationForMove);
             }
-            
+
+            SoundController.sounder.SetSound(_doorAudio, false, gameObject.name, _volume);
         }
     
     }

@@ -5370,7 +5370,7 @@ MonoBehaviour:
   _idleSpeed: 1
   _runSpeed: 1.9
   _maxTilt: 8
-  _tiltSpeed: 10
+  _tiltSpeed: 13
   _jumpParticles: {fileID: 2969068312619346371}
   _launchParticles: {fileID: 2969068312669941334}
   _moveParticles: {fileID: 2969068311631949152}
@@ -15126,7 +15126,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 965
+  m_SortingOrder: 1000
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -20122,7 +20122,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1840327654, guid: 5afa3922a30ef6141bca084fbb413141, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
