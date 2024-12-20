@@ -1,11 +1,14 @@
-using Dialogue_system;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
+using Dialogue_system;
+using DG.Tweening;
 
+[RequireComponent(typeof(CopilotMove))]
+[RequireComponent(typeof(Transform))]
 public class CopilotMonolog : MonoBehaviour
 {
     [System.Serializable]
@@ -18,30 +21,71 @@ public class CopilotMonolog : MonoBehaviour
 
     [Header("Suggestion Parametrs")]
     [SerializeField] private Collider2D _player;
-    [SerializeField] private TMP_Text _text;
+    [SerializeField] private TMP_Text _textPhrase;
+    [SerializeField] private TMP_Text _textQuestion;
+    [SerializeField] private CanvasGroup _phraseCanvasGroup;
+    [SerializeField] private CanvasGroup _questionCanvasGroup;
     [SerializeField] private Animator _speechBableAnimator;
     [SerializeField] private AnimationClip _hideKeyAnimationClip;
+    [SerializeField] private Button _yesForPhraseButton;
+    [SerializeField] private Button _noForPhraseButton;
     [Space(10)]
-    [SerializeField] private float _charTime;
+    [SerializeField] private float _timeOfChar;
     [SerializeField, Min(0f)] private float _timeAnimatorOffset;
-    [SerializeField, Min(0)] private float _timeShowPhrase;
-    [SerializeField, Min(0f)] private float _timeTextAnimation;
+    [SerializeField, Min(0)] private float _timeShow;
+    [SerializeField, Min(0f)] private float _timeCanvasGroupFade;
     [Space(30)]
     [SerializeField] private List<Zone> _zones;
     [Space(30)]
     [Header("Appearence Parametrs")]
     [SerializeField] private Transform _copilotPointsTransform;
-    [SerializeField] private CopilotMove _copilotMove;
     [Space(10)]
-    [SerializeField, Min(0)] private float _distance;
+    [SerializeField, Min(0f)] private float _timeToNextAppearence;
 
+    private int _distance = 20;
     private int _currentZoneIndex;
     private WriterDialogue _writer;
     private Coroutine _currentCoroutine;
     private readonly int ShowKey = Animator.StringToHash("Show");
     private readonly int HideKey = Animator.StringToHash("Hide");
 
-    public void TakeSuggestion()
+    private void Awake()
+    {
+        _currentCoroutine = null;
+        _currentZoneIndex = 0;
+
+        //For savety (just in case)
+        //_phraseCanvasGroup.alpha = 0;
+        //_questionCanvasGroup.alpha = 0;
+        //_yesForPhraseButton.interactable = false;
+        //_noForPhraseButton.interactable = false;
+        //_phraseCanvasGroup.gameObject.SetActive(false);
+        //_questionCanvasGroup.gameObject.SetActive(false);
+
+        HideCopilot();
+    }
+
+    private void OnEnable()
+    {
+        if (_currentCoroutine != null)
+            StopCoroutine(_currentCoroutine);
+        _currentCoroutine = null;
+   
+        _yesForPhraseButton?.onClick.AddListener(TakeSuggestion);
+        _noForPhraseButton?.onClick.AddListener(() => StartCoroutine(HideQuestion()));
+    }
+
+    private void OnDisable()
+    {
+        if (_currentCoroutine != null)
+            StopCoroutine(_currentCoroutine);
+        _currentCoroutine = null;
+
+        _yesForPhraseButton?.onClick.RemoveListener(TakeSuggestion);
+        _noForPhraseButton?.onClick.RemoveListener(() => StartCoroutine(HideQuestion()));
+    }
+
+    private void TakeSuggestion()
     {
         if (_currentCoroutine == null)
         {
@@ -49,90 +93,100 @@ public class CopilotMonolog : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        _currentCoroutine = null;
-        _copilotPointsTransform.Translate(Vector3.up * _distance);
-    }
-
     private IEnumerator ShowPhrase()
     {
-        _copilotPointsTransform.Translate(Vector3.down * _distance);
-        float _timeAppearence = _distance/_copilotMove.MaxSpeed/2;
-        yield return new WaitForSeconds(_timeAppearence);
+        _questionCanvasGroup.DOFade(0, _timeCanvasGroupFade).WaitForCompletion();
+        _speechBableAnimator.SetTrigger(HideKey);
+        yield return new WaitForSeconds(_hideKeyAnimationClip.length);
+        yield return new WaitForSeconds(_timeAnimatorOffset);
+
+        _questionCanvasGroup.gameObject.SetActive(false);
+        _phraseCanvasGroup.gameObject.SetActive(true);
+        _phraseCanvasGroup.alpha = 0;
 
         _currentZoneIndex = CheckZoneIndex();
+        Zone currentZone = _zones[_currentZoneIndex];
 
         if (_zones[_currentZoneIndex].phrasesConfig.Phrases.Count > 0)
         {
-            _text.text = "";
+            _textPhrase.text = "";
             _speechBableAnimator.SetTrigger(ShowKey);
-            StartCoroutine(TextShow());
             yield return new WaitForSeconds(_timeAnimatorOffset);
-            yield return WriteTextCoroutine(_zones[_currentZoneIndex].phrasesConfig.Phrases[_zones[_currentZoneIndex].indexOfPhrase]);
-            yield return new WaitForSeconds(_timeShowPhrase);
-            yield return TextHide();
+            _phraseCanvasGroup.DOFade(1, _timeCanvasGroupFade);
+            yield return WriteTextCoroutine(_textPhrase, currentZone.phrasesConfig.Phrases[currentZone.indexOfPhrase]);
+            yield return new WaitForSeconds(_timeShow);
+            _phraseCanvasGroup.DOFade(0, _timeCanvasGroupFade).WaitForCompletion();
             _speechBableAnimator.SetTrigger(HideKey);
             yield return new WaitForSeconds(_hideKeyAnimationClip.length);
             yield return new WaitForSeconds(_timeAnimatorOffset);
 
             if (_zones[_currentZoneIndex].indexOfPhrase < _zones[_currentZoneIndex].phrasesConfig.Phrases.Count - 1)
             {
-                Zone zone = _zones[_currentZoneIndex];
-                zone.indexOfPhrase++;
-                _zones[_currentZoneIndex] = zone;
+                currentZone.indexOfPhrase++;
+                _zones[_currentZoneIndex] = currentZone;
             }
             else
             {
-                Zone zone = _zones[_currentZoneIndex];
-                zone.indexOfPhrase = 0;
-                _zones[_currentZoneIndex] = zone;
+                currentZone.indexOfPhrase = 0;
+                _zones[_currentZoneIndex] = currentZone;
             }
         }
 
-        _currentCoroutine = null;
+        HideCopilot();
 
-        _copilotPointsTransform.Translate(Vector3.up * _distance);
+        _currentCoroutine = null;
 
         yield return null;
     }
 
-
-    private IEnumerator WriteTextCoroutine(string text)
+    private IEnumerator ShowQuestion()
     {
-        _writer = new DecodingWriterDialogue(text);
-        while (_text.text != _writer.EndText())
-        {
-            _text.text = _writer.WriteNextStep();
-            yield return new WaitForSeconds(_charTime);
-        }
+        _phraseCanvasGroup.gameObject.SetActive(false);
+        _questionCanvasGroup.gameObject.SetActive(true);
+        _questionCanvasGroup.alpha = 0;
+
+        _textQuestion.text = "";
+        _speechBableAnimator.SetTrigger(ShowKey);
+        yield return new WaitForSeconds(_timeAnimatorOffset);
+        _questionCanvasGroup.DOFade(1, _timeCanvasGroupFade);
+        yield return WriteTextCoroutine(_textQuestion, "Хочешь подсказку?");
+
+        _currentCoroutine = null;
+
+        yield return null;
     }
 
-    private IEnumerator TextHide()
+    private IEnumerator HideQuestion()
     {
-        var c = _text.color;
-        var t = 0f;
-        while (t <= _timeTextAnimation)
-        {
-            c.a = Mathf.Lerp(1, 0, t / _timeTextAnimation);
-            _text.color = c;
-            yield return new WaitForFixedUpdate();
-            t += Time.fixedDeltaTime;
-        }
-        _text.gameObject.SetActive(false);
+        _questionCanvasGroup.DOFade(0, _timeCanvasGroupFade).WaitForCompletion();
+        _speechBableAnimator.SetTrigger(HideKey);
+        yield return new WaitForSeconds(_hideKeyAnimationClip.length);
+        yield return new WaitForSeconds(_timeAnimatorOffset);
+        HideCopilot();
+
+        yield return null;
     }
 
-    private IEnumerator TextShow()
+    private IEnumerator ShowCopilot()
     {
-        _text.gameObject.SetActive(true);
-        var c = _text.color;
-        var t = 0f;
-        while (t <= _timeTextAnimation)
+        yield return new WaitForSeconds(_timeToNextAppearence);
+        _copilotPointsTransform.Translate(Vector3.down * _distance);
+        StartCoroutine(ShowQuestion());
+    }
+
+    private void HideCopilot()
+    {
+        _copilotPointsTransform.Translate(Vector3.up * _distance);
+        StartCoroutine(ShowCopilot());
+    }
+
+    private IEnumerator WriteTextCoroutine(TMP_Text text, string str)
+    {
+        _writer = new DecodingWriterDialogue(str);
+        while (text.text != _writer.EndText())
         {
-            c.a = Mathf.Lerp(0, 1, t / _timeTextAnimation);
-            _text.color = c;
-            yield return new WaitForFixedUpdate();
-            t += Time.fixedDeltaTime;
+            text.text = _writer.WriteNextStep();
+            yield return new WaitForSeconds(_timeOfChar);
         }
     }
 

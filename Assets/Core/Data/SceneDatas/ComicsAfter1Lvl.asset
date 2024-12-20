@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ComicsAfter1Lvl
   m_EditorClassIdentifier: 
   _sceneName: ComicsAfter1Lvl
-  _musicBackground: {fileID: 0}
+  _backgroundMusic: {fileID: 8300000, guid: c471ca28054a02347aa0684363b0cb5b, type: 3}

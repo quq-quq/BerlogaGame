@@ -1,6 +1,7 @@
 using System.Collections;
 using Core.Gameplay.SceneManagement;
 using DefaultNamespace;
+using DG.Tweening;
 using Save_files.Scripts;
 using TMPro;
 using UnityEngine;
@@ -11,15 +12,16 @@ public class StartEndScene : MonoBehaviour
 {
     [SerializeField] private SceneData _nextScene;
     [SerializeField] private TMP_Text _text;
-    [SerializeField] private float _transitTime;
     [SerializeField] private Image _image;
     [SerializeField] private GameObject _canvas;
     [SerializeField] private TriggerZone _zone;
     [SerializeField] private AudioClip _endAudio;
     [SerializeField] private float _volume;
+    [SerializeField] private float _ofsetBeforeAudioClip;
     
     private SceneLoader _sceneLoader;
-    
+    private float _transitTime;
+
     [Inject]
     private void Inject(SceneLoader sceneLoader)
     {
@@ -28,6 +30,7 @@ public class StartEndScene : MonoBehaviour
     
     private void Awake()
     {
+        _transitTime = _endAudio.length + _ofsetBeforeAudioClip;
         _canvas.SetActive(true);
         _image.color = Color.black;
         Show();
@@ -46,21 +49,15 @@ public class StartEndScene : MonoBehaviour
     public void Hide()
     {
         StartCoroutine(HideCoroutine());
-        SoundController.sounder.SetSound(_endAudio, false, "BackGroundMusic", _volume);
+        
+        
         IEnumerator HideCoroutine()
         {
-            var t = _transitTime;
-            var tColor = Color.black;
-            var a = 0f;
+            _image.DOColor(Color.black, _transitTime);
+            yield return new WaitForSeconds(_ofsetBeforeAudioClip);
+            SoundController.sounder.SetSound(_endAudio, false, "BackGroundMusic", _volume);
+            yield return new WaitForSeconds(_transitTime-_ofsetBeforeAudioClip);
 
-            while (t > 0)
-            {
-                a = Mathf.Lerp(1, 0, t / _transitTime);
-                t -= Time.deltaTime;
-                tColor.a = a;
-                _image.color = tColor;
-                yield return new WaitForEndOfFrame();
-            }
             Saver.Data.SetCompleted(_sceneLoader.GetCurrentScene());
             _sceneLoader.LoadScene(_nextScene);
         }
@@ -69,33 +66,15 @@ public class StartEndScene : MonoBehaviour
     public void Show()
     {
         StartCoroutine(ShowCoroutine());
+
+
         IEnumerator ShowCoroutine()
         {
-            var t = _transitTime;
-            var tColor = Color.black;
-            var a = 1f;
-
-            while (t > 0)
-            {
-                a = Mathf.Lerp(0, 1, t / _transitTime);
-                t -= Time.deltaTime;
-                tColor.a = a;
-                _image.color = tColor;
-                yield return new WaitForEndOfFrame();
-            }
-            /////
-             t = _transitTime/2;
-             tColor = _text.color;
-             a = 1f;
-
-            while (t >= 0)
-            {
-                a = Mathf.Lerp(0, 1, t / (_transitTime / 2));
-                t -= Time.deltaTime;
-                tColor.a = a;
-                _text.color = tColor;
-                yield return new WaitForEndOfFrame();
-            }
+           yield return _image.DOColor(Color.clear, _transitTime).WaitForCompletion();
+           _text.DOColor(Color.clear, _transitTime);
         }
+
+        
+        
     }
 }

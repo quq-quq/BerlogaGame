@@ -54,7 +54,6 @@ public class LevelButtonsScript : MonoBehaviour
         _pausePanel.SetActive(false);
         _isPaused = false;
 
-        SoundController.sounder.SetSound(_backgroundSound, true, "BackGroundMusic", _volume);
 
         _suggestionImage = _suggestionButton.gameObject.GetComponent<Image>();
         _suggestionImage.type = Image.Type.Filled;
@@ -128,35 +127,6 @@ public class LevelButtonsScript : MonoBehaviour
         _pausePanel.SetActive(false);
         _isPaused = false;
         _sceneLoader.LoadScene(_sceneLoader.GetCurrentScene());
-    }
-
-    public void Suggestion()
-    {
-         _copilotMonolog.TakeSuggestion();
-
-        if (_suggestionIsActive)
-        {
-            StartCoroutine(Coroutine());
-        }
-
-        IEnumerator Coroutine()
-        {
-
-            _suggestionIsActive = false;
-            _suggestionButton.interactable = false;
-            _suggestionImage.fillAmount = 0;
-            float lerpTime = Time.time;
-
-            while (Time.time - lerpTime < _suggestionCooldown)
-            {
-                _suggestionImage.fillAmount = (Time.time - lerpTime) / _suggestionCooldown;
-
-                yield return null;
-            }
-
-            _suggestionIsActive = true;
-            _suggestionButton.interactable = true;
-        }
     }
 
     public void SetOnlyCurrentButton(GameObject currentButton)
