@@ -57,8 +57,10 @@ MonoBehaviour:
   _lerp: 0.05
   _zoneOnColor: {r: 0.5754717, g: 0.15472588, b: 0.15472588, a: 0.5176471}
   _zoneOffColor: {r: 0.33333334, g: 1, b: 0.4117647, a: 0.11372549}
-  _volume: 1
-  _zoneSound: {fileID: 8300000, guid: a8a272215758ad14f83c5c281d19891a, type: 3}
+  _volumeOfDrone: 0.2
+  _volumeOfSleep: 0.5
+  _droneSound: {fileID: 8300000, guid: a684dbac59fc83f4f8dea3b44bd882c7, type: 3}
+  _sleepSound: {fileID: 8300000, guid: e778721fb03f00a4cb935dd7a5cd08a8, type: 3}
 --- !u!61 &9164443614805413052
 BoxCollider2D:
   m_ObjectHideFlags: 0

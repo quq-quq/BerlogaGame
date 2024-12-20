@@ -155,4 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab30636fba070145a45d68e05f6b459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  _DialogueRobot: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: e3c80eb39fcdeca46872e7825d2fa49c, type: 3}
+  _volume: 0.5

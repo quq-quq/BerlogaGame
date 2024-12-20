@@ -19,9 +19,11 @@ namespace NodeObjects
         [SerializeField] private Color _zoneOnColor;
         [SerializeField] private Color _zoneOffColor;
 
-        [Space(40)]
-        [SerializeField] private float _volume;
-        [SerializeField] private AudioClip _zoneSound;
+        [Space(30)]
+        [SerializeField, Range(0, 1)] private float _volumeOfDrone = 0.2f;
+        [SerializeField, Range(0, 1)] private float _volumeOfSleep = 0.2f;
+        [SerializeField] private AudioClip _droneSound;
+        [SerializeField] private AudioClip _sleepSound;
 
         private List<ISleeper> _sleepers = new List<ISleeper>();
         private bool _isStartSleep = false;
@@ -32,16 +34,20 @@ namespace NodeObjects
             _zone.TriggerExit += OnZoneExit;
         }
 
+        private void Start()
+        {
+            SoundController.sounder.SetSound(_droneSound, true, gameObject.name, _volumeOfDrone);
+        }
+
         public void StartSleep()
         {
             _isStartSleep = true;
             foreach (var i in _sleepers)
             {
+                SoundController.sounder.SetSound(_sleepSound, false, this.gameObject.name, _volumeOfSleep);
                 i.Sleep(this);
             }
             _spriteRange.color = _zoneOnColor;
-
-            SoundController.sounder.SetSound(_zoneSound, true, gameObject.name, _volume);
         }
         
         public void StopSleep()
@@ -52,16 +58,17 @@ namespace NodeObjects
                 i.WakeUp(this);
             }
             _spriteRange.color = _zoneOffColor;
-
-            SoundController.sounder.SetSound(null, false, gameObject.name, _volume);
         }
 
         private void OnZoneEnter(Collider2D other)
         {
             if(other.TryGetComponent(out ISleeper sleeper))
             {
-                if(_isStartSleep)
+                if (_isStartSleep)
+                {
                     sleeper.Sleep(this);
+                    SoundController.sounder.SetSound(_sleepSound, false, this.gameObject.name, _volumeOfSleep);
+                }                   
                 _sleepers.Add(sleeper);
             }
         }
@@ -79,11 +86,13 @@ namespace NodeObjects
         public void StopFollow()
         {
             _isFollow = false;
+            SoundController.sounder.SetSound(null, true, gameObject.name, _volumeOfDrone);
         }
         
         public void StartFollow()
         {
             _isFollow = true;
+            SoundController.sounder.SetSound(_droneSound, true, gameObject.name, _volumeOfDrone);
         }
 
         private void FixedUpdate()
