@@ -69,7 +69,10 @@ namespace UI
                 _isActive = true;
                 _button.interactable = true;
             }
-            
+        }
+
+        public override void SetTitle(string title)
+        {
         }
     }
 }

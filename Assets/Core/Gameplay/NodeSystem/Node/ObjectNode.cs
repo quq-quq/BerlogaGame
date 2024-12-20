@@ -24,6 +24,7 @@ namespace Node_System.Scripts.Node
 
         public override void Boot()
         {
+            _objectForNode.PrepareText(_objectName);
         }
 
         public override void Do(ObjectForNode go)

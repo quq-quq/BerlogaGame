@@ -53,16 +53,16 @@ namespace Core.Gameplay.UISystem
             UpdateView();
         }
 
-        public override void Show()
+        public override void Show(PanelState state, bool animate = true)
         {
             Time.timeScale = 0f;
-            base.Show();
+            base.Show(state, animate);
         }
 
-        public override void Hide()
+        public override void Hide(PanelState state, bool animate = true)
         {
             Time.timeScale = 1f;
-            base.Hide();
+            base.Hide(state, animate);
         }
 
         private void OnEnable()
