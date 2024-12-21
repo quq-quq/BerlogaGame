@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4bcb6f71f9f4172bab83413c0c58e5, type: 3}
   m_Name: Room3
   m_EditorClassIdentifier: 
-  _sceneName: Room 3
-  _backgroundMusic: {fileID: 8300000, guid: dd47e16e780a36142bb08599aaf15a75, type: 3}
+  _sceneName: Room3
+  _backgroundMusic: {fileID: 8300000, guid: 97b691aca1dd71a488758a04f7f37c21, type: 3}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8c0d939d066d1354c8e14dbd75d19d54
+guid: 441902f7dd051d344b34e2c2e063ae34
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 2
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,33 +81,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,43 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fade_0
+      name: pngfind.com-black-circle-fade-png-587994_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2
-        height: 1
+        x: 625
+        y: 553
+        width: 494
+        height: 592
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e64b1cc9b1c3534cb280289a1b61331
-      internalID: -326529513
+      spriteID: 6d0e99ad7eafe434e8cf2a8ad95a263c
+      internalID: -791952142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fade_1
+      name: pngfind.com-black-circle-fade-png-587994_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1
-        height: 1
+        x: 215
+        y: 551
+        width: 412
+        height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cf0c99f3ef65af4baab23f648e25aec
-      internalID: -1015211659
+      spriteID: ece3913ca3c8ce4418b1b197cf249305
+      internalID: -2096238651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-black-circle-fade-png-587994_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 631
+        height: 545
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b26ac956dc9ae8745915736d6d6c55b8
+      internalID: -150203403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngfind.com-black-circle-fade-png-587994_3
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 253
+        width: 401
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636ee88736ac85d4c947cc05b84e4308
+      internalID: -1751895318
       vertices: []
       indices: 
       edges: []
@@ -188,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fade_0: -326529513
-      fade_1: -1015211659
+      pngfind.com-black-circle-fade-png-587994_0: -791952142
+      pngfind.com-black-circle-fade-png-587994_1: -2096238651
+      pngfind.com-black-circle-fade-png-587994_2: -150203403
+      pngfind.com-black-circle-fade-png-587994_3: -1751895318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -53,7 +53,7 @@ MonoBehaviour:
   _closeSkin: {fileID: 3638098042785037162}
   _isOpen: 1
   _doorAudio: {fileID: 8300000, guid: d5a20234990ec174483c30332364420a, type: 3}
-  _volume: 0.5
+  _volume: 0.2
   _distanceUp: 4
   _durationForMove: 0.4
 --- !u!61 &7534965949066658507

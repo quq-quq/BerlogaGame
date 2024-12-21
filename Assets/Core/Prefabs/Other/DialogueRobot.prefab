@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2529740278109738970}
   - component: {fileID: 4930334472980922961}
   - component: {fileID: 4399159171034294217}
-  - component: {fileID: 5223138484256141038}
   - component: {fileID: 5047096116841848943}
   m_Layer: 0
   m_Name: DialogueRobot
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 51fa1a304d4eb06488bd3db91e990629, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,27 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
---- !u!95 &5223138484256141038
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6045424650326885082}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 38d66f29e73fe2a4681650411e69e280, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5047096116841848943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueCanvas:
   - {fileID: 0}
+  _signE: {fileID: 8822260195417014874}
+  _distanceUp: 4
+  _durationForMove: 0.5
 --- !u!1 &7954752627265138255
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +221,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -1
   m_Sprite: {fileID: -384205437, guid: 7e6366b582a34934694b82bbe996aedc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
