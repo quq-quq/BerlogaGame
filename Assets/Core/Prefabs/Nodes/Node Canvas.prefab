@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _title: {fileID: 0}
-  _calculation: {fileID: 8300000, guid: bc00b3b2845d2a84699368d126a5745d, type: 3}
+  _calculations: []
   _volume: 0.5
   cooldown: 5
   _button: {fileID: 2720868848325829640}
@@ -1562,7 +1562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 6004591454284618354}
-  _direction: 3
+  _direction: 0
   _isHided: 0
 --- !u!1 &2819559535195732919
 GameObject:
