@@ -5362,8 +5362,8 @@ MonoBehaviour:
   _launchParticles: {fileID: 2969068312669941334}
   _moveParticles: {fileID: 2969068311631949152}
   _landParticles: {fileID: 2969068312368229178}
-  _footsteps: {fileID: 8300000, guid: 4d70c49ee4a5c5d4c97cd22bf1014253, type: 3}
-  _Jump: {fileID: 8300000, guid: c07ac3c123e32c6468cc36926b4f92fe, type: 3}
+  _footsteps: {fileID: 8300000, guid: 40ad6258a10c50049aa81d0a9ea82973, type: 3}
+  _Jump: {fileID: 8300000, guid: ce9aa7414fad9f345803a055fde9d51e, type: 3}
   _volume: 0.4
 --- !u!1 &2969068312368229159
 GameObject:
