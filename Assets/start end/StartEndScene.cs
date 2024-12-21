@@ -22,6 +22,11 @@ public class StartEndScene : MonoBehaviour
     private SceneLoader _sceneLoader;
     private float _transitTime;
 
+    public TMP_Text Text
+    {
+        get => _text;
+    }
+
     [Inject]
     private void Inject(SceneLoader sceneLoader)
     {

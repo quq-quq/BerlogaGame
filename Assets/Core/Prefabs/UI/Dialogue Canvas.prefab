@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 2728859728658296354}
   - component: {fileID: 4183918327474900518}
   - component: {fileID: 9022167998298859140}
+  - component: {fileID: 3502050389791239880}
   m_Layer: 5
   m_Name: Dialogue Canvas
   m_TagString: Untagged
@@ -578,9 +579,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9bb96fe8c9f12349a16c35bb9de8f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _panelName: Dialogue
   _bunch: {fileID: 11400000, guid: ec97a517ea0ae694f9092245c9573ab5, type: 2}
+  _isHidedAwake: 0
   _oneCharTime: 0.1
-  _startOnStart: 0
   _parent: {fileID: 5353560186583404183}
   _avatar: {fileID: 257329052498787076}
   _leftAvatarPositions: {fileID: 1705671222469661712}
@@ -588,6 +590,18 @@ MonoBehaviour:
   _background: {fileID: 6023373591664741573}
   _mainText: {fileID: 235505445430332380}
   _nameText: {fileID: 6657350969520764906}
+--- !u!225 &3502050389791239880
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981229978226716981}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7322617447537743922
 GameObject:
   m_ObjectHideFlags: 0

@@ -305,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea516eaedcc4ac7a6238d84347a9e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Galagram
   _title: {fileID: 5724860195046841688}
   _isActive: 1
   _speed: 2
@@ -553,6 +552,14 @@ PrefabInstance:
     - target: {fileID: 6125821804222460264, guid: 6b8b938fc58774bb79d4ca66edbabfe1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493253835828202470, guid: 6b8b938fc58774bb79d4ca66edbabfe1, type: 3}
+      propertyPath: _override
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493253835828202470, guid: 6b8b938fc58774bb79d4ca66edbabfe1, type: 3}
+      propertyPath: _overrideText
+      value: "\u0420\u043E\u0431\u043E\u0442-\u0433\u043E\u043B\u043E\u0433\u0440\u0430\u043C\u043C\u0430"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

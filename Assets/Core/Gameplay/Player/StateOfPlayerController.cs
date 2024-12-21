@@ -1,29 +1,37 @@
+using Core.Gameplay.UISystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
 public class StateOfPlayerController : MonoBehaviour
 {
+    [SerializeField] private PlayerController _playerController;
+    [SerializeField] private Transform _mainUI;
+    [SerializeField] List<Transform> _notDisablePlayerControllerPanels;
+    private List<Transform> _panels = new List<Transform>();
     private bool _isEnabled = true;
-    private PlayerController _playerController;
 
-    private void Awake()
+    private void Start()
     {
-        _playerController = GetComponent<PlayerController>();
+        foreach ( Transform panel in _mainUI)
+        {
+            if(!_notDisablePlayerControllerPanels.Contains(panel) && panel.gameObject.name != "EventSystem")
+                _panels.Add(panel);
+        }
     }
 
-    public void SetStateOfComponent()
+    private void Update()
     {
-        if(_isEnabled)
+        foreach (RectTransform panel in _panels)
         {
-            _playerController.enabled = false;
-            _isEnabled = false;
+            if (panel.GetChild(0).gameObject.activeSelf)
+            {
+                _playerController.enabled = false;
+                _playerController.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                SoundController.sounder.SetSound(null, false, "PlayerRun", 0);
+                return;
+            }
         }
-        else
-        {
-            _playerController.enabled = true;
-            _isEnabled = true;
-        }
-    } 
+        _playerController.enabled = true;
+    }
 }

@@ -2,6 +2,7 @@ using System;
 using Core.Extension;
 using Core.Gameplay.SceneManagement;
 using Save_files.Scripts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -27,6 +28,10 @@ namespace Core.Gameplay.UISystem
         [SerializeField] private Image _soundImage;
         [SerializeField] private Sprite _mute;
         [SerializeField] private Sprite _unmute;
+        [SerializeField] private Button _restartButton;
+        [SerializeField] TMP_Text _text;
+        [SerializeField] private StartEndScene _startEndScene;
+        
 
         protected override CanvasGroup CanvasGroup => _canvasGroup;
         private CanvasGroup _canvasGroup;
@@ -51,6 +56,8 @@ namespace Core.Gameplay.UISystem
             _isMuted = Saver.Data.IsMute;
             AudioListener.pause = _isMuted;
             UpdateView();
+
+            _text.text = _startEndScene.Text.text;
         }
 
         public override void Show(PanelState state, bool animate = true)
@@ -70,6 +77,7 @@ namespace Core.Gameplay.UISystem
             _resumeButton.onClick.AddListener(Resume);
             _exitButton.onClick.AddListener(Exit);
             _soundButton.onClick.AddListener(SwitchSound);
+            _restartButton.onClick.AddListener(Restart);
 
         }
 
@@ -78,6 +86,7 @@ namespace Core.Gameplay.UISystem
             _resumeButton.onClick.RemoveListener(Resume);
             _exitButton.onClick.RemoveListener(Exit);
             _soundButton.onClick.RemoveListener(SwitchSound);
+            _restartButton.onClick.RemoveListener(Restart);
         }
 
         private void Update()
@@ -107,5 +116,7 @@ namespace Core.Gameplay.UISystem
 
         private void Resume() => _uiPanelController.ClosePanel(this);
         private void Exit() => _sceneLoader.LoadScene(_menuScene);
+
+        private void Restart() => _sceneLoader.LoadScene(_sceneLoader.GetCurrentScene());
     }
 }

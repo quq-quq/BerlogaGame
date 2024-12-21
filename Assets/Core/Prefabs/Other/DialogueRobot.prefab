@@ -148,7 +148,7 @@ MonoBehaviour:
   - {fileID: 0}
   _signE: {fileID: 8822260195417014874}
   _distanceUp: 4
-  _durationForMove: 0.5
+  _durationForMove: 0.3
 --- !u!1 &7954752627265138255
 GameObject:
   m_ObjectHideFlags: 0

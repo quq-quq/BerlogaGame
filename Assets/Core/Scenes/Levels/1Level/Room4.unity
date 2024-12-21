@@ -1202,7 +1202,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 100d988aecc7d3845aa3fe6184ab6233, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2882,7 +2882,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -3265,6 +3265,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9134352529966960349, guid: 63bb0d2ae1dfe455d9536efec6e1c951, type: 3}
   m_PrefabInstance: {fileID: 439168258}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &844072728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1544650614272011792, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
+  m_PrefabInstance: {fileID: 1386520902}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61c64124c8575748994f087b9dc1b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &878097974 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3112056323028038146, guid: be544229f52b96845aad38b9ee16c045, type: 3}
@@ -3965,6 +3976,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1811709145902948800, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
+      propertyPath: _playerController
+      value: 
+      objectReference: {fileID: 844072728}
     - target: {fileID: 1842679332694421655, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.41045
@@ -4037,6 +4052,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5416344037714895949, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
+      propertyPath: _startEndScene
+      value: 
+      objectReference: {fileID: 1425381497}
     - target: {fileID: 5571560214597390744, guid: 93830a06bb7a147dcb4c23fec1a68ebc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4921,8 +4940,8 @@ Transform:
   m_GameObject: {fileID: 1208869252}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0367, y: 0, z: 0}
+  m_LocalScale: {x: 1.0005, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 807920471}
@@ -4975,7 +4994,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -14122,6 +14141,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.14
       objectReference: {fileID: 0}
+    - target: {fileID: 5814142440682644911, guid: 0d51b9eada3fe014183857b5c559f4d7, type: 3}
+      propertyPath: m_text
+      value: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 1\n\u041A\u043E\u043C\u043D\u0430\u0442\u0430
+        4/4"
+      objectReference: {fileID: 0}
     - target: {fileID: 5816616585125821768, guid: 0d51b9eada3fe014183857b5c559f4d7, type: 3}
       propertyPath: m_Name
       value: StartEnd
@@ -14148,6 +14172,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000340447693883273, guid: 0d51b9eada3fe014183857b5c559f4d7, type: 3}
   m_PrefabInstance: {fileID: 1425381495}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1425381497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6010658082931702070, guid: 0d51b9eada3fe014183857b5c559f4d7, type: 3}
+  m_PrefabInstance: {fileID: 1425381495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7661a80d008dab04581d5bc5fe8b5b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1443931192 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3112056323028038146, guid: be544229f52b96845aad38b9ee16c045, type: 3}
