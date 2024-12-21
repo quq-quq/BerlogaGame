@@ -181,6 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 3423703417675600013}
   _canvasGroup: {fileID: 228931090206722000}
+  _override: 0
+  _overrideText: 
 --- !u!1 &4004597158393515019
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +320,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &5442064500235997822
 MonoBehaviour:
