@@ -14,8 +14,8 @@ public class Title : MonoBehaviour
         if (_override)
         {
             SetText(_overrideText);
-            Hide();
         }
+        Hide();
     }
 
     public void Hide()
