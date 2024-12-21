@@ -21,8 +21,7 @@ namespace Dialogue_system
         [SerializeField] private Image _background;
         [SerializeField] private TMP_Text _mainText;
         [SerializeField] private TMP_Text _nameText;
-        [SerializeField] private StateOfPlayerController _stateOfPlayerController;
-        
+
         private int _currentIndexDialogue = 0;
         private bool _isWriting = false;
         private float _currentCharTime;

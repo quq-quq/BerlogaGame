@@ -7,24 +7,28 @@ public class StateOfPlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private Transform _mainUI;
-    [SerializeField] List<UIPanel> _notDisablePlayerControllerPanels;
-    private List<UIPanel> _allPanels = new List<UIPanel>();
+    [SerializeField] List<Transform> _notDisablePlayerControllerPanels;
+    [SerializeField] private List<Transform> _panels = new List<Transform>();
     private bool _isEnabled = true;
 
-    private void Awake()
+    private void Start()
     {
-        UIPanel[] panels = _mainUI.GetComponentsInChildren<UIPanel>(true);
-
-        _allPanels.AddRange(panels);
+        foreach ( Transform panel in _mainUI)
+        {
+            if(!_notDisablePlayerControllerPanels.Contains(panel) && panel.gameObject.name != "EventSystem")
+                _panels.Add(panel);
+        }
     }
 
     private void Update()
     {
-        foreach(UIPanel panel in _allPanels)
+        foreach (RectTransform panel in _panels)
         {
-            if (!panel.IsHided && !_notDisablePlayerControllerPanels.Contains(panel))
+            if (panel.GetChild(0).gameObject.activeSelf)
             {
                 _playerController.enabled = false;
+                _playerController.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                SoundController.sounder.SetSound(null, false, "PlayerRun", 0);
                 return;
             }
         }
