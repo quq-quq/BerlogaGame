@@ -14,6 +14,7 @@ public class SoundController : MonoBehaviour
 
     [SerializeField] private int _sourcesCount;
     [Space]
+    [SerializeField] private AudioClip _backGroundMusic;
     [SerializeField, Range(0, 1)] private float _volumeOfBackgroundMusic;
 
 
@@ -41,15 +42,7 @@ public class SoundController : MonoBehaviour
 
     private void Awake()
     {
-        if (sounder==null)
-        {
-            sounder = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-
+        sounder = this;
         if (gameObject.GetComponents<AudioSource>().Length != _sourcesCount)
         {
             for (int i = 0; i < _sourcesCount; i++)
@@ -70,16 +63,7 @@ public class SoundController : MonoBehaviour
 
     private void Start()
     {
-        if(_sceneLoader == null)
-        {
-            _sceneLoader.GetCurrentScene();
-        }
-
-        if (_sceneLoader.GetCurrentScene() != null)
-        {
-                    AudioClip backgroundMusic = _sceneLoader.GetCurrentScene().BackgroundMusic;
-        SetSound(backgroundMusic, true, "BackgroundMusic", _volumeOfBackgroundMusic);
-        }
+        SetSound(_backGroundMusic, true, "BackgroundMusic", _volumeOfBackgroundMusic);
     }
 
     public void SetSound(AudioClip clip, bool isLooped, string objectName, float volume)

@@ -480,6 +480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameLifetimeScope
       objectReference: {fileID: 0}
+    - target: {fileID: 2803167780576737862, guid: 4ad1a579e499b4c4285fb2ffd383f1d9, type: 3}
+      propertyPath: _backGroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: c471ca28054a02347aa0684363b0cb5b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
