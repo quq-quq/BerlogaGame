@@ -1,18 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+using Core.Gameplay.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
+using VContainer;
 
 public class ComicsButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private string _comicName;
+    [SerializeField] private Button _button;
+    [SerializeField] private SceneData _comicsScene;
+    [SerializeField] private GameObject _blockPanel;
+    [SerializeField] private bool _overrideOpen = false;
+    
+    private bool _opened = false;
+    private SceneLoader _sceneLoader;
+
+    [Inject]
+    private void Inject(SceneLoader sceneLoader)
     {
-        
+        _sceneLoader = sceneLoader;
+    }
+    
+    private void Awake()
+    {
+        _opened = PlayerPrefs.GetInt(_comicName, 0) != 0 || _overrideOpen;
+        _blockPanel.SetActive(!_opened);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
+    { 
+        if(_opened)
+            _button.onClick.AddListener(OpenComics);   
+    }
+
+    private void OnDisable()
     {
-        
+        if(_opened)
+            _button.onClick.RemoveListener(OpenComics);   
+    }
+
+    private void OpenComics()
+    {
+        _sceneLoader.LoadScene(_comicsScene);
     }
 }

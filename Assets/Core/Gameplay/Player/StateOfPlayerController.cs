@@ -8,7 +8,7 @@ public class StateOfPlayerController : MonoBehaviour
     private bool _isEnabled = true;
     private PlayerController _playerController;
 
-    private void Start()
+    private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
     }

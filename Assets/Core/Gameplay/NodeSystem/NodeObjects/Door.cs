@@ -29,6 +29,10 @@ namespace NodeObjects
         {
             _currentDistance = transform.localPosition.y;
             _collider = GetComponent<Collider2D>();
+        }
+
+        private void Start()
+        {
             SwitchStates(_isOpen);
             Move(_isOpen);
         }

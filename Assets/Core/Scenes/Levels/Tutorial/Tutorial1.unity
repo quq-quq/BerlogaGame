@@ -1412,6 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sourcesCount: 6
+  _volumeOfBackgroundMusic: 0
 --- !u!4 &942247088
 Transform:
   m_ObjectHideFlags: 0
@@ -4706,6 +4707,10 @@ PrefabInstance:
       propertyPath: _startOnStart
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9022167998298859140, guid: 6647b4a39cbd9483ea0e1e807b8c818c, type: 3}
+      propertyPath: _stateOfPlayerController
+      value: 
+      objectReference: {fileID: 2059841612}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25375,6 +25380,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2059841612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1084654239251134156, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
+  m_PrefabInstance: {fileID: 466359325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc34b513821d204c9c70e0151d10990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2060063006
 GameObject:
   m_ObjectHideFlags: 0

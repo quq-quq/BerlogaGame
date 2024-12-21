@@ -550,6 +550,7 @@ MonoBehaviour:
   _showTransitTime: 2.5
   _hideTransitTime: 0.8
   _fadeImage: {fileID: 1312986337}
+  _comicsSaveName: 1lc
 --- !u!81 &885026921
 AudioListener:
   m_ObjectHideFlags: 0

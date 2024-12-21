@@ -19,6 +19,8 @@ public class ComicsMover : MonoBehaviour
     [Space(20)]
     [SerializeField] private Image _fadeImage;
 
+    [SerializeField] private string _comicsSaveName;
+
     private int _index = 0;
     private SceneLoader _sceneLoader;
 
@@ -90,6 +92,8 @@ public class ComicsMover : MonoBehaviour
         _fadeImage.DOKill();
         _cameraTransform.DOKill();
         _fadeImage.DOColor(Color.black, _hideTransitTime).OnComplete(() => {
+            if(!string.IsNullOrEmpty(_comicsSaveName))
+                PlayerPrefs.SetInt(_comicsSaveName, 1);
             _sceneLoader.LoadScene(_nextSceneData);
         });
     }
