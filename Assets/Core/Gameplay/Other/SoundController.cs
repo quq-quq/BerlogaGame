@@ -16,6 +16,7 @@ public class SoundController : MonoBehaviour
     [Space]
     [SerializeField, Range(0, 1)] private float _volumeOfBackgroundMusic;
 
+
     private SceneLoader _sceneLoader;
 
     [Inject]
@@ -69,10 +70,15 @@ public class SoundController : MonoBehaviour
 
     private void Start()
     {
+        if(_sceneLoader == null)
+        {
+            _sceneLoader.GetCurrentScene();
+        }
+
         if (_sceneLoader.GetCurrentScene() != null)
         {
-            AudioClip backgroundMusic = _sceneLoader.GetCurrentScene().BackgroundMusic;
-            SetSound(backgroundMusic, true, "BackgroundMusic", _volumeOfBackgroundMusic);
+                    AudioClip backgroundMusic = _sceneLoader.GetCurrentScene().BackgroundMusic;
+        SetSound(backgroundMusic, true, "BackgroundMusic", _volumeOfBackgroundMusic);
         }
     }
 

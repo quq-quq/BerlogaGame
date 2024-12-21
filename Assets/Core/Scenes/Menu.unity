@@ -4421,7 +4421,7 @@ PrefabInstance:
     - target: {fileID: 6840340854483643047, guid: 420b5ff36013848778fc3e73979c8f27, type: 3}
       propertyPath: _handedSceneData
       value: 
-      objectReference: {fileID: 11400000, guid: 86321a67f3e054c9586d3e1f2eb1893d, type: 2}
+      objectReference: {fileID: 11400000, guid: 1ca0d277c83314778b24924794e48f34, type: 2}
     - target: {fileID: 6840340854483643047, guid: 420b5ff36013848778fc3e73979c8f27, type: 3}
       propertyPath: _handedSceneName
       value: Tutorial3
@@ -7211,7 +7211,7 @@ PrefabInstance:
     - target: {fileID: 6840340854483643047, guid: 420b5ff36013848778fc3e73979c8f27, type: 3}
       propertyPath: _handedSceneData
       value: 
-      objectReference: {fileID: 11400000, guid: 86321a67f3e054c9586d3e1f2eb1893d, type: 2}
+      objectReference: {fileID: 11400000, guid: 013e61dd482d045bdb1246f342bcf5cb, type: 2}
     - target: {fileID: 6840340854483643047, guid: 420b5ff36013848778fc3e73979c8f27, type: 3}
       propertyPath: _handedSceneName
       value: Tutorial3

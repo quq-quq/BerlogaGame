@@ -354,7 +354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095a18c0028842f7be3cfd763edf07c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nodeName: 
   _trigger: {fileID: 0}
+  _titleName: "\u0421\u043C\u043E\u0442\u0440\u0438\u0442\u0435\u043B\u044C \u0434\u0440\u043E\u043D\u0430"
 --- !u!1 &7421801362674498140
 GameObject:
   m_ObjectHideFlags: 0

@@ -73,6 +73,8 @@ public class PlayerAnimator : MonoBehaviour
         HandleCharacterTilt();
 
         HandleRun();
+
+
     }
 
     private void HandleSpriteFlip()
