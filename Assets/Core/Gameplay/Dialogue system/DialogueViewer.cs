@@ -67,8 +67,6 @@ namespace Dialogue_system
             _currentIndexDialogue = 0;
             _mainText.text = string.Empty;
             ViewDialog(CurrentDialogue);
-
-            _stateOfPlayerController.SetStateOfComponent();
         }
         
         public void EndDialogue()
@@ -77,8 +75,6 @@ namespace Dialogue_system
             _mainText.text = string.Empty;
             _isWriting = false;
             _parent.SetActive(false);
-
-            _stateOfPlayerController.SetStateOfComponent();
         }
         
         public void NextDialogue()

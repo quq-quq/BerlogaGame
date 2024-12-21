@@ -27,7 +27,6 @@ public class LevelButtonsScript : MonoBehaviour
     [SerializeField, Min(0f)] private float _suggestionCooldown = 5f;
     [SerializeField] private CopilotMonolog _copilotMonolog;
     [SerializeField] private GameObject _nodeDesk, _buttonDesk;
-    [SerializeField] private StateOfPlayerController _stateOfPlayerController;
     private bool _isPaused, _isMusicOff, _suggestionIsActive = true, _isCoolDownAccepted = false;
     private SceneLoader _sceneLoader;
     private Image _suggestionImage;
@@ -83,7 +82,6 @@ public class LevelButtonsScript : MonoBehaviour
             _pauseButtonImage.sprite = _unpausedSprite;
             SetAllButtonsOn();
         }
-        _stateOfPlayerController.SetStateOfComponent();
     }
 
     public void StopMusic()
@@ -118,7 +116,6 @@ public class LevelButtonsScript : MonoBehaviour
             SetAllButtonsOn();
             _manualButtonImage.sprite = _manualInactiveSprite;
         }
-        _stateOfPlayerController.SetStateOfComponent();
     }
 
     public void RestartScene()

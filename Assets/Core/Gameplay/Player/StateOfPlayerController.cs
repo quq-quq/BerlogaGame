@@ -1,29 +1,33 @@
+using Core.Gameplay.UISystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
 public class StateOfPlayerController : MonoBehaviour
 {
+    [SerializeField] private PlayerController _playerController;
+    [SerializeField] private Transform _mainUI;
+    [SerializeField] List<UIPanel> _notDisablePlayerControllerPanels;
+    private List<UIPanel> _allPanels = new List<UIPanel>();
     private bool _isEnabled = true;
-    private PlayerController _playerController;
 
     private void Awake()
     {
-        _playerController = GetComponent<PlayerController>();
+        UIPanel[] panels = _mainUI.GetComponentsInChildren<UIPanel>(true);
+
+        _allPanels.AddRange(panels);
     }
 
-    public void SetStateOfComponent()
+    private void Update()
     {
-        if(_isEnabled)
+        foreach(UIPanel panel in _allPanels)
         {
-            _playerController.enabled = false;
-            _isEnabled = false;
+            if (!panel.IsHided && !_notDisablePlayerControllerPanels.Contains(panel))
+            {
+                _playerController.enabled = false;
+                return;
+            }
         }
-        else
-        {
-            _playerController.enabled = true;
-            _isEnabled = true;
-        }
-    } 
+        _playerController.enabled = true;
+    }
 }
