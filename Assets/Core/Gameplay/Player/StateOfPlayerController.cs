@@ -8,7 +8,7 @@ public class StateOfPlayerController : MonoBehaviour
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private Transform _mainUI;
     [SerializeField] List<Transform> _notDisablePlayerControllerPanels;
-    [SerializeField] private List<Transform> _panels = new List<Transform>();
+    private List<Transform> _panels = new List<Transform>();
     private bool _isEnabled = true;
 
     private void Start()

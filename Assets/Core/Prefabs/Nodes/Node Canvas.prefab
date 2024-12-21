@@ -577,7 +577,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _title: {fileID: 0}
-  _calculations: []
+  _calculations:
+  - {fileID: 8300000, guid: b8c22618b49bcfa4bad754dcb032e9d0, type: 3}
+  - {fileID: 8300000, guid: 98e61e10e1197d74ab2420ce81547eb2, type: 3}
+  - {fileID: 8300000, guid: d1c65ed91ac9b5f43971fd681b205d5f, type: 3}
+  - {fileID: 8300000, guid: f9b51a8aa09fb6d4ea1bcac4acdcba05, type: 3}
+  - {fileID: 8300000, guid: 2b224ffae1ff46d4190fcacca76c1e3e, type: 3}
   _volume: 0.5
   cooldown: 5
   _button: {fileID: 2720868848325829640}
