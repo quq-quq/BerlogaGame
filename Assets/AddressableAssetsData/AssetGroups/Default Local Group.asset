@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 7b78b2ea255c24a579bddd80ece716d6
   m_SerializeEntries:
   - m_GUID: 02ff845132bc7438c83f56a1b8b44521
-    m_Address: sd_Room 1
+    m_Address: sd_Room1
     m_ReadOnly: 0
     m_SerializedLabels:
     - SceneData
@@ -58,7 +58,7 @@ MonoBehaviour:
     - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4cdb1df4381cd4c40bad1039c40a8fbf
-    m_Address: sd_Room 2
+    m_Address: sd_Room2
     m_ReadOnly: 0
     m_SerializedLabels:
     - SceneData
@@ -70,7 +70,7 @@ MonoBehaviour:
     - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 661def668e1380742bc3f4a12de8748f
-    m_Address: Room 1
+    m_Address: Room1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -79,8 +79,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73965ee653adb404baf2c3633a0366a3
+    m_Address: Room3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7653e5fed264c4fcba68296db83097bb
-    m_Address: sd_Room 3
+    m_Address: sd_Room3
     m_ReadOnly: 0
     m_SerializedLabels:
     - SceneData
@@ -112,9 +117,15 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cb497e085e56a484a80c1eec595b2c78
-    m_Address: Room 3
+    m_Address: Room4
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5f0921d393384e4bbe1ffa287d7e393
+    m_Address: sd_Room4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fc16375c4c0714c53bff4224a8a6b511
     m_Address: sd_Menu
@@ -123,7 +134,7 @@ MonoBehaviour:
     - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fec37407cbacf0d4b807d3adc5df2e15
-    m_Address: Room 2
+    m_Address: Room2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
