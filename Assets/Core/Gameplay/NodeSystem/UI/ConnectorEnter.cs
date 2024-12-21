@@ -9,6 +9,8 @@ namespace UI
     public class ConnectorEnter : MonoBehaviour
     {
         
+        public event Action<BaseConnector> OnEnter;
+        
         private BaseNode _node;
 
         private bool _isSealed = false;
@@ -16,6 +18,8 @@ namespace UI
         public bool IsSealed => _isSealed;
 
         private List<BaseConnector> _connections = new List<BaseConnector>();
+        
+        public IReadOnlyList<BaseConnector> Connections => _connections;
 
         public BaseNode Node
         {
@@ -51,6 +55,7 @@ namespace UI
         {
             if (!IsConnectable(connection)) throw new AggregateException($"Can't connect able from {connection.OwnerNode} node, to {Node}");
             _connections.Add(connection);
+            OnEnter?.Invoke(connection);
         }
 
         public void Disconnect(BaseConnector connection)

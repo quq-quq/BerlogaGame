@@ -19,5 +19,10 @@ namespace Node_System.Scripts.Node
         {
             
         }
+        
+        public override bool CanExecute(ObjectNode node)
+        {
+            return true;
+        }
     }
 }

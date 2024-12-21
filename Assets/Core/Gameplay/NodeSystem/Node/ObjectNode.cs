@@ -11,7 +11,8 @@ namespace Node_System.Scripts.Node
         [SerializeField] private string _objectName;
         [SerializeField] private ObjectForNode _objectForNode;
         [SerializeField] private TMP_Text _nameText;
-
+        
+        public ObjectForNode ObjectForNode => _objectForNode;
 #if UNITY_EDITOR
         [ContextMenu("Apply Text")]
         private void ApplyText()

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Node;
 using Node_System.Scripts.Node;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace UI
         protected bool _isClicked = false;
         protected bool _isMoveConnection = false;
         private Connection _currentConnection = null;
-
+        
 
         protected override void OnAwake()
         {
@@ -99,6 +100,7 @@ namespace UI
                 return;
             
             _connections.Add(connect);
+            InvokeConnection(connect);
             connect.ClickedDownEvent += OnClickDownConnection;
             connect.ClickedUpEvent += OnClickUpConnection;
         }

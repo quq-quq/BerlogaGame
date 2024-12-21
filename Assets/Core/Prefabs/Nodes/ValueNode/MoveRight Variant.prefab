@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047839976b6849dcaf59a4a679168416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nodeName: "\u041F\u043E\u0435\u0445\u0430\u0442\u044C \u043D\u0430\u043F\u0440\u0430\u0432\u043E"
   _nonNegative: 1
   _step: 0.5
   _value: 0

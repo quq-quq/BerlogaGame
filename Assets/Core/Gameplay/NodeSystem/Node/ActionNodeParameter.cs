@@ -32,6 +32,7 @@ namespace Node_System.Scripts.Node
             _textValue.text = _value.ToString();
             _increaseButton.onClick.AddListener(() => Value+=_step);
             _decreaseButton.onClick.AddListener(() => Value = Value - _step < 0 && _nonNegative? 0f: Value - _step);
+            base.Boot();
         }
     }
 }

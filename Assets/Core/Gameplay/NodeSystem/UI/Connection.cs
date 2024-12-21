@@ -16,6 +16,8 @@ namespace UI
             get;
             private set;
         }
+
+        public BaseConnector Connector => _connector;
         private readonly PointerCatcher _endPoint;
         private readonly RectTransform _rectSolid;
         private readonly Transform _parent;
