@@ -27,7 +27,6 @@ public class StateOfPlayerController : MonoBehaviour
             {
                 _playerController.enabled = false;
                 _playerController.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-                SoundController.sounder.SetSound(null, false, "PlayerRun", 0);
                 return;
             }
         }

@@ -332,11 +332,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a8e8dfdc092ebaf46951e2ecae4730f5, type: 2}
     - target: {fileID: 2773044100417632834, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.93
+      value: -20.22
       objectReference: {fileID: 0}
     - target: {fileID: 2773044100417632834, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.2999997
+      value: -1.57
       objectReference: {fileID: 0}
     - target: {fileID: 2773044100417632834, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
       propertyPath: m_LocalPosition.z
@@ -376,7 +376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6322006695908716407, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7777218198468574190, guid: 3c11513da45c749c9b3a8249f33440df, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag

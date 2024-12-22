@@ -68,13 +68,16 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (_player == null) return;
 
-        HandleSpriteFlip();
+        PlayerController playerController = transform.GetComponentInParent<PlayerController>();
 
-        HandleCharacterTilt();
+        if (playerController.enabled)
+        {
+            HandleSpriteFlip();
 
-        HandleRun();
+            HandleCharacterTilt();
 
-
+            HandleRun();
+        }
     }
 
     private void HandleSpriteFlip()
