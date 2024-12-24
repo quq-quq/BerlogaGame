@@ -5645,7 +5645,7 @@ MonoBehaviour:
   _timeCanvasGroupFade: 0.5
   _zones: []
   _copilotPointsTransform: {fileID: 0}
-  _timeToNextAppearence: 75
+  _timeToNextAppearence: 90
 --- !u!1 &6381150112445599563
 GameObject:
   m_ObjectHideFlags: 0

@@ -449,7 +449,7 @@ MonoBehaviour:
   _canvas: {fileID: 3200337157179128891}
   _zone: {fileID: 1699524045456666386}
   _endAudio: {fileID: 8300000, guid: a44cdffed82192b4e8a08cfb3d68f829, type: 3}
-  _volume: 0.7
+  _volume: 0.5
   _ofsetBeforeAudioClip: 0.5
 --- !u!1 &6667222616582634847
 GameObject:
