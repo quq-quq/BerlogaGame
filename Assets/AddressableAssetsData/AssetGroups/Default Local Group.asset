@@ -63,6 +63,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - SceneData
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43cd237e282b7ae48aa092d42f8eabf4
+    m_Address: Room5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 43f1f9937a36a442585bada35e7e2de1
     m_Address: sd_Tutorial2
     m_ReadOnly: 0
@@ -128,8 +133,19 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 94e70176d768d544c8f286f0f00c5784
+    m_Address: sd_Room5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SceneData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 97ae548a9defb80429d52a5176e04fbd
     m_Address: ComicsAfter1Lvl
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9d489fac012f4946993d84f83a4884e
+    m_Address: Room4
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -139,9 +155,15 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cb497e085e56a484a80c1eec595b2c78
-    m_Address: Room4
+    m_Address: Room6
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0c5cfab3bd603b459abe25879e09ebd
+    m_Address: sd_Room6
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SceneData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f5f0921d393384e4bbe1ffa287d7e393
     m_Address: sd_Room4

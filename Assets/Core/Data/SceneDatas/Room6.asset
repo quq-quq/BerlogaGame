@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc4bcb6f71f9f4172bab83413c0c58e5, type: 3}
-  m_Name: Room4
+  m_Name: Room6
   m_EditorClassIdentifier: 
-  _sceneName: Room4
-  _backgroundMusic: {fileID: 8300000, guid: 043b84fddbfb120469498b1a43819e07, type: 3}
+  _sceneName: Room6
+  _backgroundMusic: {fileID: 8300000, guid: dd47e16e780a36142bb08599aaf15a75, type: 3}

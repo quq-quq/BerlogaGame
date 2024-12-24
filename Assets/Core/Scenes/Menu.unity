@@ -3427,7 +3427,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u0415\u0432\u0433\u0435\u043D\u0438\u044E \u0418\u0432\u0430\u043D\u0447\u0438\u043A\u043E\u0432\u0443\r\n\u0412\u0430\u043B\u0435\u0440\u0438\u0438
-    \u041A\u0438\u0440\u044B\u0448\u0435\u0432\u043E\u0439\n\u041E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0430\u043C 
+    \u041A\u0438\u0440\u044B\u0448\u0435\u0432\u043E\u0439\n\u041A\u0438\u0440\u0438\u043B\u043B\u0443
+    \u0412\u043E\u0440\u043E\u0442\u043D\u0438\u043A\u043E\u0432\u0443\n\u041E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440\u0430\u043C 
     \u0438  \u043A\u0443\u0440\u0430\u0442\u043E\u0440\u0430\u043C \u041D\u0422\u041E\r\tGameDev"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8e61b2ee342e5d47b9141acf2c881c1, type: 2}
@@ -8337,7 +8338,7 @@ MonoBehaviour:
   _oneLevelHeight: 150
   _offSetForEachLevel: 100
   _offSetEnd: 50
-  _columCount: 3
+  _columCount: 2
 --- !u!1 &1466217182
 GameObject:
   m_ObjectHideFlags: 0

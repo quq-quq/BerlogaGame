@@ -140,7 +140,7 @@ MonoBehaviour:
     _speedOverride: 0
     _writeType: 2
     _colorText: {r: 0.25490198, g: 0.4862745, b: 0.45490196, a: 1}
-  - _mainText: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u0434\u0438\u0441\u043A...
+  - _mainText: "\u041F\u0440\u0438\u043D\u0435\u0441\u0438\u0442\u0435 \u0434\u0438\u0441\u043A...
       :("
     _characterName: "\u0420\u043E\u0431\u043E\u0442-\u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0442\u043E\u0440"
     _avatar: {fileID: 0}

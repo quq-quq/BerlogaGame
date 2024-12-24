@@ -23,5 +23,9 @@ MonoBehaviour:
         _isCompleted: 0
       - _sceneData: {fileID: 11400000, guid: f5f0921d393384e4bbe1ffa287d7e393, type: 2}
         _isCompleted: 0
+      - _sceneData: {fileID: 11400000, guid: 94e70176d768d544c8f286f0f00c5784, type: 2}
+        _isCompleted: 0
+      - _sceneData: {fileID: 11400000, guid: e0c5cfab3bd603b459abe25879e09ebd, type: 2}
+        _isCompleted: 0
     _isMute: 0
     _volume: 1
