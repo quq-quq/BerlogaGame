@@ -258,6 +258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameLifetimeScope
       objectReference: {fileID: 0}
+    - target: {fileID: 2803167780576737862, guid: 4ad1a579e499b4c4285fb2ffd383f1d9, type: 3}
+      propertyPath: _volumeOfBackgroundMusic
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7136196453083205706, guid: 4ad1a579e499b4c4285fb2ffd383f1d9, type: 3}
       propertyPath: autoInjectGameObjects.Array.size
       value: 2
@@ -547,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _logoSound: {fileID: 8300000, guid: 30f2c5de56f35d5428981ac3140af8bd, type: 3}
-  _volume: 0.3
+  _volume: 0.1
 --- !u!95 &512598495
 Animator:
   serializedVersion: 5

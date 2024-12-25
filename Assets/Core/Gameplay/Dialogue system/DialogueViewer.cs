@@ -43,7 +43,7 @@ namespace Dialogue_system
         {
             if(!_isWriting) return;
 
-            if(Input.GetKeyDown(KeyCode.Return))
+            if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
                 if(_mainText.text == _currentWriter.EndText())
                 {
@@ -53,6 +53,19 @@ namespace Dialogue_system
                 {
                     _mainText.text = _currentWriter.EndText();
                     StopCoroutine(WriteTextCoroutine());
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (_mainText.text == _currentWriter.EndText())
+                {
+                    EndDialogue();
+                }
+                else
+                {
+                    _mainText.text = _currentWriter.EndText();
+                    StopCoroutine(WriteTextCoroutine());
+                    EndDialogue();
                 }
             }
         }

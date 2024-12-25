@@ -18,7 +18,7 @@ public class StarController : MonoBehaviour
     private void Start()
     {
         transform.DOMoveY(transform.position.y+_distanceUp, _durationOfMove).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
-        transform.DORotate(new Vector3(0, 0, _rotation) , _durationOfMove).SetEase(Ease.InOutElastic).SetLoops(-1, LoopType.Yoyo);
+        transform.DORotate(new Vector3(0, 0, _rotation) , _durationOfMove).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
