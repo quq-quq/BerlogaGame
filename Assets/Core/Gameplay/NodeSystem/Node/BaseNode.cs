@@ -30,7 +30,7 @@ namespace Node
         {
             get
             {
-                if (_connector == null)
+                if (_connector == null && this != null)
                 {
                     _connector = GetComponentInChildren<BaseConnector>(true);
                 }
